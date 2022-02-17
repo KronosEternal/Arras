@@ -15,7 +15,7 @@
     "@muchmore/opus": "^0.1.0"
   },
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   },
   "license": "GPL-3.0"
 }
