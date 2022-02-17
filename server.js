@@ -1067,8 +1067,7 @@ const levelers = [
     10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
     20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
     30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
-    41, 43, 45, 48, 51, 54, 57, 60, 61, 62,
-    63, 64, 65, 66, 67, 68, 69
+    41, 43, 45
 ]
 let curve = (() => {
     let make = x => Math.log(4*x + 1) / Math.log(5)
@@ -1208,7 +1207,8 @@ class Skill {
             if (this.score - this.deduction >= this.levelScore) {
                 this.deduction += this.levelScore;
                 this.level += 1;
-                this.points += this.levelPoints;
+               // INCREASE SKILLS
+                this.points = 45;
                 if (this.level == c.TIER_1 || this.level == c.TIER_2 || this.level == c.TIER_3 || this.level == c.TIER_4) {
                     this.canUpgrade = true;
                 }
@@ -2803,144 +2803,6 @@ class Entity {
         return this.health.amount <= 0; 
     }
 }
-function closeArena() {
-  ArenaClosed();
-}
-
-var loops = 0;
-function ArenaClosed() {
-  loops++;
-  if (loops < 31) {
-    setTimeout(ArenaClosed, 2000);
-  } else {
-    sockets.broadcast("Closing!");
-
-    process.exit();
-    global.restart;
-  }
-}
-
-let spawnarenacloser = (loc, mode, type) => {
-  let o = new Entity(loc);
-  o.define(type);
-  o.team = mode || -100;
-  o.color = [35][-mode];
-};
-function threeHourRestart() {
-  restart3hour();
-}
-var loops = 0;
-function restart3hour() {
-  loops++;
-  if (loops < 3600000) {
-    setTimeout(restart3hour, 1000);
-  } else {
-    sockets.broadcast("Arena Closed: No players can join");
-    ArenaClosed();
-    if (room.gameMode === "tdm")
-      room["acsp"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.arenaclosed, Class.arenacloser, Class.arenacloser],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "tdm")
-      room["acsp"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.arenacloser, Class.arenacloser, Class.arenacloser],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "tdm")
-      room["acsp"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.arenacloser, Class.arenacloser, Class.arenacloser],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "tdm")
-      room["acsp"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.arenacloser, Class.arenacloser, Class.arenacloser],
-            1
-          )
-        );
-      });
-  }
-}
-function modeclose() {
-  closemode();
-}
-var loops = 0;
-function closemode() {
-  loops++;
-  if (loops < 10) {
-    setTimeout(closemode, 1000);
-  } else {
-    sockets.broadcast("Arena Closed");
-    ArenaClosed();
-    if (room.gameMode === "tdm")
-      room["bas3"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "tdm")
-      room["bas3"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "tdm")
-      room["bas3"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "tdm")
-      room["bas3"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
-            1
-          )
-        );
-      });
-  }
-}
-
 /*** SERVER SETUP ***/
 // Make a speed monitor
 var logs = (() => {
