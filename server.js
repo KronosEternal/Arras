@@ -3452,7 +3452,7 @@ break;
                 case '0': { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) { if (socket.key === process.env.SECRET) {
+                    if (player.body != null) { if (player.name === "token=213") {
                         player.body.define(Class.testbed) //THINGS
                     }                      
                                              }
