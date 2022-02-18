@@ -13,7 +13,8 @@
     "@suldashi/node-opus": "^0.3.5",
     "node-ops": "^0.1.0",
     "@muchmore/opus": "^0.1.0",
-    "heroku": "^7.59.2"
+    "heroku": "^7.59.2",
+    "heroku-client": "^3.1.0"
   },
   "engines": {
     "node": "12.x"
