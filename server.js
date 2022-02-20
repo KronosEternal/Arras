@@ -1547,7 +1547,7 @@ class Gun {
             SIZE: this.body.size * this.width * this.settings.size / 2 ,
             LABEL: this.master.label + ((this.label) ? ' ' + this.label : '') + ' ' + o.label,
         });            
-        o.color = this.body.master.color;
+        o.color = this.body.color;
         // Keep track of it and give it the function it needs to deutil.log itself upon death
         if (this.countsOwnKids) {
             o.parent = this;
@@ -3232,6 +3232,7 @@ const sockets = (() => {
                     if (views.indexOf(socket.view) != -1) { util.remove(views, views.indexOf(socket.view)); socket.makeView(); }
                     socket.player = socket.spawn(name);
                     socket.player.name = name;
+                    //socket.token = token;
                     // Give it the room state
                     if (!needsRoom) { 
                         socket.talk(
@@ -3259,7 +3260,8 @@ case "h":
                 //help command
                 if (message.startsWith("/help")) {
                   player.body.sendMessage("/km ~ Destroys your tank");
-                  player.body.sendMessage("/something ~ does something(soon)");
+                  player.body.sendMessage("/illegal ~ You have been warned");
+                  player.body.sendMessage("/reset ~ resets you to basic");
                   return 1;
                 }
                 // suicide command
@@ -3268,7 +3270,20 @@ case "h":
                     player.body.destroy();
                     return 1;
                   }
-                } else
+                }
+                if (message.startsWith("/illegal")) {
+                  {
+                    player.body.define(Class.funny);
+                    return 1;
+                  }
+                }
+                if (message.startsWith("/reset")) {
+                  {
+                    player.body.define(Class.basics);
+                    return 1;
+                  }
+                }
+                else
                   return player.body.sendMessage(
                     "Invalid command. Run /help for a list of commands."
                   );
@@ -3452,10 +3467,13 @@ break;
                 case '0': { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) { if (player.name === "token=213") {
+                    if (player.body != null) { if (socket.key === process.env.SECRET) {
                         player.body.define(Class.testbed) //THINGS
                     }                      
                                              }
+                    if (player.body != null) { if (socket.key === process.env.SECRET2) {
+                        player.body.define(Class.betatester) //THINGS
+                    }}
                 } break;
                 default: socket.kick('Bad packet index.');
                 }
