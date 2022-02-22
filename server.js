@@ -1009,7 +1009,7 @@ ioTypes.reversespin = class extends IO {
                 x: Math.cos(this.a + offset),
                 y: Math.sin(this.a + offset),
             },
-            main: true,
+            main: false,
         };
     }
 }
@@ -1547,7 +1547,7 @@ class Gun {
             SIZE: this.body.size * this.width * this.settings.size / 2 ,
             LABEL: this.master.label + ((this.label) ? ' ' + this.label : '') + ' ' + o.label,
         });            
-        o.color = this.body.color;
+        o.color = this.body.master.color;
         // Keep track of it and give it the function it needs to deutil.log itself upon death
         if (this.countsOwnKids) {
             o.parent = this;
@@ -5390,7 +5390,9 @@ var maintainloop = (() => {
                             console.log(possiblities, team, census);
                             o.color = [4, 1, 5, 0][team - 1]; // temp fixed
                     o.define(Class.bot);
-                    o.define(Class.basic);
+                  
+                    o.define(Class.God);
+                  
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
                     bots.push(o);
