@@ -5403,7 +5403,10 @@ var maintainloop = (() => {
                    Class.God,
                    Class.overlooker,
                    Class.nolivesmatter,
-                   
+                   Class.rocketshoot,
+                   Class.necromancer,
+                   Class.octo,
+                   Class.murder
                  ];
                  let newClass =
                    arrayOfClasses[
