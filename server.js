@@ -5380,7 +5380,7 @@ var maintainloop = (() => {
                             let team = ran.choose(possiblities) + 1;
                             o.team = -team;
                             console.log(possiblities, team, census);
-                            o.color = [4, 1, 5, 0][team - 1]; // temp fixed
+                            o.color = [12, 15][team - 1]; // temp fixed
                     o.define(Class.bot);
                    let arrayOfClasses = [
                    Class.stream,
