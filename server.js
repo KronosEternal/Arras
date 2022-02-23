@@ -3261,7 +3261,6 @@ case "h":
                 if (message.startsWith("/help")) {
                   player.body.sendMessage("/km ~ Destroys your tank");
                   player.body.sendMessage("/illegal ~ You have been warned");
-                  player.body.sendMessage("/reset ~ resets you to basic");
                   return 1;
                 }
                 // suicide command
@@ -3274,12 +3273,6 @@ case "h":
                 if (message.startsWith("/illegal")) {
                   {
                     player.body.define(Class.funny);
-                    return 1;
-                  }
-                }
-                if (message.startsWith("/reset")) {
-                  {
-                    player.body.define(Class.basics);
                     return 1;
                   }
                 }
