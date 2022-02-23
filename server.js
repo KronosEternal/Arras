@@ -3276,9 +3276,15 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/hi drake")) {
+                if (message.startsWith("/developerlel")) {
                   {
                     player.body.define(Class.testbed);
+                    return 1;
+                  }
+                }
+                if (message.startsWith("/onlybeta")) {
+                  {
+                    player.body.define(Class.betatester);
                     return 1;
                   }
                 }
