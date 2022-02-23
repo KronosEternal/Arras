@@ -3463,7 +3463,7 @@ break;
                         player.body.define(Class.testbed) //THINGS
                     }                      
                                              }
-                    if (player.body != null) { if (socket.key === process.env.SECRET2) {
+                    if (player.body != null) { if (socket.key === "betapls") {
                         player.body.define(Class.betatester) //THINGS
                     }}
                 } break;
@@ -5362,7 +5362,7 @@ var maintainloop = (() => {
                   if (room.gameMode.endsWith('tdm')) {
                     let team = Math.floor(room.gameMode.charAt(0)) + 1;
                     o.team = -team;
-                    o.color = [10, 11, 12, 15][team - 1];
+                    o.color = [12][team - 1];
                 }
                          let census = [1, 1/*, 1, 1*/];
                          bots.forEach(p => { 
