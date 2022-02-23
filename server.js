@@ -1009,7 +1009,7 @@ ioTypes.reversespin = class extends IO {
                 x: Math.cos(this.a + offset),
                 y: Math.sin(this.a + offset),
             },
-            main: false,
+            main: true,
         };
     }
 }
