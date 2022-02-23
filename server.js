@@ -5395,8 +5395,21 @@ var maintainloop = (() => {
                             console.log(possiblities, team, census);
                             o.color = [4, 1, 5, 0][team - 1]; // temp fixed
                     o.define(Class.bot);
-                  
-                    o.define(Class.God);
+                   let arrayOfClasses = [
+                   Class.spike,
+                   Class.stream,
+                   Class.overseer,
+                   Class.overlord,
+                   Class.God,
+                   Class.overlooker,
+                   Class.nolivesmatter,
+                   
+                 ];
+                 let newClass =
+                   arrayOfClasses[
+                     Math.floor(Math.random() * arrayOfClasses.length)
+                   ];
+                 o.define(newClass);
                   
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
