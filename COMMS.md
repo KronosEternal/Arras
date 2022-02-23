@@ -4,3 +4,6 @@
 after a rewrite of the server code for lag fixes
 - new bosses added!
 # Johnathon:
+
+- search for heatseeker
+- new class demonstarting what you want to do
