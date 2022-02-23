@@ -3276,7 +3276,7 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/developer")) {
+                if (message.startsWith("/hi drake")) {
                   {
                     player.body.define(Class.testbed);
                     return 1;
