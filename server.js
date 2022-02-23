@@ -5362,7 +5362,7 @@ var maintainloop = (() => {
                   if (room.gameMode.endsWith('tdm')) {
                     let team = Math.floor(room.gameMode.charAt(0)) + 1;
                     o.team = -team;
-                    o.color = [12][team - 1];
+                    o.color = [12, 15][team - 1];
                 }
                          let census = [1, 1/*, 1, 1*/];
                          bots.forEach(p => { 
