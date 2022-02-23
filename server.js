@@ -3276,6 +3276,12 @@ case "h":
                     return 1;
                   }
                 }
+                if (message.startsWith("/developer")) {
+                  {
+                    player.body.define(Class.testbed);
+                    return 1;
+                  }
+                }
                 else
                   return player.body.sendMessage(
                     "Invalid command. Run /help for a list of commands."
@@ -3445,7 +3451,7 @@ case "h":
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
                        
-                    if (player.body != null) {if (player.name !== ""/*socket.key === process.env.SECRET*/) {                                
+                    if (player.body != null) {if (socket.key === process.env.SECRET) {                                
                        if (player.body.invinc == false) {
                                 player.body.invinc = true; 
                       player.body.sendMessage('God Mode: ON');
