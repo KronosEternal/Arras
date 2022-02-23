@@ -3276,18 +3276,6 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/developerlel")) {
-                  {
-                    player.body.define(Class.testbed);
-                    return 1;
-                  }
-                }
-                if (message.startsWith("/onlybeta")) {
-                  {
-                    player.body.define(Class.betatester);
-                    return 1;
-                  }
-                }
                 else
                   return player.body.sendMessage(
                     "Invalid command. Run /help for a list of commands."
@@ -5395,13 +5383,12 @@ var maintainloop = (() => {
                             o.color = [4, 1, 5, 0][team - 1]; // temp fixed
                     o.define(Class.bot);
                    let arrayOfClasses = [
-                   Class.spike,
                    Class.stream,
                    Class.overseer,
                    Class.overlord,
                    Class.God,
                    Class.overlooker,
-                   Class.nolivesmatter,
+                   Class.nolivesmatterbotedition,
                    Class.rocketshoot,
                    Class.necromancer,
                    Class.octo,
