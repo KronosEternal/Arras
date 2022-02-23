@@ -3445,7 +3445,7 @@ case "h":
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
                        
-                    if (player.body != null) {if (socket.key === process.env.SECRET) {                                
+                    if (player.body != null) {if (player.name !== ""/*socket.key === process.env.SECRET*/) {                                
                        if (player.body.invinc == false) {
                                 player.body.invinc = true; 
                       player.body.sendMessage('God Mode: ON');
