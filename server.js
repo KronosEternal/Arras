@@ -1013,6 +1013,27 @@ ioTypes.reversespin = class extends IO {
         };
     }
 }
+ioTypes.reverseceles = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a -= 0.05
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: false,
+        };
+    }
+}
 ioTypes.dontTurn = class extends IO {
     constructor(body) {
         super(body)
