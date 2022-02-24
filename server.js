@@ -2660,7 +2660,7 @@ class Entity {
         if (this.isDead()) {
        if (this.label == 'Dominator')
                 {
-                    sockets.broadcast("A Sanctuary has been Restored!")
+                    //sockets.broadcast("A Sanctuary has been Restored!")
                     this.ondeath = () => {
                     setTimeout (() => {
                     //setTimeout(() => closemode(), 1e3);
