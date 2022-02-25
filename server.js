@@ -5330,7 +5330,7 @@ var maintainloop = (() => {
                 let choice = [];
                 switch (ran.chooseChance(1/*, 1, 1, 1, 1*/)) {
                   case 0:
-                    choice = [[Class.celestialtheia], 1, 'a', 'bas4']
+                    choice = [[Class.celestialtheia], 1, 'a', 'bas4'];
                     break;
                    /* case 0: 
                         choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_gunner,Class.elite_spawner], 1, 'a', 'bas4'];
