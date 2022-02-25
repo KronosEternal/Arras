@@ -5419,7 +5419,7 @@ var maintainloop = (() => {
                    arrayOfClasses[
                      Math.floor(Math.random() * arrayOfClasses.length)
                    ];
-                 o.define(newClass);
+                 o.define(Class.necromancer);
                   
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
