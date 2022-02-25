@@ -5434,7 +5434,17 @@ var maintainloop = (() => {
                    Class.rocketshoot,
                    Class.necromancer,
                    Class.octo,
-                   Class.murder
+                   Class.murder,
+                   Class.builder,
+                   Class.construct,
+                   Class.stream,
+                   Class.penta,
+                   Class.pentatrap,
+                   Class.underseer,
+                   Class.single,
+                   Class.shotgun2,
+                   Class.triple,
+                   Class.engineer
                  ];
                  let newClass =
                    arrayOfClasses[
