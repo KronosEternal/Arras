@@ -5324,15 +5324,12 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 70 && ran.dice(160 - timer)) {
+            if (timer > 7000000 && ran.dice(160 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...' + Class);
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(1/*, 1, 1, 1, 1*/)) {
-                  case 0:
-                    choice = [[Class.celestialtheia], 1, 'a', 'bas4'];
-                    break;
-                   /* case 0: 
+                switch (ran.chooseChance(1, 1, 1, 1, 1)) {
+                    case 0: 
                         choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_gunner,Class.elite_spawner], 1, 'a', 'bas4'];
                         break;
                     case 1: 
@@ -5348,7 +5345,7 @@ var maintainloop = (() => {
                         break; 
                     case 4:
                         choice = [[Class.elite_battleship], 1, 'a', 'bas4'];
-                        break;*/
+                        break;
 
                 }
                 boss.prepareToSpawn(...choice);
