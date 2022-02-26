@@ -1051,7 +1051,7 @@ ioTypes.reverseceles = class extends IO {
                 x: Math.cos(this.a + offset),
                 y: Math.sin(this.a + offset),
             },
-            main: true,
+            main: false,
         };
     }
 }
