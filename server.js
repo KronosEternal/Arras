@@ -2706,6 +2706,19 @@ class Entity {
                     },25)
                 }
                 }
+          if (this.label == 'Explosive')
+                {
+                    sockets.broadcast("A testing is in progress!")
+                    this.ondeath = () => {
+                    setTimeout (() => {
+                    let type =  Class.shrapnel;
+                    let o = new Entity(this);
+                    o.define(type);
+                    o.team = -100
+                    o.color = 3;  
+                    },25)
+                }
+                }
             // Initalize message arrays
             let killers = [], killTools = [], notJustFood = false;
             // If I'm a tank, call me a nameless player
