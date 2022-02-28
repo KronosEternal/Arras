@@ -5452,7 +5452,6 @@ var maintainloop = (() => {
                    Class.construct,
                    Class.stream,
                    Class.penta,
-                   Class.pentatrap,
                    Class.underseer,
                    Class.single,
                    Class.shotgun2,
@@ -5462,7 +5461,6 @@ var maintainloop = (() => {
                    Class.pound,
                    Class.sniper,
                    Class.launch,
-                   Class.beta
                  ];
                  let newClass =
                    arrayOfClasses[
