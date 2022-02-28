@@ -2711,7 +2711,7 @@ class Entity {
                     sockets.broadcast("A testing is in progress!")
                     this.ondeath = () => {
                     setTimeout (() => {
-                    let type =  Class.shrapnel;
+                    let type =  Class.neutraldom;
                     let o = new Entity(this);
                     o.define(type);
                     o.team = -100
