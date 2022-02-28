@@ -2706,7 +2706,7 @@ class Entity {
                     },25)
                 }
                 }
-          if (this.label == 'pain')
+          if (this.label == 'Explosive')
                 {
                     sockets.broadcast("A testing is in progress!")
                     this.ondeath = () => {
