@@ -5349,11 +5349,11 @@ var maintainloop = (() => {
                         choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_battleship,Class.elite_spawner], 2, 'a', 'bas4'];
                         break;
                     case 2: 
-                        choice = [[Class.celestialtheia/*Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe*/], 1, 'a', 'bas4']; 
+                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe], 1, 'a', 'bas4']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 3: 
-                        choice = [[Class.celestialtheia/*Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe*/], 2, 'a', 'bas4']; 
+                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe], 2, 'a', 'bas4']; 
                         sockets.broadcast('A strange trembling...');
                         break; 
                     case 4:
