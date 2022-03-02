@@ -1,49 +1,17 @@
-# The Proper Arras.io Private Server Template
+# Arras.io Siege Gamemode
 
-## This Template is still in progress, but here is is so far..
+The code  of a attempted clone of the Official Arras.io siege gamemode
+The Server is hosted on Heroku as well as Glitch
+This server can be imported to heroku as it uses `Node.js version 12.x` and `google-closure-library version: 20190909.0.0`
+`ws version: 7.3.0`
 
-## Quick Start Guide
 
-1. Click the top right where it says **Remix to Edit :microphone:**
-2. Give your new project a name.
-3. Your private server name will be at <http://arras.io/#private=arras-template3.glitch.me> (replace `arras-template3` with it's new name)
-4. You add a gamemode code in the link to specify its gamemode (see below).
+- Tank Definitions are in `definitions.js` file
+- Map data, bot amount, gamemode are in the `config.json` file
+- bot names, boss names, and random chance is in `random.js`
+- more stuff such as collisions, score curve, stats are in `server.js`
+- The `package.json` has been updated for compatibility with Heroku
 
-## More Information
+The current contributers are `KronosEternal/@Nyx_The_Celestial` and `jbom4390/@jbom4390`
 
-1. Open the file at the left named `🔑 .env`
-2. Fill it in with
-```
-SECRET=aSecretPasswordHere
-```
-3. Open the private server with <http://arras.io/#private=arras-template3.glitch.me;aSecretPasswordHere> (replace `aSecretPasswordHere` with the password)
-4. The map/config data are in the `config.js` file
-5. The tank data are in the `lib/definitions.js` file
-6. Other stuff (score curve, stat amount) are in the `server.js` file
-
-## Gamemode Code
-
-You can add a gamemode code in the link to specify its gamemode, such as <http://arras.io/#private=arras-template3.glitch.me&mode=f> where `f` is the gamemode code.
-
-Parts of the gamemode code must appear in the order below, all of which are optional:
-- `p` for Private
-- `e` for customized event names, which is followed by the length of the event name and then the event name itself, such as `e5space`
-- `d` for customized event names with dashes, which is followed by the number of words and the length of each word and the word itself, such as `d21d3day`
-- `o` for Open
-- `m` for Maze
-- `f` for FFA, `2` for 2 Teams, `3` for 3 Teams, or `4` for 4 Teams
-- `d` for Domination, `m` for Mothership, or `a` for Assault
-
-Note:
-- Maze FFA, 2 Teams Mothership, and 2 Teams Assault are replaced with just Maze, Mothership, and Assault
-- Team modes without domination or mothership are changed to TDM instead of Teams
-- Although Maze is before the team number in the gamemode code, they are moved to be after it in the displayed name (`m2` to 2TDM Maze)
- 
-
-## Gamemode Code and Secret Password Combined
-For those who want to have a gamemode code and the secret password combined, there is a way to do that...
-Open the private server with <http://arras.io/#private=arras-template3.glitch.me;aSecretPasswordHere&mode=f> (replace aSecretPasswordHere with the password, and f as the gamemode code) 
-
-## Breaking Changes
-
-Breaking changes are important updates to the template that you should do on your server, as otherwise it may stop functioning. The last breaking change is on April 10th, 2019. If you've made a private server before that day, it may no longer work without this update. See `CHANGELOG.md` for details.
+A project viewer who tests our server is `Lumu Emu/#LumuEmu`
