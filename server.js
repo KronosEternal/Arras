@@ -5341,24 +5341,21 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...' + Class);
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(1, 1, 1, 1, 1)) {
+                switch (ran.chooseChance(1, 1, 1, 1)) {
                     case 0: 
-                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_gunner,Class.elite_spawner], 1, 'a', 'bas4'];
+                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_gunner, Class.elite_gunner/*,Class.elite_spawner*/], 1, 'a', 'bas4'];
                         break;
                     case 1: 
-                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_battleship,Class.elite_spawner], 2, 'a', 'bas4'];
+                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_battleship, Class.elite_gunner/*,Class.elite_spawner*/], 2, 'a', 'bas4'];
                         break;
                     case 2: 
-                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe], 1, 'a', 'bas4']; 
+                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe, Class.nestkeep], 1, 'a', 'bas4']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 3: 
-                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe], 2, 'a', 'bas4']; 
+                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe, Class.nestkeep], 2, 'a', 'bas4']; 
                         sockets.broadcast('A strange trembling...');
                         break; 
-                    case 4:
-                        choice = [[Class.elite_battleship], 1, 'a', 'bas4'];
-                        break;
 
                 }
                 boss.prepareToSpawn(...choice);
