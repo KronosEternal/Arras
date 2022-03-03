@@ -3280,7 +3280,7 @@ case "h":
                   return 1;
                 }
                 // suicide command
-                if (message.startsWith("/km")) {
+                if (message.startsWith("/km")) { if ( player.body.invinc = true) {player.body.sendMessage("Please Turn God Mode off first")}} else {
                   {
                     player.body.destroy();
                     return 1;
@@ -3476,11 +3476,11 @@ break;
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
                     if (player.body != null) { if (socket.key === "developer") {
-                        player.body.define(Class.testbed) //THINGS
+                        player.body.define(Class.testbed) //Testbed cheat
                     }                      
                                              }
                     if (player.body != null) { if (socket.key === "betapls") {
-                        player.body.define(Class.betatester) //THINGS
+                        player.body.define(Class.betatester)
                     }}
                 } break;
                 default: socket.kick('Bad packet index.');
