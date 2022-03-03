@@ -5867,7 +5867,7 @@ if (sancount === 0) {
       process.exit(0);
 }
 if (room.bas1) //Sanctuary Room
-    for (let loc of room.bas4) {
+    for (let loc of room.bas1) {
          let o = new Entity(loc);
          o.define(Class.sanctuary);
          o.team = -1;
