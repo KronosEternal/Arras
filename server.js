@@ -5320,9 +5320,9 @@ var maintainloop = (() => {
                         begin = 'A visitor is coming.';
                         arrival = names[0] + ' has arrived.'; 
                     } else {
-                        begin = 'Wave ' + wave + ' is starting!'; //Say that the wave is preparing
+                        begin = 'Wave ' + wave; //Say that the wave is preparing
                         arrival = '';
-                        arrival += 'Wave ' + wave + ' has started!'; //Say what wave was started
+                        arrival += 'Wave ' + wave + ' has begun!'; //Say what wave was started
                     } wave += 1; //Increase it
                 },
                 spawn: () => {
@@ -5337,17 +5337,17 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 50 && ran.dice(160 - timer)) {
+            if (timer > 20 && ran.dice(160 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.palisade], 1, 'a', 'nest'];
-                        sockets.broadcast('Wave 1');
+                        choice = [[Class.elite_gunner], 1, 'a', 'nest'];
+                        sockets.broadcast('Wave 1 is starting');
                         break;
                     case 2: 
-                        choice = [[Class.nestkeep], 1, 'a', 'nest']; 
+                        choice = [[Class.nestkeep, Class.palisade], 2, 'a', 'nest']; 
                         sockets.broadcast('Wave 2');
                         break;
                 }
