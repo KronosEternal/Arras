@@ -5343,11 +5343,11 @@ var maintainloop = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.elite_gunner], 1, 'a', 'nest'];
+                        choice = [[Class.Celestialpaladin], 1, 'a', 'nest'];
                         sockets.broadcast('Wave 1 is starting');
                         break;
                     case 2: 
-                        choice = [[Class.nestkeep, Class.palisade, Class.Celestialfreyja], 2, 'a', 'nest']; 
+                        choice = [[Class.nestkeep, Class.palisade], 2, 'a', 'nest']; 
                         sockets.broadcast('Wave 2 is starting');
                         break;
                 }
