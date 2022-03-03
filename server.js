@@ -5324,7 +5324,7 @@ let spawnBosses = (() => {
                         break;
   }
                 boss.prepareToSpawn(...choice);
-                setTimeout(boss.spawn, 3000);
+                setTimeout(boss.spawn, 10000);
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
