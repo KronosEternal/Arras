@@ -3280,7 +3280,7 @@ case "h":
                   return 1;
                 }
                 // suicide command
-                if (message.startsWith("/km") && player.body.invinc === false){
+                if (message.startsWith("/km")){
                   {
                     player.body.destroy();
                     return 1;
