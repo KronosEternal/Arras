@@ -3282,6 +3282,7 @@ case "h":
                 // suicide command
                 if (message.startsWith("/km")){
                   {
+                    player.body.invinc = false,
                     player.body.destroy();
                     return 1;
                   }
@@ -5281,7 +5282,7 @@ let spawnBosses = (() => {
                         begin = 'A visitor is coming.';
                         arrival = names[0] + ' has arrived.'; 
                     } else {
-                        begin = 'Visitors are arriving'
+                        begin = 'Wave ' + wave + ' is arriving'
                         arrival = '';
                         arrival += 'Wave ' + wave + ' has begun!'; //Say what wave was started
                     } wave += 1; //Increase it
@@ -5305,11 +5306,11 @@ let spawnBosses = (() => {
                 switch (wave) { //The wave contenders
                     case 1: 
                         choice = [[Class.Celestialpaladin, Class.Celestialtheia, Class.Celestialzaphkiel], 1, 'a', 'nest'];
-                        sockets.broadcast('Wave 1 will start soon');
+                        sockets.broadcast('The next wave starts soon');
                         break;
                     case 2: 
-                        choice = [[Class.nestkeep, Class.palisade, Class.summoner], 1, 'a', 'nest']; 
-                        sockets.broadcast('Wave 2 will start soon');
+                        choice = [[Class.RogueCelesAlviss, Class.RogueCelesFiolnir, Class.RogueCelesTyr], 1, 'a', 'nest']; 
+                        sockets.broadcast('The next wave starts soon');
                         break;
   }
                 boss.prepareToSpawn(...choice);
