@@ -17,20 +17,19 @@
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [ 
-    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "norm", "norm", "bas4", "norm", "norm", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "bas1", "nest", "bas1", "nest", "bas1", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "nest", "norm", "norm", "norm", "nest", "norm", "norm", "norm"],
-    [ "norm", "bas4", "norm", "bas1", "norm", "nest", "norm", "bas1", "norm", "bas4", "norm"],
-    [ "norm", "norm", "norm", "nest", "norm", "norm", "norm", "nest", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "bas1", "nest", "bas1", "nest", "bas1", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "norm", "norm", "bas4", "norm", "norm", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"]
+    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
+    [ "norm", "wall", "suss", "suss", "bas4", "bas4", "suss", "suss", "wall", "norm"],
+    [ "norm", "suss", "norm", "norm", "norm", "norm", "norm", "norm", "suss", "norm"],
+    [ "norm", "suss", "norm", "bas1", "nest", "nest", "bas1", "norm", "suss", "norm"],
+    [ "norm", "bas4", "norm", "nest", "norm", "norm", "nest", "norm", "bas4", "norm"],
+    [ "norm", "bas4", "norm", "nest", "norm", "norm", "nest", "norm", "bas4", "norm"],
+    [ "norm", "suss", "norm", "bas1", "nest", "nest", "bas1", "norm", "suss", "norm"],
+    [ "norm", "suss", "norm", "norm", "norm", "norm", "norm", "norm", "suss", "norm"],
+    [ "norm", "wall", "suss", "suss", "bas4", "bas4", "suss", "suss", "wall", "norm"],
+    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"]
   ],
-  "X_GRID": 11,
-  "Y_GRID": 11,
+  "X_GRID": 10,
+  "Y_GRID": 10,
   "DAMAGE_CONSTANT": 0.6,
   "KNOCKBACK_CONSTANT": 1,
   "ROOM_BOUND_FORCE": 0.01,
@@ -43,7 +42,7 @@
     0,
     0
   ],
-  "FOOD_norm": [
+  "FOOD_NEST": [
     0, 
     0.0,
     0.0,
