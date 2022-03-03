@@ -5249,7 +5249,7 @@ var maintainloop = (() => {
     }
     placethiccbigWalls()
   // Spawning functions
-      let spawnBosses = (() => {
+let spawnBosses = (() => {
         let wave = 1; //Define Wave.
         let timer = 0;
         let boss = (() => {
@@ -5281,10 +5281,10 @@ var maintainloop = (() => {
                         begin = 'A visitor is coming.';
                         arrival = names[0] + ' has arrived.'; 
                     } else {
-                        //begin = ''
+                        begin = 'Visitors are arriving'
                         arrival = '';
                         arrival += 'Wave ' + wave + ' has begun!'; //Say what wave was started
-                    }   wave += 1;//Increase it
+                    } wave += 1; //Increase it
                 },
                 spawn: () => {
                     sockets.broadcast(begin);
@@ -5298,20 +5298,20 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 25 && ran.dice(160 - timer)) {
+            if (timer > 100 && ran.dice(110 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.Celestialpaladin, Class.Celestialtheia, Class.Celestialnyx], 1, 'a', 'nest'];
-                        sockets.broadcast('Wave 1 is starting');
+                        choice = [[Class.Celestialpaladin, Class.Celestialtheia, Class.Celestialzaphkiel], 1, 'a', 'nest'];
+                        sockets.broadcast('Wave 1 will start soon');
                         break;
                     case 2: 
-                        choice = [[Class.palisade, Class.nestkeep, Class.summoner], 1, 'a', 'nest']; 
-                        sockets.broadcast('Wave 2 is starting');
+                        choice = [[Class.nestkeep, Class.palisade, Class.summoner], 1, 'a', 'nest']; 
+                        sockets.broadcast('Wave 2 will start soon');
                         break;
-                }
+  }
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 3000);
                 // Set the timeout for the spawn functions
