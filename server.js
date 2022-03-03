@@ -5288,7 +5288,76 @@ var maintainloop = (() => {
     }
     placethiccbigWalls()
   // Spawning functions
-    let spawnBosses = (() => {
+      let spawnBosses = (() => {
+        let wave = 1; //Define Wave.
+        let timer = 0;
+        let boss = (() => {
+            let i = 0,
+                names = [],
+                bois = [Class.egg],
+                n = 0,
+                begin = 'yo some shit is about to move to a lower position',
+                arrival = 'Something happened lol u should probably let Neph know this broke',
+                loc = 'norm';
+            let spawn = () => {
+                let spot, m = 0;
+                do {
+                    spot = room.randomType(loc); m++;
+                } while (dirtyCheck(spot, 500) && m<30);
+                let o = new Entity(spot);
+                    o.define(ran.choose(bois));
+                    o.team = -100;
+                    o.name = names[i++];
+            };
+            return {
+                prepareToSpawn: (classArray, number, nameClass, typeOfLocation = 'norm') => {
+                    n = number;
+                    bois = classArray;
+                    loc = typeOfLocation;
+                    names = ran.chooseBossName(nameClass, number);
+                    i = 0;
+                    if (n === 0) {
+                        begin = 'A visitor is coming.';
+                        arrival = names[0] + ' has arrived.'; 
+                    } else {
+                        begin = 'Wave ' + wave + ' is starting!'; //Say that the wave is preparing
+                        arrival = '';
+                        arrival += 'Wave ' + wave + ' has started!'; //Say what wave was started
+                    } wave += 1; //Increase it
+                },
+                spawn: () => {
+                    sockets.broadcast(begin);
+                    for (let i=0; i<n; i++) {
+                        setTimeout(spawn, ran.randomRange(3500, 5000));
+                    }
+                    // Wrap things up.
+                    setTimeout(() => sockets.broadcast(arrival), 5000);
+                    util.log('[SPAWN] ' + arrival);
+                },
+            };
+        })();
+        return census => {
+            if (timer > 50 && ran.dice(160 - timer)) {
+                util.log('[SPAWN] Preparing to spawn...');
+                timer = 0;
+                let choice = [];
+                switch (wave) { //The wave contenders
+                    case 1: 
+                        choice = [[Class.palisade], 1, 'a', 'nest'];
+                        sockets.broadcast('Wave 1');
+                        break;
+                    case 2: 
+                        choice = [[Class.nestkeep], 1, 'a', 'nest']; 
+                        sockets.broadcast('Wave 2');
+                        break;
+                }
+                boss.prepareToSpawn(...choice);
+                setTimeout(boss.spawn, 3000);
+                // Set the timeout for the spawn functions
+            } else if (!census.miniboss) timer++;
+        };
+    })();
+    /*let spawnBosses = (() => {
         let timer = 0;
         let boss = (() => {
             let i = 0,
@@ -5343,10 +5412,10 @@ var maintainloop = (() => {
                 let choice = [];
                 switch (ran.chooseChance(1, 1, 1, 1)) {
                     case 0: 
-                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_gunner, Class.elite_gunner/*,Class.elite_spawner*/], 1, 'a', 'bas4'];
+                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_gunner, Class.elite_gunner,Class.elite_spawner], 1, 'a', 'bas4'];
                         break;
                     case 1: 
-                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_battleship, Class.elite_gunner/*,Class.elite_spawner*/], 2, 'a', 'bas4'];
+                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_battleship, Class.elite_gunner,Class.elite_spawner], 2, 'a', 'bas4'];
                         break;
                     case 2: 
                         choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe, Class.nestkeep], 1, 'a', 'bas4']; 
@@ -5363,7 +5432,7 @@ var maintainloop = (() => {
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
-    })();
+    })();*/
     let spawnCrasher = census => {
         if (ran.chance(1 -  0.5 * census.crasher / room.maxFood / room.nestFoodAmount)) {
             let spot, i = 30;
