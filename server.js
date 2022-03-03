@@ -5283,8 +5283,8 @@ var maintainloop = (() => {
                     } else {
                         arrival = '';
                         arrival += 'Wave ' + wave + ' has begun!'; //Say what wave was started
+                        wave += 1;//Increase it
                     }
-                     wave += 1;//Increase it
                 },
                 spawn: () => {
                     sockets.broadcast(begin);
