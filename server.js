@@ -5889,7 +5889,7 @@ if (sancount === 0) {
       util.log("[INFO] The team has fallen.");
       process.exit(0);
 }
-if (room.bas1) //Sanctuary Room
+/*if (room.bas1) //Sanctuary Room
     for (let loc of room.bas1) {
          let o = new Entity(loc);
          o.define(Class.sanctuary);
@@ -5918,4 +5918,4 @@ if (room.bas1) //Sanctuary Room
              o = e;
           };
      };
- }
+ }*/
