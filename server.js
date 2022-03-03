@@ -3280,7 +3280,7 @@ case "h":
                   return 1;
                 }
                 // suicide command
-                if (message.startsWith("/km")) { if ( player.body.invinc = true) {player.body.sendMessage("Please Turn God Mode off first")}} else {
+                if (message.startsWith("/km") && player.body.invinc === false){
                   {
                     player.body.destroy();
                     return 1;
