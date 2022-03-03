@@ -5284,7 +5284,7 @@ let spawnBosses = (() => {
                         begin = 'A visitor is coming.';
                         arrival = names[0] + ' has arrived.'; 
                     } else {
-                        begin = 'Wave ' + wave + ' is arriving'
+                        begin = 'Spawning..'
                         arrival = '';
                         arrival += 'Wave ' + wave + ' has begun!'; //Say what wave was started
                     } wave += 1;
@@ -5301,7 +5301,7 @@ let spawnBosses = (() => {
             };
         })();
         return census => {
-            if (timer > 10 && ran.dice(110 - timer)) {
+            if (timer > 100 && ran.dice(110 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
@@ -5324,7 +5324,7 @@ let spawnBosses = (() => {
                         break;
   }
                 boss.prepareToSpawn(...choice);
-                setTimeout(boss.spawn, 6000);
+                setTimeout(boss.spawn, 3000);
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
