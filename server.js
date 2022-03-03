@@ -5285,7 +5285,7 @@ let spawnBosses = (() => {
                         begin = 'Wave ' + wave + ' is arriving'
                         arrival = '';
                         arrival += 'Wave ' + wave + ' has begun!'; //Say what wave was started
-                    } if (wave < 5) {wave += 1; }//Increase it
+                    } wave += 1; if (wave = 5) {wave = 1}
                 },
                 spawn: () => {
                     sockets.broadcast(begin);
