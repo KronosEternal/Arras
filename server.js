@@ -5307,20 +5307,25 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.Celestialpaladin, Class.Celestialtheia, Class.Celestialzaphkiel, Class.Celestialnyx, Class.Celestialfreyja], 1, 'a', 'nest'];
-                        sockets.broadcast('The next wave starts in ? seconds');
+                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 1, 'a', 'nest'];
+                        sockets.broadcast('The first wave will spawn in the middle of the map');
                         break;
                     case 2: 
-                        choice = [[Class.RogueCelesAlviss, Class.RogueCelesFiolnir, Class.RogueCelesTyr], 1, 'a', 'nest']; 
+                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 2, 'a', 'bas5']; 
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
                     case 3: 
-                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 1, 'a', 'nest']; 
+                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 3, 'a', 'bas4']; 
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
                     case 4: 
-                        choice = [[Class.palisade, Class.summoner, Class.cyclibe, Class.nestkeep, Class.skimboss], 1, 'a', 'nest']; 
+                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 4, 'a', 'bas4']; 
                         sockets.broadcast('The next wave starts in ? seconds');
+                        break;
+                    case 5: 
+                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer, Class.palisade, Class.cyclibe, Class.nestkeep, Class.skimboss, Class.summoner], 5, 'a', 'bas4']; 
+                        sockets.broadcast('The next wave starts in ? seconds');
+                        sockets.broadcast('A strange trembling...');
                         break;
   }
                 boss.prepareToSpawn(...choice);
@@ -5330,8 +5335,8 @@ let spawnBosses = (() => {
         };
     })();    
   
-// Siege Boss Spawning ^
-// Regular Boss Spawning (Active) --> 
+// Siege Boss Spawning (Active) ^
+// Regular Boss Spawning  --> 
 /*  let spawnBosses = (() => {
         let timer = 0;
         let boss = (() => {
@@ -5581,7 +5586,7 @@ let spawnBosses = (() => {
         let placeNewFood = (position, scatter, level, allowInNest = false) => {
             let o = nearest(food, position); 
             let mitosis = false;
-            let seed = false;
+            let seed = false;//you can play at arras-100.surge.sh, and choose "Heroku Siege"
             // Find the nearest food and determine if we can do anything with it
             if (o != null) {
                 for (let i=50; i>0; i--) {
