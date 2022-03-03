@@ -5337,7 +5337,7 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 20 && ran.dice(160 - timer)) {
+            if (timer > 25 && ran.dice(160 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
@@ -5347,8 +5347,8 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave 1 is starting');
                         break;
                     case 2: 
-                        choice = [[Class.nestkeep, Class.palisade], 2, 'a', 'nest']; 
-                        sockets.broadcast('Wave 2');
+                        choice = [[Class.nestkeep, Class.palisade, Class.Celestialfreyja], 2, 'a', 'nest']; 
+                        sockets.broadcast('Wave 2 is starting');
                         break;
                 }
                 boss.prepareToSpawn(...choice);
