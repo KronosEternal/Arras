@@ -5323,7 +5323,7 @@ let spawnBosses = (() => {
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
                     case 5: 
-                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer, Class.palisade, Class.cyclibe, Class.nestkeep, Class.skimboss, Class.summoner], 5, 'a', 'bas4']; 
+                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer, Class.palisade, Class.nestkeep, Class.skimboss, Class.summoner], 4, 'a', 'bas4']; 
                         sockets.broadcast('The next wave starts in ? seconds');
                         sockets.broadcast('A strange trembling...');
                         break;
