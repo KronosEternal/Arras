@@ -5311,7 +5311,7 @@ let spawnBosses = (() => {
                         sockets.broadcast('The first wave will spawn in the middle of the map');
                         break;
                     case 2: 
-                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 2, 'a', 'bas5']; 
+                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 2, 'a', 'bas4']; 
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
                     case 3: 
