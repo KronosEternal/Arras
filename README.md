@@ -1,8 +1,8 @@
 # Arras.io Siege Gamemode
 
-The code  of a attempted clone of the Official Arras.io siege gamemode
+The code  of a clone of the Official Arras.io siege gamemode
 The Server is hosted on Heroku as well as Glitch
-This server can be imported to heroku as it uses `Node.js version 12.x` and `google-closure-library version: 20190909.0.0`
+This server can be imported to heroku as it uses `Node.js version 12.x`,`google-closure-library version: 20190909.0.0`, and
 `ws version: 7.3.0`
 
 
@@ -16,4 +16,4 @@ The current contributers are `KronosEternal/@Nyx_The_Celestial` and `jbom4390/@j
 ```
 # Arras.io Siege Gamemode
 ```
-A project viewer who tests our server is `Lumu Emu/#LumuEmu`
+A project viewer on our server is `Lumu Emu/@LumuEmu`

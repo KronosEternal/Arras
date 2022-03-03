@@ -5252,7 +5252,7 @@ var maintainloop = (() => {
   // Spawning functions
   
   
-/*let spawnBosses = (() => {
+let spawnBosses = (() => {
         let wave = 1; //Define Wave.
         let timer = 0;
         let boss = (() => {
@@ -5301,26 +5301,26 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 100 && ran.dice(110 - timer)) {
+            if (timer > 10 && ran.dice(110 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
                         choice = [[Class.Celestialpaladin, Class.Celestialtheia, Class.Celestialzaphkiel, Class.Celestialnyx, Class.Celestialfreyja], 1, 'a', 'nest'];
-                        sockets.broadcast('The next wave starts 10 seconds');
+                        sockets.broadcast('The next wave starts NAN seconds');
                         break;
                     case 2: 
                         choice = [[Class.RogueCelesAlviss, Class.RogueCelesFiolnir, Class.RogueCelesTyr], 1, 'a', 'nest']; 
-                        sockets.broadcast('The next wave starts in 10 seconds');
+                        sockets.broadcast('The next wave starts in NAN seconds');
                         break;
                     case 3: 
                         choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 1, 'a', 'nest']; 
-                        sockets.broadcast('The next wave starts in 10 seconds');
+                        sockets.broadcast('The next wave starts in NAN seconds');
                         break;
                     case 4: 
                         choice = [[Class.palisade, Class.summoner, Class.cyclibe, Class.nestkeep, Class.skimboss], 1, 'a', 'nest']; 
-                        sockets.broadcast('The next wave starts in 10 seconds');
+                        sockets.broadcast('The next wave starts in NAN seconds');
                         break;
   }
                 boss.prepareToSpawn(...choice);
@@ -5328,11 +5328,11 @@ var maintainloop = (() => {
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
-    })();*/     
+    })();    
   
 // Siege Boss Spawning ^
 // Regular Boss Spawning (Active) --> 
-  let spawnBosses = (() => {
+/*  let spawnBosses = (() => {
         let timer = 0;
         let boss = (() => {
             let i = 0,
@@ -5407,7 +5407,7 @@ var maintainloop = (() => {
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
-    })();
+    })();*/
   
   
     let spawnCrasher = census => {
