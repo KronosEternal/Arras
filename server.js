@@ -5281,10 +5281,10 @@ var maintainloop = (() => {
                         begin = 'A visitor is coming.';
                         arrival = names[0] + ' has arrived.'; 
                     } else {
+                        //begin = ''
                         arrival = '';
                         arrival += 'Wave ' + wave + ' has begun!'; //Say what wave was started
-                        wave += 1;//Increase it
-                    }
+                    }   wave += 1;//Increase it
                 },
                 spawn: () => {
                     sockets.broadcast(begin);
@@ -5304,11 +5304,11 @@ var maintainloop = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.palisade], 1, 'a', 'nest'];
+                        choice = [[Class.Celestialpaladin, Class.Celestialtheia, Class.Celestialnyx], 1, 'a', 'nest'];
                         sockets.broadcast('Wave 1 is starting');
                         break;
                     case 2: 
-                        choice = [[Class.Celestialpaladin, Class.Celestialtheia, Class.Celestialnyx], 1, 'a', 'nest']; 
+                        choice = [[Class.palisade, Class.nestkeep, Class.summoner], 1, 'a', 'nest']; 
                         sockets.broadcast('Wave 2 is starting');
                         break;
                 }
