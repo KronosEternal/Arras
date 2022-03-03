@@ -20,10 +20,10 @@
     [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
     [ "norm", "wall", "suss", "suss", "bas4", "bas4", "suss", "suss", "wall", "norm"],
     [ "norm", "suss", "norm", "norm", "norm", "norm", "norm", "norm", "suss", "norm"],
-    [ "norm", "suss", "norm", "bas2", "nest", "nest", "bas2", "norm", "suss", "norm"],
+    [ "norm", "suss", "norm", "bas1", "nest", "nest", "bas1", "norm", "suss", "norm"],
     [ "norm", "bas4", "norm", "nest", "norm", "norm", "nest", "norm", "bas4", "norm"],
     [ "norm", "bas4", "norm", "nest", "norm", "norm", "nest", "norm", "bas4", "norm"],
-    [ "norm", "suss", "norm", "bas2", "nest", "nest", "bas2", "norm", "suss", "norm"],
+    [ "norm", "suss", "norm", "bas1", "nest", "nest", "bas1", "norm", "suss", "norm"],
     [ "norm", "suss", "norm", "norm", "norm", "norm", "norm", "norm", "suss", "norm"],
     [ "norm", "wall", "suss", "suss", "bas4", "bas4", "suss", "suss", "wall", "norm"],
     [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"]

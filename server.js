@@ -2679,46 +2679,6 @@ class Entity {
 
         // Check for death
         if (this.isDead()) {
-       if (this.label == 'Dominator')
-                {
-                    //sockets.broadcast("A Sanctuary has been Restored!")
-                    this.ondeath = () => {
-                    setTimeout (() => {
-                    //setTimeout(() => closemode(), 1e3);
-                    let type =  Class.sanctuary;
-                    let o = new Entity(this);
-                    o.define(type);
-                    o.team = -1
-                    o.color = 10;  
-                    },25)
-                }
-                }
-       if (this.label == 'Sanctuary')
-                {
-                    sockets.broadcast("A Sanctuary has been Destroyed!")
-                    this.ondeath = () => {
-                    setTimeout (() => {
-                    let type =  Class.neutraldom;
-                    let o = new Entity(this);
-                    o.define(type);
-                    o.team = -100
-                    o.color = 3;  
-                    },25)
-                }
-                }
-          if (this.label == 'Explosive')
-                {
-                    sockets.broadcast("A testing is in progress!")
-                    this.ondeath = () => {
-                    setTimeout (() => {
-                    let type =  Class.neutraldom;
-                    let o = new Entity(this);
-                    o.define(type);
-                    o.team = -100
-                    o.color = 3;  
-                    },25)
-                }
-                }
             // Initalize message arrays
             let killers = [], killTools = [], notJustFood = false;
             // If I'm a tank, call me a nameless player
@@ -5343,7 +5303,7 @@ var maintainloop = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.Celestialpaladin], 1, 'a', 'nest'];
+                        choice = [[Class.Celestialpaladin, Class.Celestialtheia, Class.Celestialnyx], 1, 'a', 'nest'];
                         sockets.broadcast('Wave 1 is starting');
                         break;
                     case 2: 
@@ -5448,7 +5408,7 @@ var maintainloop = (() => {
         // Make base protectors if needed.
             let f = (loc, team) => { 
                 let o = new Entity(loc);
-                    o.define(Class.neutraldom);
+                    o.define(Class.sanctuary);
                     o.team = team;
                     o.color = [10][team-1];
             };
@@ -5900,3 +5860,39 @@ let websockets = (() => {
 setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
+let sancount = 4; //How many sanctuaries did you put 
+if (sancount === 0) {
+      sockets.broadcast("Your team has lost the game.");
+      util.log("[INFO] The team has fallen.");
+      process.exit(0);
+}
+if (room.bas1) //Sanctuary Room
+    for (let loc of room.bas4) {
+         let o = new Entity(loc);
+         o.define(Class.sanctuary);
+         o.team = -1;
+         o.SIZE = 60;
+         o.color = 10;
+         o.ondeath = () => {
+           let i = new Entity(loc);
+           i.define(Class.neutraldom);
+           i.team = -100;
+           i.SIZE = 60;
+           i.color = 3;
+           sancount -= 1;
+           sockets.broadcast("A sanctuary has been destroyed! " + sancount + " Sanctuaries Alive.");
+           util.log("[INFO] The team has lost an Sanctuary. " + sancount + " Sanctuaries Left.");
+           i.ondeath = () => {
+             let e = new Entity(loc);
+             e.define(Class.sanctuary);
+             e.team = -1;
+             e.SIZE = 60;
+             e.color = 10;
+             sancount += 1;
+             sockets.broadcast("A sanctuary has been revived! " + sancount + " Sanctuaries Alive.");
+             util.log("[INFO] The team has revived a Sanctuary. " + sancount + " Sanctuaries Left.");
+             e.ondeath = o.ondeath;
+             o = e;
+          };
+     };
+ }
