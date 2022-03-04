@@ -1003,6 +1003,90 @@ ioTypes.spinmercury = class extends IO {
         };
     }
 }
+ioTypes.spinvenus = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a += 0.05
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
+ioTypes.spinearth = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a += 0.04
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
+ioTypes.spinmars = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a += 0.032
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
+ioTypes.spinjupiter = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a += 0.023
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
 /*
 \\
 \\\
