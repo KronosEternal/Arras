@@ -5538,7 +5538,7 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.legionarycrasher, Class.ragnarok], 5, 'a', 'bas4'];
+                        choice = [[Class.anni], 5, 'a', 'bas4'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         sockets.broadcast('A strange trembling...');
                         break;
