@@ -5326,6 +5326,11 @@ let spawnBosses = (() => {
                         choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer, Class.palisade, Class.nestkeep, Class.skimboss, Class.summoner], 4, 'a', 'bas4']; 
                         sockets.broadcast('The next wave starts in ? seconds');
                         sockets.broadcast('A strange trembling...');
+                        break
+                    case 6: 
+                        choice = [[Class.legionarycrasher], 1, 'a', 'bas4']; 
+                        sockets.broadcast('The next wave starts in ? seconds');
+                        sockets.broadcast('Die.. Now');
                         break;
   }
                 boss.prepareToSpawn(...choice);
