@@ -5311,11 +5311,6 @@ let spawnBosses = (() => {
                         sockets.broadcast('The next wave starts in ? seconds');
                         sockets.broadcast('A strange trembling...');
                         break;
-                   case 2: 
-                        choice = [[Class.Celestialpaladin, Class.Celestialzaphkiel, Class.Celestialtheia, Class.Celestialnyx], 7, 'a', 'nest'];
-                        sockets.broadcast('The next wave starts in ? seconds');
-                        sockets.broadcast('You are fuc*()*#');
-                        break;
   }
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 3000);
