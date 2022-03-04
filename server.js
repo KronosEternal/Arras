@@ -3318,7 +3318,7 @@ case "h":
                 let chatMessage = playerName + " says: " + message;
                 sockets.broadcast(chatMessage);
                 util.log("[CHAT] " + chatMessage);
-                // Basic chat spam control.
+                // Basic chat spam control. //its back
                 socket.status.lastChatTime = util.time();
               } else
                 player.body.sendMessage("You're sending messages too quickly!");
