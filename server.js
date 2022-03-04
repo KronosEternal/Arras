@@ -5305,6 +5305,7 @@ let spawnBosses = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
+                let choice2 = [];
                 switch (wave) { //The wave contenders
                     case 1: 
                         choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 1, 'a', 'nest'];
@@ -5323,7 +5324,8 @@ let spawnBosses = (() => {
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
                     case 5: 
-                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer, Class.palisade, Class.nestkeep, Class.skimboss, Class.summoner], 4, 'a', 'bas4']; 
+                        choice = [[Class.palisade], 3, 'a', 'bas4'];
+                        choice2 = [[Class.skimboss], 1, 'a', 'bas4']
                         sockets.broadcast('The next wave starts in ? seconds');
                         sockets.broadcast('A strange trembling...');
                         break;
