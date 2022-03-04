@@ -849,19 +849,18 @@ ioTypes.beltRockAction = class extends IO {
     constructor(body) {
         super(body)
         this.acceptsFromTop = false
-        this.orbit = 30 //this is the variable that determines the "rings" of drone orbit
+        this.orbit = 30
         this.currentGoal = { x: this.body.source.x, y: this.body.source.y, }
         this.timer = 0
     }
     think(input) {
         if (this.body.invisible[1]) return {}
         if (this.body.source !== this.body) {
-            let bound1 = this.orbit * 1 + this.body.source.size + this.body.size
-            let bound2 = this.orbit * 1 + this.body.source.size + this.body.size
-            let dist = 1000
-            let output = { //As you can see this variable is "dist" it is based of of tank size, not a predefined value I FORGOT TO MOVE BELT TO MID OF SUN do that now
-              //let dist = 0? if we make the "rocks" orbit the sun, then we will make dist a different value so that it exclusivly orbits beyond the outer planets
-                target: { //get on the glitch server, sso we can view changes quicker
+            let bound1 = this.orbit * 0.8 + this.body.source.size + this.body.size
+            let bound2 = this.orbit * 1.5 + this.body.source.size + this.body.size
+            let dist = util.getDistance(this.body, this.body.source) + Math.PI / 8;
+            let output = {
+                target: {
                     x: this.body.velocity.x,
                     y: this.body.velocity.y,
                 },
@@ -973,6 +972,47 @@ ioTypes.spinceles = class extends IO {
         };
     }
 }
+/*
+\\
+\\\
+\\\\
+\\\\\  Orbit Speeds for Solar System Testing
+/////
+////
+///
+//
+*/
+ioTypes.spinmercury = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a += 0.06
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
+/*
+\\
+\\\
+\\\\
+\\\\\
+///// Orbit Speeds for Solar System Testing
+////
+///
+//
+*/
 ioTypes.fastspin = class extends IO {
     constructor(body) {
         super(body)
