@@ -5305,27 +5305,9 @@ let spawnBosses = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                let choice2 = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 1, 'a', 'nest'];
-                        sockets.broadcast('The first wave will spawn in the middle of the map');
-                        break;
-                    case 2: 
-                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 2, 'a', 'bas4']; 
-                        sockets.broadcast('The next wave starts in ? seconds');
-                        break;
-                    case 3: 
-                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 3, 'a', 'bas4']; 
-                        sockets.broadcast('The next wave starts in ? seconds');
-                        break;
-                    case 4: 
-                        choice = [[Class.elite_gunner, Class.elite_battleship, Class.elite_destroyer, Class.elite_sprayer], 4, 'a', 'bas4']; 
-                        sockets.broadcast('The next wave starts in ? seconds');
-                        break;
-                    case 5: 
                         choice = [[Class.palisade], 3, 'a', 'bas4'];
-                        choice2 = [[Class.skimboss], 1, 'a', 'bas4']
                         sockets.broadcast('The next wave starts in ? seconds');
                         sockets.broadcast('A strange trembling...');
                         break;
@@ -5886,11 +5868,6 @@ setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
 let sancount = 4; //How many sanctuaries did you put 
-if (sancount === 0) {
-      sockets.broadcast("Your team has lost the game.");
-      util.log("[INFO] The team has fallen.");
-      process.exit(0);
-}
 if (room.bas1) //Sanctuary Room
     for (let loc of room.bas1) {
          let o = new Entity(loc);
@@ -5914,10 +5891,13 @@ if (room.bas1) //Sanctuary Room
              e.SIZE = 60;
              e.color = 10;
              sancount += 1;
-             sockets.broadcast("A sanctuary has been revived! " + sancount + " Sanctuaries Alive.");
+             sockets.broadcast("A sanctuary has been restored! " + sancount + " Sanctuaries Alive.");
              util.log("[INFO] The team has revived a Sanctuary. " + sancount + " Sanctuaries Left.");
              e.ondeath = o.ondeath;
              o = e;
           };
      };
  }
+if (sancount <= 1) {
+sockets.broadcast("All sanctuary are gone, your team will lose")  
+}
