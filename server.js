@@ -5307,9 +5307,14 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.palisade], 3, 'a', 'bas4'];
+                        choice = [[Class.legionarycrasher, Class.ragnarok], 12, 'a', 'bas4'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         sockets.broadcast('A strange trembling...');
+                        break;
+                   case 2: 
+                        choice = [[Class.Celestialpaladin, Class.Celestialzaphkiel, Class.Celestialtheia, Class.Celestialnyx], 7, 'a', 'nest'];
+                        sockets.broadcast('The next wave starts in ? seconds');
+                        sockets.broadcast('You are fuc*()*#');
                         break;
   }
                 boss.prepareToSpawn(...choice);
@@ -5869,6 +5874,9 @@ setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
 let sancount = 4; //How many sanctuaries did you put 
 if (room.bas1) //Sanctuary Room
+if (sancount === 0){
+  sockets.broadcast("kind of sus");
+}
     for (let loc of room.bas1) {
          let o = new Entity(loc);
          o.define(Class.sanctuary);
@@ -5898,6 +5906,3 @@ if (room.bas1) //Sanctuary Room
           };
      };
  }
-if (sancount <= 1) {
-sockets.broadcast("All sanctuary are gone, your team will lose")  
-}
