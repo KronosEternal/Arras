@@ -989,7 +989,7 @@ ioTypes.spinmercury = class extends IO {
     }
 
     think(input) {
-        this.a += 0.06
+        this.a += 0.07
         let offset = 0
         if (this.body.bond != null) {
             offset = this.body.bound.angle
