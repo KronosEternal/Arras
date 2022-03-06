@@ -802,7 +802,7 @@ ioTypes.minion = class extends IO {
         }
     }
 }
-ioTypes.TESTING = class extends IO {
+ioTypes.orbitsupermassive = class extends IO {
     constructor(body) {
         super(body)
         this.turnwise = 1
@@ -813,7 +813,7 @@ ioTypes.TESTING = class extends IO {
         if (input.target != null && (input.alt || input.main)) {
             let sizeFactor = Math.sqrt(this.body.master.size / this.body.master.SIZE)
             let leash = 82 * sizeFactor
-            let orbit = 14 * sizeFactor
+            let orbit = 240 * sizeFactor
             let repel = 142 * sizeFactor
             let goal
             let power = 1
