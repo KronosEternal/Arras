@@ -1044,7 +1044,7 @@ ioTypes.spinbelt1 = class extends IO {
     }
 
     think(input) {
-        this.a += 0.043
+        this.a += 0.025
         let offset = 0
         if (this.body.bond != null) {
             offset = this.body.bound.angle
@@ -1065,7 +1065,7 @@ ioTypes.spinbelt2 = class extends IO {
     }
 
     think(input) {
-        this.a -= 0.034
+        this.a -= 0.013
         let offset = 0
         if (this.body.bond != null) {
             offset = this.body.bound.angle
