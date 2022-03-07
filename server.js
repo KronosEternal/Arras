@@ -3639,9 +3639,9 @@ case "h":
                   }
                 }
                 if (message.startsWith("/reset")) {
-                  player.body.sendMessage("will reset, please stand by");
-                  process.exit
-                  process.globalreset
+                  sockets.broadcast("Resetting...");
+                  process.exit();
+                  global.restart;
                 }
                 else
                   return player.body.sendMessage(
