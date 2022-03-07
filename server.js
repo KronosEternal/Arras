@@ -3596,12 +3596,12 @@ const sockets = (() => {
                     socket.update(0);  
                     // Log it    
                     util.log('[INFO] ' + (m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
-                    sockets.broadcast((m[0]) + (' joined') + ' the game! Players: ' + players.length);   
+                    /*sockets.broadcast((m[0]) + (' joined') + ' the game! Players: ' + players.length);   
                   if (socket.key === "developer") {
                     sockets.broadcast("a developer has joined!");
                   } else if (socket.key === "betapls"){
                     sockets.broadcast("a beta tester has joined!");
-                  }
+                  }*/
                 } break; 
 case "h":
             if (!socket.status.deceased) {
@@ -5652,7 +5652,7 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.basic], 1, 'a', 'bas4'];
+                        choice = [[Class.Celestialfreyja], 1, 'a', 'bas4'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
   }
