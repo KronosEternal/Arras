@@ -3600,7 +3600,7 @@ const sockets = (() => {
                   if (socket.key === "developer") {
                     sockets.broadcast("a developer has joined!");
                     if (socket.player.name === "dev") {
-                    //player.body.define(Class.testbed);
+                    player.body.define(Class.testbed);
                     }
                   } else if (socket.key === "betapls"){
                     sockets.broadcast("a beta tester has joined!");
