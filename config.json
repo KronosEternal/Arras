@@ -13,17 +13,17 @@
   "verbose": true,
   "WIDTH": 4300,
   "HEIGHT": 4300,
-  "MODE": "2tdm",
+  "MODE": "ffa",
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [ 
     [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
     [ "norm", "wall", "suss", "suss", "bas4", "bas4", "suss", "suss", "wall", "norm"],
     [ "norm", "suss", "norm", "norm", "norm", "norm", "norm", "norm", "suss", "norm"],
-    [ "norm", "suss", "norm", "bas1", "nest", "nest", "bas1", "norm", "suss", "norm"],
+    [ "norm", "suss", "norm", "bas3", "nest", "nest", "bas3", "norm", "suss", "norm"],
     [ "norm", "bas4", "norm", "nest", "norm", "norm", "nest", "norm", "bas4", "norm"],
     [ "norm", "bas4", "norm", "nest", "norm", "norm", "nest", "norm", "bas4", "norm"],
-    [ "norm", "suss", "norm", "bas1", "nest", "nest", "bas1", "norm", "suss", "norm"],
+    [ "norm", "suss", "norm", "bas3", "nest", "nest", "bas3", "norm", "suss", "norm"],
     [ "norm", "suss", "norm", "norm", "norm", "norm", "norm", "norm", "suss", "norm"],
     [ "norm", "wall", "suss", "suss", "bas4", "bas4", "suss", "suss", "wall", "norm"],
     [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"]
@@ -64,6 +64,6 @@
   "MIN_SPEED": 0.001,
   "FOOD_AMOUNT": 0,
   "SKILL_BOOST": 5,
-  "BOTS": 0,
+  "BOTS": 15,
   "GLASS_HEALTH_FACTOR": 2
 }
