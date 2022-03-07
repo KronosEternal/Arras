@@ -3596,7 +3596,7 @@ const sockets = (() => {
                     socket.update(0);  
                     // Log it    
                     util.log('[INFO] ' + (m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
-                    sockets.broadcast((m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
+                    sockets.broadcast((m[0]) + (' joined') + ' the game! Players: ' + players.length);   
                   if (socket.key === "developer") {
                     sockets.broadcast("a developer has joined!");
                   } else if (socket.key === "betapls"){
