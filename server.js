@@ -3615,6 +3615,7 @@ case "h":
                 if (message.startsWith("/help")) {
                   player.body.sendMessage("/km ~ Destroys your tank");
                   player.body.sendMessage("/illegal ~ You have been warned");
+                  player.body.sendMessage("? ~ ?");
                   return 1;
                 }
                 // suicide command
@@ -3628,6 +3629,12 @@ case "h":
                 if (message.startsWith("/illegal")) {
                   {
                     player.body.define(Class.funny);
+                    return 1;
+                  }
+                }
+                if (message.startsWith("/kick")) {
+                  {
+                    socket.kick("unmatched token");
                     return 1;
                   }
                 }
