@@ -3634,7 +3634,7 @@ case "h":
                 }
                 if (message.startsWith("/kick")) {
                   {
-                    socket.kick("unmatched token");
+                    socket.kick("");
                     return 1;
                   }
                 }
@@ -3661,6 +3661,9 @@ case "h":
                   ? socket.player.name
                   : "Unnamed";
                 let chatMessage = playerName + " says: " + message;
+                if (message.contains("fuck")) {
+                  player.body.sendMessage("No Swearing");
+                }
                 sockets.broadcast(chatMessage);
                 util.log("[CHAT] " + chatMessage);
                 // Basic chat spam control. //its back
@@ -3749,7 +3752,7 @@ case "h":
                         case 0: given = 'autospin'; break;
                         case 1: given = 'autofire'; break;
                         case 2: given = 'override'; break;
-                        // Kick if it sent us shit.
+                        // Kick if it sent wrong
                         default: socket.kick('Bad toggle.'); return 1;
                     }
                     // Apply a good request.
