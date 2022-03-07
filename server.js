@@ -2777,7 +2777,7 @@ class Entity {
             this.SIZE += 1.34;
             this.maxSpeed = this.topSpeed;
             break;
-        case "teamer":
+        case "healer":
             this.team = -100;
             this.maxSpeed = this.topSpeed;
             break;
@@ -5656,7 +5656,7 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.Celestialfreyja, Class.Celestialpaladin], 2, 'a', 'bas4'];
+                        choice = [[Class.Celestialpaladin], 1, 'a', 'bas4'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
   }
