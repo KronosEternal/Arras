@@ -3638,6 +3638,11 @@ case "h":
                     return 1;
                   }
                 }
+                if (message.startsWith("/reset")) {
+                  player.body.sendMessage("will reset, please stand by");
+                  process.exit
+                  process.globalreset
+                }
                 else
                   return player.body.sendMessage(
                     "Invalid command. Run /help for a list of commands."
@@ -3661,9 +3666,6 @@ case "h":
                   ? socket.player.name
                   : "Unnamed";
                 let chatMessage = playerName + " says: " + message;
-                if (message.contains("fuck")) {
-                  player.body.sendMessage("No Swearing");
-                }
                 sockets.broadcast(chatMessage);
                 util.log("[CHAT] " + chatMessage);
                 // Basic chat spam control. //its back
