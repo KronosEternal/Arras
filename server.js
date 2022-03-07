@@ -2777,6 +2777,10 @@ class Entity {
             this.SIZE += 1.34;
             this.maxSpeed = this.topSpeed;
             break;
+        case "teamer":
+            this.team = -100;
+            this.maxSpeed = this.topSpeed;
+            break;
         case 'motor':
             this.maxSpeed = 0;            
             if (this.topSpeed) {
