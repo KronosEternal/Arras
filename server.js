@@ -5639,9 +5639,8 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.ragnarok], 1, 'a', 'bas4'];
+                        choice = [[Class.basic], 1, 'a', 'bas4'];
                         sockets.broadcast('The next wave starts in ? seconds');
-                        sockets.broadcast('Reality Comes to an end as Ragnarok is arriving!');
                         break;
   }
                 boss.prepareToSpawn(...choice);
@@ -5650,7 +5649,6 @@ let spawnBosses = (() => {
             } else if (!census.miniboss) timer++;
         };
     })();    
-  
 // Siege Boss Spawning (Active) ^
 // Regular Boss Spawning  --> 
 /*  let spawnBosses = (() => {
@@ -5768,7 +5766,7 @@ let spawnBosses = (() => {
                 }
             }).filter(e => { return e; });    
             // Spawning
-//            spawnCrasher(census);
+            spawnCrasher(census);
             spawnBosses(census);
             // Bots
                 if (bots.length < c.BOTS) {
