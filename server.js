@@ -3599,9 +3599,6 @@ const sockets = (() => {
                     sockets.broadcast((m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
                   if (socket.key === "developer") {
                     sockets.broadcast("a developer has joined!");
-                    if (socket.player.name === "dev") {
-                    player.body.define(Class.testbed);
-                    }
                   } else if (socket.key === "betapls"){
                     sockets.broadcast("a beta tester has joined!");
                   }
