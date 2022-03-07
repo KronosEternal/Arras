@@ -5878,7 +5878,7 @@ let spawnBosses = (() => {
         };
     })();*/
     // The big food function
-    let makefood = (() => {
+    /*let makefood = (() => {
         let food = [], foodSpawners = [];
         // The two essential functions
         function getFoodClass(level) {
@@ -5900,7 +5900,7 @@ let spawnBosses = (() => {
         let placeNewFood = (position, scatter, level, allowInNest = false) => {
             let o = nearest(food, position); 
             let mitosis = false;
-            let seed = false;//you can play at arras-100.surge.sh, and choose "Heroku Siege"
+            let seed = false;
             // Find the nearest food and determine if we can do anything with it
             if (o != null) {
                 for (let i=50; i>0; i--) {
@@ -6042,9 +6042,9 @@ let spawnBosses = (() => {
             let maxNestFood = 1 + room.maxFood * room.nestFoodAmount;
             let foodAmount = census.sum;
             let nestFoodAmount = censusNest.sum;
-            /*********** ROT OLD SPAWNERS **********/
+            //*********** ROT OLD SPAWNERS **********
             foodSpawners.forEach(spawner => { if (ran.chance(1 - foodAmount/maxFood)) spawner.rot(); });
-            /************** MAKE FOOD **************/
+            //************** MAKE FOOD **************
             while (ran.chance(0.8 * (1 - foodAmount * foodAmount / maxFood / maxFood))) {
                 switch (ran.chooseChance(10, 2, 1)) {
                 case 0: makeGroupedFood(); break;
@@ -6053,7 +6053,7 @@ let spawnBosses = (() => {
                 }
             } 
             while (ran.chance(0.5 * (1 - nestFoodAmount * nestFoodAmount / maxNestFood / maxNestFood))) makeNestFood();
-            /************* UPGRADE FOOD ************/
+            //************* UPGRADE FOOD ************
             if (!food.length) return 0;
             for (let i=Math.ceil(food.length / 100); i>0; i--) {
                 let o = food[ran.irandom(food.length - 1)], // A random food instance
@@ -6086,12 +6086,12 @@ let spawnBosses = (() => {
                 }
             }
         };
-    })();
+    })();*/
     // Define food and food spawning
     return () => {
         // Do stuff
         makenpcs();      
-        makefood(); 
+        //makefood(); 
         // Regen health and update the grid
         entities.forEach(instance => {
             if (instance.shield.max) {
