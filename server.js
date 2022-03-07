@@ -5767,7 +5767,6 @@ let spawnBosses = (() => {
                    Class.overlooker,
                    Class.nolivesmatterbotedition,
                    Class.rocketshoot,
-                   Class.necromancer,
                    Class.octo,
                    Class.murder,
                    Class.builder,
