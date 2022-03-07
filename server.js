@@ -1037,6 +1037,48 @@ ioTypes.spinceles = class extends IO {
 ///
 //
 */
+ioTypes.spinbelt1 = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a += 0.043
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
+ioTypes.spinbelt2 = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a -= 0.034
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
 ioTypes.spinmercury = class extends IO {
     constructor(body) {
         super(body)
