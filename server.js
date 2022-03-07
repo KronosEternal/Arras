@@ -3638,11 +3638,6 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/reset")) {
-                  sockets.broadcast("Resetting...");
-                  process.exit();
-                  global.restart;
-                }
                 else
                   return player.body.sendMessage(
                     "Invalid command. Run /help for a list of commands."
