@@ -5820,7 +5820,7 @@ if (room.bas1) //Sanctuary Room
                 if (bots.length < c.BOTS) {
                     let spot;
                     do {
-                        spot = room.bas3;
+                        spot = room.random();
                     } while (dirtyCheck(spot, 40))
                     let o = new Entity(spot);
                     o.color = 12;
