@@ -2972,7 +2972,7 @@ class Entity {
         if (room.gameMode.endsWith('tdm') && this.type !== 'food') { 
             let loc = { x: this.x, y: this.y, };
             if (
-                (this.team !== -100 && room.isIn('bas4', loc))
+                (this.team !== -100 && room.isIn('bas3', loc))
             ) { this.kill(); }
         }
     }
@@ -5656,7 +5656,7 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.Celestialpaladin], 1, 'a', 'bas4'];
+                        choice = [[Class.Celestialpaladin], 1, 'a', 'bas3'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
   }
@@ -5723,17 +5723,17 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (ran.chooseChance(1, 1, 1, 1)) {
                     case 0: 
-                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_gunner, Class.elite_gunner,Class.elite_spawner], 1, 'a', 'bas4'];
+                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_gunner, Class.elite_gunner,Class.elite_spawner], 1, 'a', 'bas3'];
                         break;
                     case 1: 
-                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_battleship, Class.elite_gunner,Class.elite_spawner], 2, 'a', 'bas4'];
+                        choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_battleship, Class.elite_gunner,Class.elite_spawner], 2, 'a', 'bas3'];
                         break;
                     case 2: 
-                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe, Class.nestkeep], 1, 'a', 'bas4']; 
+                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe, Class.nestkeep], 1, 'a', 'bas3']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 3: 
-                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe, Class.nestkeep], 2, 'a', 'bas4']; 
+                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe, Class.nestkeep], 2, 'a', 'bas3']; 
                         sockets.broadcast('A strange trembling...');
                         break; 
 
@@ -5795,10 +5795,10 @@ let spawnBosses = (() => {
                     o.color = 12;
                   if (room.gameMode.endsWith('tdm')) {
                     let team = Math.floor(room.gameMode.charAt(0)) + 1;
-                    o.team = -team;
-                    o.color = [12, 15][team - 1];
+                    o.team = -100;
+                    o.color = [12][team - 1];
                 }
-                         let census = [1, 1/*, 1, 1*/];
+                         let census = [1];
                          bots.forEach(p => { 
                                 census[-p.team - 1]++;; 
                             });
@@ -5812,12 +5812,16 @@ let spawnBosses = (() => {
                             }
                             // Choose from one of the least ones
                             let team = ran.choose(possiblities) + 1;
-                            o.team = -team;
+                            o.team = -100;
                             console.log(possiblities, team, census);
-                            o.color = [12, 15][team - 1]; // temp fixed
+                            o.color = [12][team - 1]; // temp fixed
                     o.define(Class.bot);
                    let arrayOfClasses = [
-                   Class.stream,
+                   Class.elite_gunner,
+                   Class.elite_sprayer,
+                   Class.elite_destroyer,
+                   Class.elite_battleship
+                  /*Class.stream,
                    Class.overseer,
                    Class.overlord,
                    Class.God,
@@ -5838,7 +5842,7 @@ let spawnBosses = (() => {
                    Class.basic,
                    Class.pound,
                    Class.sniper,
-                   Class.launch,
+                   Class.launch,*/
                  ];
                  let newClass =
                    arrayOfClasses[

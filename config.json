@@ -18,14 +18,14 @@
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [ 
     [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-    [ "norm", "wall", "suss", "suss", "bas4", "bas4", "suss", "suss", "wall", "norm"],
+    [ "norm", "wall", "suss", "suss", "bas3", "bas3", "suss", "suss", "wall", "norm"],
     [ "norm", "suss", "norm", "norm", "norm", "norm", "norm", "norm", "suss", "norm"],
     [ "norm", "suss", "norm", "bas1", "nest", "nest", "bas1", "norm", "suss", "norm"],
-    [ "norm", "bas4", "norm", "nest", "norm", "norm", "nest", "norm", "bas4", "norm"],
-    [ "norm", "bas4", "norm", "nest", "norm", "norm", "nest", "norm", "bas4", "norm"],
+    [ "norm", "bas3", "norm", "nest", "norm", "norm", "nest", "norm", "bas3", "norm"],
+    [ "norm", "bas3", "norm", "nest", "norm", "norm", "nest", "norm", "bas3", "norm"],
     [ "norm", "suss", "norm", "bas1", "nest", "nest", "bas1", "norm", "suss", "norm"],
     [ "norm", "suss", "norm", "norm", "norm", "norm", "norm", "norm", "suss", "norm"],
-    [ "norm", "wall", "suss", "suss", "bas4", "bas4", "suss", "suss", "wall", "norm"],
+    [ "norm", "wall", "suss", "suss", "bas3", "bas3", "suss", "suss", "wall", "norm"],
     [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"]
   ],
   "X_GRID": 10,
