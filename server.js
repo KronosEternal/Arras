@@ -5820,7 +5820,7 @@ if (room.bas1) //Sanctuary Room
                 if (bots.length < c.BOTS) {
                     let spot;
                     do {
-                        spot = room.random();
+                        spot = room.bas3();
                     } while (dirtyCheck(spot, 40))
                     let o = new Entity(spot);
                     o.color = 12;
@@ -5915,32 +5915,6 @@ if (room.bas1) //Sanctuary Room
             
         };
     })();
-
- /*               if (bots.length < c.RAMBOTS) {
-                    let o = new Entity(room.random());
-                    o.color = 12;
-                    o.define(Class.rambot);
-                    o.define(Class.tri);
-                    o.name += ran.chooseBotName();
-                    o.refreshBodyAttributes();
-                    o.color = 12;
-                    bots.push(o);
-                }
-                // Remove dead ones
-                bots = bots.filter(e => { return !e.isDead(); });
-                // Slowly upgrade them
-                bots.forEach(o => {
-                    if (o.skill.level < 60) {
-                        o.skill.score += 700;
-                        o.skill.maintain();        }
-                if (o.upgrades.length)
-                  o.upgrade(Math.floor(Math.random() * 9))
-            }
-                    
-                );
-            
-        };
-    })();*/
     // The big food function
     /*let makefood = (() => {
         let food = [], foodSpawners = [];
