@@ -5833,8 +5833,8 @@ let spawnBosses = (() => {
                    Class.Celestialfreyja,
                    Class.Celestialnyx,
                    Class.Celestialzaphkiel*/
-                     
-                     
+                     /////////////////////////////////////////////
+                     /////////////////////////////////////////////
                   /*Class.stream,
                    Class.overseer,
                    Class.overlord,
