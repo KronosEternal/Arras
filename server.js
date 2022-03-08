@@ -5820,7 +5820,12 @@ let spawnBosses = (() => {
                    Class.elite_gunner,
                    Class.elite_sprayer,
                    Class.elite_destroyer,
-                   Class.elite_battleship
+                   Class.elite_battleship,
+                   Class.palisade,
+                   Class.summoner,
+                   Class.nestkeep,
+                   Class.skimboss,
+                   Class.cyclibe
                   /*Class.stream,
                    Class.overseer,
                    Class.overlord,
