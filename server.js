@@ -5825,7 +5825,8 @@ let spawnBosses = (() => {
                    Class.summoner,
                    Class.nestkeep,
                    Class.skimboss,
-                   Class.cyclibe
+                   Class.cyclibe,
+                   Class.Celestialtheia
                   /*Class.stream,
                    Class.overseer,
                    Class.overlord,
