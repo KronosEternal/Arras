@@ -5768,6 +5768,37 @@ let spawnBosses = (() => {
             for (let i=1; i<2; i++) {
                 room['bas' + i].forEach((loc) => { f(loc, i); }); //Don't spawn sanctuary in boss teritory
             }*/
+let sancount = 6; //How many sanctuaries did you put 
+if (room.bas1) //Sanctuary Room
+    for (let loc of room.bas1) {
+         let o = new Entity(loc);
+         o.define(Class.sanctuary);
+         o.team = -1;
+         o.SIZE = 60;
+         o.color = 10;
+         o.ondeath = () => {
+           let i = new Entity(loc);
+           i.define(Class.neutraldom);
+           i.team = -100;
+           i.SIZE = 60;
+           i.color = 3;
+           sancount -= 1;
+           sockets.broadcast("A sanctuary has been destroyed! " + sancount + " Sanctuaries Alive.");
+           util.log("[INFO] The team has lost an Sanctuary. " + sancount + " Sanctuaries Left.");
+           i.ondeath = () => {
+             let e = new Entity(loc);
+             e.define(Class.sanctuary);
+             e.team = -1;
+             e.SIZE = 60;
+             e.color = 10;
+             sancount += 1;
+             sockets.broadcast("A sanctuary has been restored! " + sancount + " Sanctuaries Alive.");
+             util.log("[INFO] The team has revived a Sanctuary. " + sancount + " Sanctuaries Left.");
+             e.ondeath = o.ondeath;
+             o = e;
+          };
+     };
+ }
         // Return the spawning function
         let bots = [];
         return () => {
@@ -6230,37 +6261,3 @@ let websockets = (() => {
 setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
-let sancount = 4; //How many sanctuaries did you put 
-if (room.bas1) //Sanctuary Room
-if (sancount === 0){
-  sockets.broadcast("kind of sus");
-}
-    for (let loc of room.bas1) {
-         let o = new Entity(loc);
-         o.define(Class.sanctuary);
-         o.team = -1;
-         o.SIZE = 60;
-         o.color = 10;
-         o.ondeath = () => {
-           let i = new Entity(loc);
-           i.define(Class.neutraldom);
-           i.team = -100;
-           i.SIZE = 60;
-           i.color = 3;
-           sancount -= 1;
-           sockets.broadcast("A sanctuary has been destroyed! " + sancount + " Sanctuaries Alive.");
-           util.log("[INFO] The team has lost an Sanctuary. " + sancount + " Sanctuaries Left.");
-           i.ondeath = () => {
-             let e = new Entity(loc);
-             e.define(Class.sanctuary);
-             e.team = -1;
-             e.SIZE = 60;
-             e.color = 10;
-             sancount += 1;
-             sockets.broadcast("A sanctuary has been restored! " + sancount + " Sanctuaries Alive.");
-             util.log("[INFO] The team has revived a Sanctuary. " + sancount + " Sanctuaries Left.");
-             e.ondeath = o.ondeath;
-             o = e;
-          };
-     };
- }
