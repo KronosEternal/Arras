@@ -4733,8 +4733,7 @@ break;
                           Math.round(my.SIZE),
                         ]
                       })
-                  return all //reseting
-                  
+                  return all //i am checking and editing bullet stuff and teams and all different things like barrel handling and whatnot
                 })
                 let minimapTeams = [1, 2, 3, 4].map(team => new Delta(3, () => {
                   let all = []
