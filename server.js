@@ -5817,7 +5817,9 @@ let spawnBosses = (() => {
                             o.color = [12][team - 1]; // temp fixed
                     o.define(Class.bot);
                    let arrayOfClasses = [
-                   Class.elite_gunner,
+                   Class.legionarycrasher,
+                   Class.ragnarok
+                   /*Class.elite_gunner,
                    Class.elite_sprayer,
                    Class.elite_destroyer,
                    Class.elite_battleship,
@@ -5830,7 +5832,9 @@ let spawnBosses = (() => {
                    Class.Celestialpaladin,
                    Class.Celestialfreyja,
                    Class.Celestialnyx,
-                   Class.Celestialzaphkiel
+                   Class.Celestialzaphkiel*/
+                     
+                     
                   /*Class.stream,
                    Class.overseer,
                    Class.overlord,
