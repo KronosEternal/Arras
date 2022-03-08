@@ -4733,7 +4733,8 @@ break;
                           Math.round(my.SIZE),
                         ]
                       })
-                  return all
+                  return all //reseting
+                  
                 })
                 let minimapTeams = [1, 2, 3, 4].map(team => new Delta(3, () => {
                   let all = []
