@@ -1,17 +1,17 @@
 # Code Storage
 Map Setup 6 sancs
 
-    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-    [ "norm", "wall", "norm", "norm", "norm", "bas3", "norm", "norm", "norm", "wall", "norm"],
-    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "bas1", "norm", "bas1", "norm", "bas1", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-    [ "norm", "bas3", "norm", "bas1", "norm", "nest", "norm", "bas1", "norm", "norm", "bas3"],
-    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "bas1", "norm", "bas1", "norm", "bas1", "norm", "norm", "norm"],
-    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-    [ "norm", "wall", "norm", "norm", "norm", "bas3", "norm", "norm", "norm", "wall", "norm"],
-    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"]
+    [ "norm", "norm", "norm", "norm", "norm", "wall", "norm", "norm", "norm", "norm", "norm"],
+    [ "norm", "wall", "wall", "wall", "wall", "bas3", "wall", "wall", "wall", "wall", "norm"],
+    [ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
+    [ "norm", "wall", "norm", "bas1", "norm", "bas1", "norm", "bas1", "norm", "wall", "norm"],
+    [ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "norm"],
+    [ "wall", "bas3", "norm", "bas1", "norm", "nest", "norm", "bas1", "norm", "bas3", "wall"],
+    [ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "norm"],
+    [ "norm", "wall", "norm", "bas1", "norm", "bas1", "norm", "bas1", "norm", "wall", "norm"],
+    [ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "norm"],
+    [ "norm", "wall", "wall", "wall", "wall", "bas3", "wall", "wall", "wall", "wall", "norm"],
+    [ "norm", "norm", "norm", "norm", "norm", "wall", "norm", "norm", "norm", "norm", "norm"]
 Map Setup 4 sancs
 
     [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],

@@ -5822,7 +5822,7 @@ if (room.bas1) //Sanctuary Room
                     do {
                         spot = room.random();
                     } while (dirtyCheck(spot, 40))
-                    let o = new Entity(spot);
+                    let o = new Entity(room.bas3);
                     o.color = 12;
                   if (room.gameMode.endsWith('tdm')) {
                     let team = Math.floor(room.gameMode.charAt(0)) + 1;

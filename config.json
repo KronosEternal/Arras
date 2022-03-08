@@ -19,7 +19,7 @@
   "ROOM_SETUP": [ 
     [ "norm", "norm", "norm", "norm", "norm", "wall", "norm", "norm", "norm", "norm", "norm"],
     [ "norm", "wall", "wall", "wall", "wall", "bas3", "wall", "wall", "wall", "wall", "norm"],
-    [ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
+    [ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "norm"],
     [ "norm", "wall", "norm", "bas1", "norm", "bas1", "norm", "bas1", "norm", "wall", "norm"],
     [ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "norm"],
     [ "wall", "bas3", "norm", "bas1", "norm", "nest", "norm", "bas1", "norm", "bas3", "wall"],
