@@ -5599,6 +5599,7 @@ var maintainloop = (() => {
     }
     placethiccbigWalls()
   // Spawning functions
+  
 let spawnBosses = (() => {
         let wave = 1; //Define Wave.
         let timer = 0;
@@ -5661,11 +5662,10 @@ let spawnBosses = (() => {
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 3000);
                 // Set the timeout for the spawn functions
-            } //else if (!census.miniboss) timer++;
+            } else if (!census.miniboss) timer++;
         };
     })();    
 // Siege Boss Spawning (Active) ^
-// Regular Boss Spawning  --> 
     let spawnCrasher = census => {
         if (ran.chance(1 -  0.5 * census.crasher / room.maxFood / room.nestFoodAmount)) {
             let spot, i = 30;
@@ -5676,6 +5676,7 @@ let spawnBosses = (() => {
                 o.team = -100;
         }
     };
+  //////////////////////////////////
     // The NPC function
     let makenpcs = (() => {
         // Make base protectors if needed.
