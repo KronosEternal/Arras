@@ -5266,7 +5266,7 @@ var gameloop = (() => {
                                 _n: damage._n,
                             };
                             if (n.shield.max) { 
-                                damageToApply._me -= n.shield.getDamage(damageToApply._me);
+                                damageToApply._me -= n.shield.getDamage(damageToApply._me); //Heal Bullet Stuff
                             }
                             if (my.shield.max) { 
                                 damageToApply._n -= my.shield.getDamage(damageToApply._n);
@@ -5822,7 +5822,7 @@ if (room.bas1) //Sanctuary Room
                     do {
                         spot = room.random();
                     } while (dirtyCheck(spot, 40))
-                    let o = new Entity(room.bas3);
+                    let o = new Entity(spot);
                     o.color = 12;
                   if (room.gameMode.endsWith('tdm')) {
                     let team = Math.floor(room.gameMode.charAt(0)) + 1;
