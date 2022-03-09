@@ -97,3 +97,128 @@ Kronos Code
                   
             }],
         };
+Single Code
+
+       exports.singlestream = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Streaming Single',
+                //CONTROLLERS: ['nearestDifferentMaster'],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },{ 
+                    POSITION: [  19.4,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.singlestream]),
+                            TYPE: exports.bullet,
+                        }, },  {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    }
+                ],
+            };
