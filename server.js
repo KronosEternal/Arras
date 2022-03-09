@@ -5689,7 +5689,7 @@ let spawnBosses = (() => {
             for (let i=1; i<2; i++) {
                 room['bas' + i].forEach((loc) => { f(loc, i); }); //Don't spawn sanctuary in boss teritory
             }*/
-let sancount = 6; //How many sanctuaries did you put 
+let sancount = 4; //How many sanctuaries did you put 
 if (room.bas1) //Sanctuary Room
     for (let loc of room.bas1) {
          let o = new Entity(loc);
