@@ -5804,7 +5804,10 @@ if (room.bas1) //Sanctuary Room
                    Class.Celestialpaladin,
                    Class.Celestialfreyja,
                    Class.Celestialnyx,
-                   Class.Celestialzaphkiel
+                   Class.Celestialzaphkiel,
+                   Class.RogueCelesTyr,
+                   Class.RogueCelesFiolnir,
+                   Class.RogueCelesAlviss
                      /////////////////////////////////////////////
                      /////////////////////////////////////////////
                   /*Class.stream,
