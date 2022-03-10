@@ -3639,7 +3639,8 @@ case "h":
                 if (message.startsWith("/help")) {
                   player.body.sendMessage("/km ~ Destroys your tank");
                   player.body.sendMessage("/illegal ~ You have been warned");
-                  player.body.sendMessage("? ~ ?");
+                  player.body.sendMessage("/kick ~ kick yourself if /km doesn't work")
+                  player.body.sendMessage("/kill (name) ~ kills the player with this name");
                   return 1;
                 }
                 // suicide command
@@ -3659,6 +3660,13 @@ case "h":
                 if (message.startsWith("/kick")) {
                   {
                     socket.kick("");
+                    return 1;
+                  }
+                }
+                let name = "";
+                if (message.startsWith("/kill" + name)) {
+                  {
+                    player.body.destroy(name);
                     return 1;
                   }
                 }
