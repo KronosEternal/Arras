@@ -2105,8 +2105,9 @@ if (my.invisible[1]) {
                       my.dangerValue = -1; // when you invisible, the danger will be -1, that means the AIs will skip you and attack other things
                     }
                   }
-            } else my.alpha = 1;
+            } else my.alpha = 1; //here is the function :)the default setup would be INVISIBLE: [0.09, 0.05], had to go for a se, what is the second number?
        // OLD Invis
+      
      /* if (my.invisible[1]) {
       my.alpha = Math.max(0.01, my.alpha - my.invisible[1]);
       if (
