@@ -5790,8 +5790,8 @@ if (room.bas1) //Sanctuary Room
                             o.color = [12][team - 1]; // temp fixed
                     o.define(Class.bot);
                    let arrayOfClasses = [
-                   /*Class.legionarycrasher,
-                   Class.ragnarok
+                   Class.Celestialeternal
+                  /*
                    Class.elite_gunner,
                    Class.elite_sprayer,
                    Class.elite_destroyer,
@@ -5800,10 +5800,10 @@ if (room.bas1) //Sanctuary Room
                    Class.summoner,
                    Class.nestkeep,
                    Class.skimboss,
-                   Class.cyclibe,*/
+                   Class.cyclibe,
                    Class.Celestialtheia,
                    Class.Celestialpaladin,
-                   /*Class.Celestialfreyja,
+                   Class.Celestialfreyja,
                    Class.Celestialnyx,
                    Class.Celestialzaphkiel,
                    Class.RogueCelesTyr,
