@@ -5701,23 +5701,19 @@ let spawnBosses = (() => {
     // The NPC function
     let makenpcs = (() => {
         // Make base protectors if needed.
-            /*let f = (loc, team) => { 
+            let f = (loc, team) => { 
                 let o = new Entity(loc);
                     o.define(Class.sanctuary);
                     o.team = team;
                     o.color = [10][team-1];
             };
             for (let i=1; i<2; i++) {
-                room['bas' + i].forEach((loc) => { f(loc, i); }); //Don't spawn sanctuary in boss teritory
-            }*/
+                room['bas' + 1].forEach((loc) => { f(loc, i); }); //Don't spawn sanctuary in boss territory
+            }
 let sancount = 4; //How many sanctuaries did you put 
 if (room.bas1) //Sanctuary Room
     for (let loc of room.bas1) {
          let o = new Entity(loc);
-         o.define(Class.sanctuary);
-         o.team = -1;
-         o.SIZE = 60;
-         o.color = 10;
          o.ondeath = () => {
            let i = new Entity(loc);
            i.define(Class.neutraldom);
