@@ -5730,19 +5730,19 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.elite_sprayer], 1, 'a', 'bas3'];
+                        choice = [[Class.elite_sprayer], 1, 'a', 'suss'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
                     case 2: 
-                        choice = [[Class.elite_gunner], 2, 'a', 'bas3'];
+                        choice = [[Class.elite_gunner], 2, 'a', 'suss'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
                     case 3: 
-                        choice = [[Class.palisade, Class.summoner, Class.nestkeep], 3, 'a', 'bas3'];
+                        choice = [[Class.palisade, Class.summoner, Class.nestkeep], 3, 'a', 'suss'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
                     case 4: 
-                        choice = [[Class.Celestialpaladin, Class.Celestialtheia, Class.Celestialzaphkiel], 1, 'a', 'bas3'];
+                        choice = [[Class.Celestialpaladin, Class.Celestialtheia, Class.Celestialzaphkiel], 1, 'a', 'suss'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
   }
