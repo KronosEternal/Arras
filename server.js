@@ -2856,6 +2856,10 @@ class Entity {
             this.team = -100;
             this.maxSpeed = this.topSpeed;
             break;
+        case "blue":
+            this.team = -1;
+            this.maxSpeed = this.topSpeed;
+            break;
         case 'motor':
             this.maxSpeed = 0;            
             if (this.topSpeed) {
@@ -3694,6 +3698,7 @@ case "h":
                   player.body.sendMessage("/km ~ Destroys your tank");
                   player.body.sendMessage("/illegal ~ You have been warned");
                   player.body.sendMessage("/kick ~ kick yourself if /km doesn't work")
+                  player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue")
                   //player.body.sendMessage("/kill (name) ~ kills the player with this name");
                   return 1;
                 }
@@ -3714,6 +3719,18 @@ case "h":
                 if (message.startsWith("/kick")) {
                   {
                     socket.kick("");
+                    return 1;
+                  }
+                }
+                if (message.startsWith("/team -100")) {
+                  {
+                    player.body.define(Class.team100);
+                    return 1;
+                  }
+                }
+                if (message.startsWith("/team -1")) {
+                  {
+                    player.body.define(Class.team1);
                     return 1;
                   }
                 }
