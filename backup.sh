@@ -9028,12 +9028,12 @@ exports.healSign2 = {
 exports.sanctuary = {
         PARENT: [exports.genericTank],
         LABEL: 'Sanctuary',
+        CAN_BE_ON_LEADERBOARD: false,
         FACING_TYPE:'autospin',
-  DAMAGE_CLASS: 0,
-  DANGER: 100,
-  ACCEPTS_SCORE: false,
-  VARIES_IN_SIZE: false,
-  CAN_BE_ON_LEADERBOARD: false, 
+        ACCEPTS_SCORE: false,
+        DANGER: 100,
+        COLOR: 10,
+        SIZE: 53,
   SKILL: skillSet({ 
     rld: 1,
     dam: 1,
@@ -9041,19 +9041,12 @@ exports.sanctuary = {
     spd: 0,
     str: 1,
   }),
-  BODY: {
-    // def
-    SPEED: 0,
-    HEALTH: 1300,
-    DAMAGE: 13,
-    PENETRATION: 0.25,
-    SHIELD: 20,
-
-    FOV: 1,
-    PUSHABILITY: 0,
-    HETERO: 0
-  },
-  SIZE: 45,
+        BODY: {
+            FOV: 1,
+            SPEED: base.SPEED * 0.5,
+            HEALTH: 600,
+            PUSHABILITY: 0,
+        },
         GUNS: [],
     TURRETS: [
     {
