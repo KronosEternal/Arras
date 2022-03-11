@@ -3033,9 +3033,67 @@ class Entity {
             this.health.amount -= healthDamage;
         }
         this.damageRecieved = 0;
-
+/*if (room.bas1) //Sanctuary Room
+    for (let loc of room.bas1) {
+         let o = new Entity(loc);
+         o.define(Class.sanctuary);
+         o.team = -1;
+         o.SIZE = 60;
+         o.color = 10;
+         o.ondeath = () => {
+           let i = new Entity(loc);
+           i.define(Class.neutraldom);
+           i.team = -100;
+           i.SIZE = 60;
+           i.color = 3;
+           sancount -= 1;
+           sockets.broadcast("A sanctuary has been destroyed! " + sancount + " Sanctuaries Alive.");
+           util.log("[INFO] The team has lost an Sanctuary. " + sancount + " Sanctuaries Left.");
+           i.ondeath = () => {
+             let e = new Entity(loc);
+             e.define(Class.sanctuary);
+             e.team = -1;
+             e.SIZE = 60;
+             e.color = 10;
+             sancount += 1;
+             sockets.broadcast("A sanctuary has been restored! " + sancount + " Sanctuaries Alive.");
+             util.log("[INFO] The team has revived a Sanctuary. " + sancount + " Sanctuaries Left.");
+             e.ondeath = o.ondeath;
+             o = e;
+          };
+     };
+ }*/
+      let sancount = 4; //How many sanctuaries did you put 
         // Check for death
         if (this.isDead()) {
+          if (this.label == 'Sanctuary')
+                {
+                    sockets.broadcast("A Sanctuary has been destroyed! " + sancount + " Sanctuaries Alive")
+                    sancount += 1
+                    this.ondeath = () => {
+                    setTimeout (() => {
+                    let type =  Class.neutraldom;
+                    let o = new Entity(this);
+                    o.define(type);
+                    o.team = -100
+                    o.color = 35;  
+                    },30)
+                }
+                }
+       if (this.label == 'Dominator')
+                {
+                    sockets.broadcast("A Sanctuary has been restored! " + sancount + " Sanctuaries Alive")
+                    sancount += 1
+                    this.ondeath = () => {
+                    setTimeout (() => {
+                    let type =  Class.sanctuary;
+                    let o = new Entity(this);
+                    o.define(type);
+                    o.team = -1
+                    o.color = 10;  
+                    },30)
+                }
+                }
             // Initalize message arrays
             let killers = [], killTools = [], notJustFood = false;
             // If I'm a tank, call me a nameless player
@@ -5701,7 +5759,7 @@ let spawnBosses = (() => {
     // The NPC function
     let makenpcs = (() => {
         // Make base protectors if needed.
-            let f = (loc, team) => { 
+           /* let f = (loc, team) => { 
                 let o = new Entity(loc);
                     o.define(Class.sanctuary);
                     o.team = team;
@@ -5709,34 +5767,7 @@ let spawnBosses = (() => {
             };
             for (let i=1; i<2; i++) {
                 room['bas' + i].forEach((loc) => { f(loc, i); }); //Don't spawn sanctuary in boss teritory
-            }
-let sancount = 4; //How many sanctuaries did you put 
-if (room.bas1) //Sanctuary Room
-    for (let loc of room.bas1) {
-         let o = new Entity(loc);
-         o.ondeath = () => {
-           let i = new Entity(loc);
-           i.define(Class.neutraldom);
-           i.team = -100;
-           i.SIZE = 60;
-           i.color = 3;
-           sancount -= 1;
-           sockets.broadcast("A sanctuary has been destroyed! " + sancount + " Sanctuaries Alive.");
-           util.log("[INFO] The team has lost an Sanctuary. " + sancount + " Sanctuaries Left.");
-           i.ondeath = () => {
-             let e = new Entity(loc);
-             e.define(Class.sanctuary);
-             e.team = -1;
-             e.SIZE = 60;
-             e.color = 10;
-             sancount += 1;
-             sockets.broadcast("A sanctuary has been restored! " + sancount + " Sanctuaries Alive.");
-             util.log("[INFO] The team has revived a Sanctuary. " + sancount + " Sanctuaries Left.");
-             e.ondeath = o.ondeath;
-             o = e;
-          };
-     };
- }
+            }*/
         // Return the spawning function
         let bots = [];
         return () => {
