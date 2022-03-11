@@ -5708,7 +5708,7 @@ let spawnBosses = (() => {
                     o.color = [10][team-1];
             };
             for (let i=1; i<2; i++) {
-                room['bas' + 1].forEach((loc) => { f(loc, i); }); //Don't spawn sanctuary in boss territory
+                room['bas' + i].forEach((loc) => { f(loc, i); }); //Don't spawn sanctuary in boss teritory
             }
 let sancount = 4; //How many sanctuaries did you put 
 if (room.bas1) //Sanctuary Room
