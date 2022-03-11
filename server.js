@@ -5791,7 +5791,7 @@ if (room.bas1) //Sanctuary Room
                     o.define(Class.bot);
                    let arrayOfClasses = [
                    /*Class.legionarycrasher,
-                   Class.ragnarok*/
+                   Class.ragnarok
                    Class.elite_gunner,
                    Class.elite_sprayer,
                    Class.elite_destroyer,
@@ -5800,15 +5800,15 @@ if (room.bas1) //Sanctuary Room
                    Class.summoner,
                    Class.nestkeep,
                    Class.skimboss,
-                   Class.cyclibe,
+                   Class.cyclibe,*/
                    Class.Celestialtheia,
                    Class.Celestialpaladin,
-                   Class.Celestialfreyja,
+                   /*Class.Celestialfreyja,
                    Class.Celestialnyx,
                    Class.Celestialzaphkiel,
                    Class.RogueCelesTyr,
                    Class.RogueCelesFiolnir,
-                   Class.RogueCelesAlviss
+                   Class.RogueCelesAlviss*/
                      /////////////////////////////////////////////
                      /////////////////////////////////////////////
                   /*Class.stream,
