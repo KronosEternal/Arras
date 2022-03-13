@@ -2852,9 +2852,11 @@ class Entity {
             this.SIZE += 1.34;
             this.maxSpeed = this.topSpeed;
             break;
-            case "shrink":
+        case "shrink":
+            if (this.SIZE > 1) { //Make sure minimum size is 1 to prevent errors :)
             this.SIZE -= 1.3;
             this.maxSpeed = this.topSpeed;
+            }
             break;
         case "healer":
             this.team = -100;
