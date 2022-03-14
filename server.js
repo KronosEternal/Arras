@@ -5757,7 +5757,7 @@ let spawnBosses = (() => {
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
                     case 2: 
-                        choice = [[Class.legionarycrasher, Class.ragnarok, Class.Celestialeternal], 1, 'a', 'suss'];
+                        choice = [[Class.legionarycrasher], 1, 'a', 'suss'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
   }
