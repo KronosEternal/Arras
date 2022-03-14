@@ -5753,11 +5753,15 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                     case 1: 
-                        choice = [[Class.Celestialpaladin, Class.Celestialtheia, Class.Celestialzaphkiel, Class.Celestialnyx, Class.Celestialfreyja], 2, 'a', 'suss'];
+                        choice = [[Class.legionarycrasher], 1, 'a', 'suss'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
-                    case 2: 
-                        choice = [[Class.legionarycrasher], 1, 'a', 'suss'];
+                   case 2: 
+                        choice = [[Class.ragnarok], 1, 'a', 'suss'];
+                        sockets.broadcast('The next wave starts in ? seconds');
+                        break;
+                   case 3: 
+                        choice = [[Class.Celestialeternal], 1, 'a', 'suss'];
                         sockets.broadcast('The next wave starts in ? seconds');
                         break;
   }
