@@ -2182,63 +2182,6 @@ exports.auto3gun = {
                 }, }
         ],
     };
-exports.circle = {
-    PARENT: [exports.genericTank],
-    COLOR: 16,
-    };
-exports.spiny = {
-    PARENT: [exports.genericTank],
-    LABEL: '',
-    BODY: {
-        FOV: 1,
-    },
-     INDEPENDENT: false,
-    FACING_TYPE: 'autospin',
-    CONTROLLERS: ['fastspin'],
-    COLOR: 16,
-    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [  16,    7,      1,      0,      0,      90,      0,   ], 
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.lowrange, g.flank, g.auto, g.doublereload, g.lessreload, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed]),
-                    TYPE: exports.bullet,
-                }, }, {
-            POSITION: [  16,    7,      1,      0,      0,      270,      0,   ], 
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.lowrange, g.flank, g.auto, g.doublereload, g.lessreload, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed]),
-                    TYPE: exports.bullet,
-                },},{ /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [  16,    7,      1,      0,      0,      90,      0.65,   ], 
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.lowrange, g.flank, g.auto, g.doublereload, g.lessreload, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed]),
-                    TYPE: exports.bullet,
-                }, }, {
-            POSITION: [  16,    7,      1,      0,      0,      270,      0.5,   ], 
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.lowrange, g.flank, g.auto, g.doublereload, g.lessreload, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed]),
-                    TYPE: exports.bullet,
-                },}
-        ],
-  TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [  11,     0,      0,      0,     360, 1], 
-                    TYPE: exports.circle,
-                        },
-            ],
-    };
-exports.spinner = {
-    PARENT: [exports.genericTank],
-    LABEL: 'Spinner',
-    AUTOSPIN: true,
-    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
-    COLOR: 16,
-    TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [  11,     12,      0,      0,     360, 0], 
-                    TYPE: exports.spiny,
-              },{
-        POSITION: [  11,     7,      0,      0,     360, 0], 
-                    TYPE: exports.circle,
-                        },
-            ],
-};
     exports.heavy3gun = {
         PARENT: [exports.genericTank],
         LABEL: '',
