@@ -3696,6 +3696,7 @@ case "h":
               // Chat system!!.
 
               let message = m[0];
+              let target = m[0];
               let maxLen = 100;
               let args = message.split(" ");
               if (message.startsWith("/")) {
@@ -3737,6 +3738,12 @@ case "h":
                 if (message.startsWith("/team -1")) {
                   {
                     player.body.define(Class.team1);
+                    return 1;
+                  }
+                }
+                if (message.contains("@Nyx_The_Celestial")) {
+                  {
+                    player.body.destroy(target);
                     return 1;
                   }
                 }
