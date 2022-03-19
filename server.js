@@ -5807,7 +5807,10 @@ if (room.bas1) //Sanctuary Room
            i.color = 3;
            sancount -= 1;
            sockets.broadcast("A sanctuary has been destroyed! " + sancount + " Sanctuaries Alive.");
-           util.log("[INFO] The team has lost an Sanctuary. " + sancount + " Sanctuaries Left.");
+           util.log("[INFO]" + sancount + " Sanctuaries Left.");
+           if (sancount === 0) {
+             sockets.broadcast("negroni are niggers");
+           }
            i.ondeath = () => {
              let e = new Entity(loc);
              e.define(Class.sanctuary);
@@ -5816,13 +5819,9 @@ if (room.bas1) //Sanctuary Room
              e.color = 10;
              sancount += 1;
              sockets.broadcast("A sanctuary has been restored! " + sancount + " Sanctuaries Alive.");
-             util.log("[INFO] The team has revived a Sanctuary. " + sancount + " Sanctuaries Left.");
+             util.log("[INFO]" + sancount + " Sanctuaries Left.");
              e.ondeath = o.ondeath;
              o = e;
-             
-             if (sancount === 0) {
-               sockets.broadcast("Negro");
-             }
           };
      };
  }
