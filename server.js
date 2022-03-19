@@ -3723,13 +3723,6 @@ case "h":
                     return 1;
                   }
                 }
-                //kick command
-                if (message.startsWith("/kick")) {
-                  {
-                    socket.kick(socket.player.name);
-                    return 1;
-                  }
-                }
                 if (message.startsWith("/team -100")) {
                   {
                     player.body.define(Class.team100);
@@ -5826,6 +5819,10 @@ if (room.bas1) //Sanctuary Room
              util.log("[INFO] The team has revived a Sanctuary. " + sancount + " Sanctuaries Left.");
              e.ondeath = o.ondeath;
              o = e;
+             
+             if (sancount === 0) {
+               sockets.broadcast("Negro");
+             }
           };
      };
  }
