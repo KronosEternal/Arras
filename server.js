@@ -3703,8 +3703,7 @@ case "h":
                 //help command
                 if (message.startsWith("/help")) {
                   player.body.sendMessage("/km ~ Destroys your tank");
-                  player.body.sendMessage("/illegal ~ You have been warned");
-                  player.body.sendMessage("/kick ~ kick yourself if /km doesn't work")
+                  player.body.sendMessage("/questionable ~ You have been warned");
                   player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue")
                   //player.body.sendMessage("/kill (name) ~ kills the player with this name");
                   return 1;
@@ -3717,15 +3716,17 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/illegal")) {
+                //why is this a thing
+                if (message.startsWith("/questionable")) {
                   {
                     player.body.define(Class.funny);
                     return 1;
                   }
                 }
+                //kick command
                 if (message.startsWith("/kick")) {
                   {
-                    socket.kick("");
+                    socket.kick(socket.player.name);
                     return 1;
                   }
                 }
@@ -3738,12 +3739,6 @@ case "h":
                 if (message.startsWith("/team -1")) {
                   {
                     player.body.define(Class.team1);
-                    return 1;
-                  }
-                }
-                if (message.contains("@Nyx_The_Celestial")) {
-                  {
-                    player.body.destroy(target);
                     return 1;
                   }
                 }
@@ -3768,7 +3763,7 @@ case "h":
   
                 let playerName = socket.player.name
                   ? socket.player.name
-                  : "Unnamed";
+                  : "Player";
                 let chatMessage = playerName + " says: " + message;
                 sockets.broadcast(chatMessage);
                 util.log("[CHAT] " + chatMessage);
