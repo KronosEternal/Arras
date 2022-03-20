@@ -5809,7 +5809,7 @@ if (room.bas1) //Sanctuary Room
            sockets.broadcast("A sanctuary has been destroyed! " + sancount + " Sanctuaries Alive.");
            util.log("[INFO]" + sancount + " Sanctuaries Left.");
            if (sancount === 0) {
-             sockets.broadcast("negroni are niggers");
+             sockets.broadcast("No sanctuaries are alive, Your team will lose in 60 seconds");
            }
            i.ondeath = () => {
              let e = new Entity(loc);
