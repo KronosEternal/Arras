@@ -5786,7 +5786,7 @@ let spawnBosses = (() => {
                     } wave += 1;
                 },
                 spawn: () => {
-                    //sockets.broadcast(begin);
+                    sockets.broadcast("NEGROES?");
                     for (let i=0; i<n; i++) {
                         setTimeout(spawn, ran.randomRange(3500, 5000));
                     }
