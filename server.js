@@ -5807,7 +5807,7 @@ let spawnBosses = (() => {
                     } wave += 1;
                 },
                 spawn: () => {
-                    sockets.broadcast(begin);
+                    //sockets.broadcast(begin);
                     for (let i=0; i<n; i++) {
                         setTimeout(spawn, ran.randomRange(3500, 5000));
                     }
@@ -5825,7 +5825,7 @@ let spawnBosses = (() => {
                 switch (wave) { //The wave contenders
                    case 1: 
                         choice = [[Class.anni], 1, 'a', 'nest'];
-                        sockets.broadcast('nothing');
+                        sockets.broadcast('random stuff');
                         break;
   }
                 boss.prepareToSpawn(...choice);
