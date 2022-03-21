@@ -5803,7 +5803,7 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                    case 1: 
-                        choice = [[Class.anni], 57, 'a', 'nest'];
+                        choice = [[Class.anni], 20, 'a', 'nest'];
                         sockets.broadcast('random stuff');
                         break;
   }
