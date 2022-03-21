@@ -5803,8 +5803,8 @@ let spawnBosses = (() => {
                 let choice = [];
                 switch (wave) { //The wave contenders
                    case 1: 
-                        choice = [[Class.legionarycrasher], 1, 'a', 'nest'];
-                        sockets.broadcast('Ceres');
+                        choice = [[Class.anni], 1, 'a', 'nest'];
+                        sockets.broadcast('nothing');
                         break;
   }
                 boss.prepareToSpawn(...choice);
