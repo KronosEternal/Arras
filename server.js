@@ -1116,6 +1116,27 @@ ioTypes.spin = class extends IO {
         };
     }
 }
+ioTypes.spindef = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a += 0.02
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
 ioTypes.spinceles = class extends IO {
     constructor(body) {
         super(body)
