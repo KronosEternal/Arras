@@ -923,7 +923,7 @@ ioTypes.orbitveryverylarge = class extends IO {
         if (input.target != null && (input.alt || input.main)) {
             let sizeFactor = Math.sqrt(this.body.master.size / this.body.master.SIZE)
             let leash = 82 * sizeFactor
-            let orbit = 330 * sizeFactor
+            let orbit = 400 * sizeFactor
             let repel = 142 * sizeFactor
             let goal
             let power = 1
@@ -5802,15 +5802,7 @@ let spawnBosses = (() => {
                 timer = 0;
                 let choice = [];
                 switch (wave) { //The wave contenders
-                    case 1: 
-                        choice = [[Class.ragnarok], 1, 'a', 'nest'];
-                        sockets.broadcast('Ragnarok');
-                        break;
-                   case 2: 
-                        choice = [[Class.Celestialeternal], 1, 'a', 'nest'];
-                        sockets.broadcast('Kronos');
-                        break;
-                   case 3: 
+                   case 1: 
                         choice = [[Class.legionarycrasher], 1, 'a', 'nest'];
                         sockets.broadcast('Ceres');
                         break;
