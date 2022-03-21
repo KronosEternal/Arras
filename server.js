@@ -2903,11 +2903,6 @@ class Entity {
             this.maxSpeed = this.topSpeed;
             this.damp = 0.05;
             break;
-        case 'glidedef':
-            this.maxSpeed = this.topSpeed;
-            this.damp = 0.05;
-            this.color = 5;
-            break;
         case "grow":
             this.SIZE += 1.34;
             this.maxSpeed = this.topSpeed;
