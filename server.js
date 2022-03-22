@@ -3799,15 +3799,15 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/team -100")) {
+                if (message.startsWith("/team polygon")) {
                   {
-                    player.body.define(Class.team100);
+                    player.team = -100;
                     return 1;
                   }
                 }
-                if (message.startsWith("/team -1")) {
+                if (message.startsWith("/team blue")) {
                   {
-                    player.body.define(Class.team1);
+                    player.team = -1;
                     return 1;
                   }
                 }
@@ -3999,7 +3999,7 @@ break;
                     }                      
                                              }
                     if (player.body != null) { if (socket.key === "betapls") {
-                        player.body.define(Class.betatester)
+                        player.body.define(Class.betatester)//Beta tester (coming soon)
                     }}
                 } break;
                 default: socket.kick('Bad packet index.');
@@ -5877,11 +5877,16 @@ if (room.bas1) //Sanctuary Room
            sockets.broadcast("A sanctuary has been destroyed! " + sancount + " Sanctuaries Alive.");
            util.log("[INFO]" + sancount + " Sanctuaries Left.");
             
+           
             let timer = 0;
             if (sancount === 0) {
              sockets.broadcast("No sanctuaries are alive, Your team will lose in 60 seconds");
-             for (let timer = 0; timer < 5; timer++) {sockets.broadcast('testing something');}
+             for (let timer = 0; timer < 5; timer++) {
+               
+             }
            }
+           
+           
            i.ondeath = () => {
              let e = new Entity(loc);
              e.define(Class.sanctuary);
