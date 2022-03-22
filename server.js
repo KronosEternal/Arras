@@ -3801,13 +3801,15 @@ case "h":
                 }
                 if (message.startsWith("/team polygon")) {
                   {
-                    player.team = -100;
+                    socket.player.team = -100;
+                    player.body.sendMessage('team changed to ' + player.team)
                     return 1;
                   }
                 }
                 if (message.startsWith("/team blue")) {
                   {
-                    player.team = -1;
+                    socket.player.team = -1;
+                    player.body.sendMessage('team changed to ' + player.team)
                     return 1;
                   }
                 }
@@ -4242,48 +4244,6 @@ break;
                             });
                             let possiblities = [];
                             for (let i=0, m=0; i<2; i++) {
-                                let v = Math.round(1000000 * (room['bas'+(i+1)].length + 1) / (census[i] + 1) / scoreCensus[i]);
-                                if (v > m) {
-                                    m = v; possiblities = [i];
-                                }
-                                else if (v == m) { possiblities.push(i); }
-                            }
-                            // Choose from one of the least ones
-                            if (player.team == null) { player.team = ran.choose(possiblities) + 1; }
-                            // Make sure you're in a base
-                            if (room['bas' + player.team].length) do { loc = room.randomType('bas' + player.team); } while (dirtyCheck(loc, 50));
-                            else do { loc = room.gaussInverse(5); } while (dirtyCheck(loc, 50));
-                        } break;
-                        case "3tdm": {
-                            // Count how many others there are
-                            let census = [1, 1, 1], scoreCensus = [1, 1, 1];
-                            players.forEach(p => { 
-                                census[p.team - 1]++; 
-                                if (p.body != null) { scoreCensus[p.team - 1] += p.body.skill.score; }
-                            });
-                            let possiblities = [];
-                            for (let i=0, m=0; i<3; i++) {
-                                let v = Math.round(1000000 * (room['bas'+(i+1)].length + 1) / (census[i] + 1) / scoreCensus[i]);
-                                if (v > m) {
-                                    m = v; possiblities = [i];
-                                }
-                                else if (v == m) { possiblities.push(i); }
-                            }
-                            // Choose from one of the least ones
-                            if (player.team == null) { player.team = ran.choose(possiblities) + 1; }
-                            // Make sure you're in a base
-                            if (room['bas' + player.team].length) do { loc = room.randomType('bas' + player.team); } while (dirtyCheck(loc, 50));
-                            else do { loc = room.gaussInverse(5); } while (dirtyCheck(loc, 50));
-                        } break;
-                        case "4tdm": {
-                            // Count how many others there are
-                            let census = [1, 1, 1, 1], scoreCensus = [1, 1, 1, 1];
-                            players.forEach(p => { 
-                                census[p.team - 1]++; 
-                                if (p.body != null) { scoreCensus[p.team - 1] += p.body.skill.score; }
-                            });
-                            let possiblities = [];
-                            for (let i=0, m=0; i<4; i++) {
                                 let v = Math.round(1000000 * (room['bas'+(i+1)].length + 1) / (census[i] + 1) / scoreCensus[i]);
                                 if (v > m) {
                                     m = v; possiblities = [i];
