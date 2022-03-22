@@ -3813,18 +3813,10 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/team red")) {
+                if (message.startsWith("/color 36")){
                   {
-                    player.body.team = -3;
-                    player.body.sendMessage('team changed to -3')
-                    return 1;
-                  }
-                }
-                if (message.startsWith("/team green")) {
-                  {
-                    player.body.team = -2;
-                    player.body.sendMessage('team changed to -2')
-                    return 1;
+                   player.body.color = 36;
+                   return 1;
                   }
                 }
                 else
