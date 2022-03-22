@@ -4280,7 +4280,7 @@ break;
                         body.name = name; // Define the name
                         // Dev hax
                         if (socket.key === 'developer') {
-                            body.name = "[DEV]" + body.name;
+                            body.name = "[DEV] " + body.name;
                             //body.define(Class.testbed);
                             sockets.broadcast('A Developer has joined the game!')
                         }                        
@@ -5857,7 +5857,7 @@ if (room.bas1) //Sanctuary Room
             if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds");
              for (let timer = 0; timer < 1000; timer++) {
-               if (timer === 1000) {sockets.broadcast('sussy')}
+               if (timer === 500) {sockets.broadcast('sussy')}
              }
            }
            
