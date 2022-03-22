@@ -5848,7 +5848,7 @@ if (room.bas1) //Sanctuary Room
            i.SIZE = 60;
            i.color = 3;
            sancount -= 1;
-           sockets.broadcast("A sanctuary has been destroyed! " + sancount + " Sanctuaries Alive.");
+           sockets.broadcast("A sanctuary has been destroyed!"); //+ sancount + " Sanctuaries Alive.");
            util.log("[INFO]" + sancount + " Sanctuaries Left.");
             
            
@@ -5856,8 +5856,7 @@ if (room.bas1) //Sanctuary Room
             if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds");
              for (let timer = 0; timer < 1000; timer++) {
-               if (timer === 50) {sockets.broadcast(timer)}
-               if (timer === 100) {sockets.broadcast(timer)}
+               if (timer === 50) {sockets.broadcast('sussy')}
              }
            }
            
@@ -5869,7 +5868,7 @@ if (room.bas1) //Sanctuary Room
              e.SIZE = 60;
              e.color = 10;
              sancount += 1;
-             sockets.broadcast("A sanctuary has been restored! " + sancount + " Sanctuaries Alive.");
+             sockets.broadcast("A sanctuary has been restored!"); //+ sancount + " Sanctuaries Alive.");
              util.log("[INFO]" + sancount + " Sanctuaries Left.");
              e.ondeath = o.ondeath;
              o = e;
