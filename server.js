@@ -5876,20 +5876,11 @@ if (room.bas1) //Sanctuary Room
            sancount -= 1;
            sockets.broadcast("A sanctuary has been destroyed! " + sancount + " Sanctuaries Alive.");
            util.log("[INFO]" + sancount + " Sanctuaries Left.");
-           if (sancount === 0) {
+            
+            let timer = 0;
+            if (sancount === 0) {
              sockets.broadcast("No sanctuaries are alive, Your team will lose in 60 seconds");
-             ////////////////////////
-             ////////////////////////
-             //Timer Function
-             let timer = 0;
-             //random if loop
-             if (timer !== 110) { timer ++; sockets.broadcast('[ARENA CLOSER TIMER] ' + timer)}
-             if (timer > 12) {
-               timer = 0;
-               sockets.broadcast('testing something or the other')
-             }
-             ///////////////////////
-             ///////////////////////
+             for (let timer = 0; timer < 555; timer++) {sockets.broadcast('testing something');}
            }
            i.ondeath = () => {
              let e = new Entity(loc);
