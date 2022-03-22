@@ -5882,8 +5882,8 @@ if (room.bas1) //Sanctuary Room
              ////////////////////////
              //Timer Function
              let timer = 0;
-             //random for loop
-             if (timer === 0) {sockets.broadcast('[ARENA CLOSER TIMER] ' + timer)}
+             //random if loop
+             if (timer !== 110) { timer ++; sockets.broadcast('[ARENA CLOSER TIMER] ' + timer)}
              if (timer > 12) {
                timer = 0;
                sockets.broadcast('testing something or the other')
