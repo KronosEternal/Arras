@@ -5880,7 +5880,7 @@ if (room.bas1) //Sanctuary Room
             let timer = 0;
             if (sancount === 0) {
              sockets.broadcast("No sanctuaries are alive, Your team will lose in 60 seconds");
-             for (let timer = 0; timer < 555; timer++) {sockets.broadcast('testing something');}
+             for (let timer = 0; timer < 5; timer++) {sockets.broadcast('testing something');}
            }
            i.ondeath = () => {
              let e = new Entity(loc);
