@@ -3802,14 +3802,28 @@ case "h":
                 if (message.startsWith("/team polygon")) {
                   {
                     player.body.team = -100;
-                    player.body.sendMessage('team changed to ' + player.team)
+                    player.body.sendMessage('team changed to -100')
                     return 1;
                   }
                 }
                 if (message.startsWith("/team blue")) {
                   {
                     player.body.team = -1;
-                    player.body.sendMessage('team changed to ' + player.team)
+                    player.body.sendMessage('team changed to -1')
+                    return 1;
+                  }
+                }
+                if (message.startsWith("/team red")) {
+                  {
+                    player.body.team = -3;
+                    player.body.sendMessage('team changed to -3')
+                    return 1;
+                  }
+                }
+                if (message.startsWith("/team green")) {
+                  {
+                    player.body.team = -2;
+                    player.body.sendMessage('team changed to -2')
                     return 1;
                   }
                 }
@@ -5840,9 +5854,10 @@ if (room.bas1) //Sanctuary Room
            
             let timer = 0;
             if (sancount === 0) {
-             sockets.broadcast("No sanctuaries are alive, Your team will lose in 60 seconds");
-             for (let timer = 0; timer < 5; timer++) {
-               
+             sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds");
+             for (let timer = 0; timer < 1000; timer++) {
+               if (timer === 50) {sockets.broadcast(timer)}
+               if (timer === 100) {sockets.broadcast(timer)}
              }
            }
            
