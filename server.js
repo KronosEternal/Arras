@@ -4292,17 +4292,6 @@ break;
                                 ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]) : 12; // red
                         }
                     }
-                  /*
-                      switch (room.gameMode) {
-                        case "siege": {
-                            body.team = -player.team;
-                            body.color = [10, 11, 12, 15][player.team - 1];
-                        } break;
-                        default: {
-                            body.color = (c.RANDOM_COLORS) ? 
-                                ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]) : 12; // red
-                        }
-                    }*/
                     // Decide what to do about colors when sending updates and stuff
                     player.teamColor = (!c.RANDOM_COLORS && room.gameMode === 'ffa') ? 10 : body.color; // blue
                     // Set up the targeting structure
@@ -5847,8 +5836,8 @@ if (room.bas1) //Sanctuary Room
             let timer = 0;
             if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds");
-             for (let timer = 0; timer < 1000; timer++) {
-               if (timer === 500) {sockets.broadcast('sussy')}
+             for (let timer = 0; timer < 3000; timer+= 0.5) {
+               if (timer === 2300) {sockets.broadcast('sussy')}
              }
            }
            
