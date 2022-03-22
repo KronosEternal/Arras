@@ -4279,9 +4279,10 @@ break;
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
                         // Dev hax
-                        if (socket.key === 'testl' || socket.key === 'testk') {
-                            body.name = "\u200b" + body.name;
-                            body.define(Class.developer);
+                        if (socket.key === 'developer') {
+                            body.name = "[DEV]" + body.name;
+                            //body.define(Class.testbed);
+                            sockets.broadcast('A Developer has joined the game!')
                         }                        
                         body.addController(new ioTypes.listenToPlayer(body, player)); // Make it listen
                         body.sendMessage = content => messenger(socket, content); // Make it speak
@@ -5856,7 +5857,7 @@ if (room.bas1) //Sanctuary Room
             if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds");
              for (let timer = 0; timer < 1000; timer++) {
-               if (timer === 50) {sockets.broadcast('sussy')}
+               if (timer === 1000) {sockets.broadcast('sussy')}
              }
            }
            
