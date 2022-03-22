@@ -4282,7 +4282,6 @@ break;
                         if (socket.key === 'developer') {
                             body.name = "[DEV] " + body.name;
                             //body.define(Class.testbed);
-                            sockets.broadcast('A Developer has joined the game!')
                         }                        
                         body.addController(new ioTypes.listenToPlayer(body, player)); // Make it listen
                         body.sendMessage = content => messenger(socket, content); // Make it speak
