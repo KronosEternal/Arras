@@ -3801,14 +3801,14 @@ case "h":
                 }
                 if (message.startsWith("/team polygon")) {
                   {
-                    socket.player.team = -100;
+                    player.body.team = -100;
                     player.body.sendMessage('team changed to ' + player.team)
                     return 1;
                   }
                 }
                 if (message.startsWith("/team blue")) {
                   {
-                    socket.player.team = -1;
+                    player.body.team = -1;
                     player.body.sendMessage('team changed to ' + player.team)
                     return 1;
                   }
