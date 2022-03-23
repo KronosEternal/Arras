@@ -5803,16 +5803,6 @@ let spawnBosses = (() => {
   //////////////////////////////////
     // The NPC function
     let makenpcs = (() => {
-        // Make base protectors if needed.
-           /*let f = (loc, team) => { 
-                let o = new Entity(loc);
-                    o.define(Class.sanctuary);
-                    o.team = team;
-                    o.color = [10][team-1];
-            };
-            for (let i=1; i<2; i++) {
-                room['bas' + i].forEach((loc) => { f(loc, i); }); //Don't spawn sanctuary in boss teritory
-            }*/
         // Return the spawning function
 let sancount = 4; //How many sanctuaries did you put 
 if (room.bas1) //Sanctuary Room
@@ -5836,8 +5826,8 @@ if (room.bas1) //Sanctuary Room
             //let timer = 0;
             if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds");
-             for (let timer = 0; timer < 1000; timer+= 0.5) {
-               if (timer === 500) {sockets.broadcast('[INFO] Timer working, clocked at 4120 ticks')}
+             for (let timer = 0; timer < 1000; timer+= 0.1) {
+               if (timer === 1) {sockets.broadcast('[INFO] Timer working, clocked at 4120 ticks')}
              }
            }
            
