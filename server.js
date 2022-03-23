@@ -5868,7 +5868,6 @@ if (room.bas1) //Sanctuary Room
                 }
             }).filter(e => { return e; });    
             // Spawning
-            spawnCrasher(census);
             spawnBosses(census);
             // Bots
                 if (bots.length < c.BOTS) {
