@@ -5812,7 +5812,6 @@ let spawnBosses = (() => {
   }
   function arena_loser() {
     sockets.broadcast(sec_left);
-    sec_left++;
     }
   
 // The NPC function
