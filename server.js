@@ -5845,7 +5845,10 @@ var arenaclosed = setInterval(function(){
   }
   timeleft -= 1;
 }, 1000); 
-            
+              
+if (timeleft === 3){
+    sockets.broadcast('sussy');
+    }       
 }
            
            i.ondeath = () => {
