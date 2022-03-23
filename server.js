@@ -5828,10 +5828,6 @@ if (room.bas1) //Sanctuary Room
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds");
              /*for (let timer = 0; timer < 100; timer++) {
              }*/
-            if (timer > 100 && ran.dice(110 - timer)) {
-              sockets.broadcast('? does it work ?');
-              sockets.broadcast('TIMER CLOCKED AT 2831 ticks');
-            }
            }
            
            
@@ -5907,7 +5903,7 @@ if (room.bas1) //Sanctuary Room
                    Class.summoner,
                    Class.nestkeep,
                    Class.skimboss,
-                   Class.cyclibe,
+                   Class.cyclone,
                    Class.Celestialtheia,
                    Class.Celestialpaladin,
                    Class.Celestialfreyja,

@@ -89,11 +89,11 @@ Boss Spawning Function (Old)
                         choice = [[Class.elite_destroyer,Class.elite_sprayer,Class.elite_battleship, Class.elite_gunner,Class.elite_spawner], 2, 'a', 'bas3'];
                         break;
                     case 2: 
-                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe, Class.nestkeep], 1, 'a', 'bas3']; 
+                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclone, Class.nestkeep], 1, 'a', 'bas3']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 3: 
-                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclibe, Class.nestkeep], 2, 'a', 'bas3']; 
+                        choice = [[Class.palisade,Class.summoner,Class.skimboss,Class.cyclone, Class.nestkeep], 2, 'a', 'bas3']; 
                         sockets.broadcast('A strange trembling...');
                         break; 
 
