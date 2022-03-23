@@ -17,7 +17,6 @@ The current contributers are `KronosEternal/@Nyx_The_Celestial` and `jbom4390/@j
 ```
 # Arras.io Siege Gamemode
 ```
-A project viewer on our server is `Lumu Emu/@LumuEmu`
 
 
 
