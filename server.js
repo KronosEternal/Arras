@@ -3773,8 +3773,14 @@ case "h":
 
               let message = m[0];
               let color = m[0];
+              let acceptcolorcode = false;
               let maxLen = 100;
               let args = message.split(" ");
+              
+              if (acceptcolorcode = true) {
+                sockets.broadcast(acceptcolorcode);
+              }
+              
               if (message.startsWith("/")) {
                 //help command
                 if (message.startsWith("/help")) {
@@ -3815,8 +3821,8 @@ case "h":
                 }
                 if (message.startsWith("/color")){
                   {
-                   player.body.sendMessage("n");
-                   player.body.color = color;
+                   player.body.sendMessage("please enter the color code.");
+                   acceptcolorcode = true;
                    return 1;
                   }
                 }
@@ -3828,7 +3834,7 @@ case "h":
               if (util.time() - socket.status.lastChatTime >= 2200) {
                 // Verify it
                 if (typeof message != "string") {
-                  player.body.sendMessage("Invalid chat message.");
+                  player.body.sendMessage("String lenth parsing error");
                   return 1;
                 }
  
