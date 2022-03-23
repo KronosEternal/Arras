@@ -3777,16 +3777,11 @@ case "h":
               let maxLen = 100;
               let args = message.split(" ");
               
-              if (acceptcolorcode = true) {
-                if (message.startsWith("0")) {
+              if (acceptcolorcode = true && message.startsWith("color")) {
+                if (message.startsWith("color 0")) {
                   {
                     player.body.color = 0;
-                    return 1;
-                  }
-                }
-                if (message.startsWith("1")) {
-                  {
-                    player.body.color = 1;
+                    acceptcolorcode = false;
                     return 1;
                   }
                 }
