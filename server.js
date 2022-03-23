@@ -5833,10 +5833,12 @@ if (room.bas1) //Sanctuary Room
            sancount -= 1;
            sockets.broadcast("A sanctuary has been destroyed!"); //+ sancount + " Sanctuaries Alive.");
            util.log("[INFO]" + sancount + " Sanctuaries Left.");
-            
             if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
-              setInterval(function () {sockets.broadcast('questionable');}, 1000);
+            const thytimer = setInterval(arena_losed, 1000);
+              function arena_losed() {
+               sockets.broadcast('timer')
+              }
 }
            
            i.ondeath = () => {
