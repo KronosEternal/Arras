@@ -3779,7 +3779,10 @@ case "h":
               
               if (acceptcolorcode = true) {
                 if (message.startsWith("color")) {
-                  
+                  {
+                    player.body.color = m[0];
+                    return 1;
+                  }
                 }
               }
               
