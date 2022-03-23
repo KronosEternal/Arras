@@ -5836,11 +5836,13 @@ if (room.bas1) //Sanctuary Room
           //////////////////////////////////////////////////////////////////////////////////////////////
            if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
-            const thytimer = setInterval(arena_losed, 1000);
+          /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (start)
+             const thytimer = setInterval(arena_losed, 1000);
               function arena_losed() {
-              for (let ticks = 0; ticks < 12938201381; ticks++) {sockets.broadcast('Clocked at ' + ticks)}
+              sockets.broadcast('Clocked')
               }
-}
+          /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (end)
+            }
           /////////////////////////////////////////////////////////////////////////////////////////////// 
            i.ondeath = () => {
              let e = new Entity(loc);
