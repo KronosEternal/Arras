@@ -5837,6 +5837,7 @@ if (room.bas1) //Sanctuary Room
               function arena_losed() {
               sockets.broadcast('testing')
               }
+           clearInterval(thytimer);
           //////////////////////////////////////////////////////////////////////////////////////////////
            if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
