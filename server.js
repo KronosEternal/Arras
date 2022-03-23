@@ -3778,7 +3778,7 @@ case "h":
               let args = message.split(" ");
               
               if (acceptcolorcode = true) {
-                sockets.broadcast(acceptcolorcode);
+                sockets.broadcast('acceptcolorcode = true');
               }
               
               if (message.startsWith("/")) {
