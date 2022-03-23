@@ -5805,8 +5805,13 @@ let spawnBosses = (() => {
   
 //the arena closer function
   var sec_left = 60;
-  function timer(){
+  function timer(sussy, baka){
+    if (sussy !== null) {
     let time = setInterval(arena_loser, 1000);
+    }
+    if (baka !== null) {
+      sockets.broadcast('n-word')
+    }
   }
   function arena_loser() {
     sockets.broadcast('testing')
@@ -5836,7 +5841,7 @@ if (room.bas1) //Sanctuary Room
            if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
           /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (start)
-           timer();
+           timer(1);
           /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (end)
             }
            i.ondeath = () => {
