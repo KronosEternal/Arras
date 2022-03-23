@@ -5802,18 +5802,17 @@ let spawnBosses = (() => {
         };
     })();    
 // Siege Boss Spawning (Active) ^
-    let spawnCrasher = census => {
-        if (ran.chance(1 -  0.5 * census.crasher / room.maxFood / room.nestFoodAmount)) {
-            let spot, i = 30;
-            do { spot = room.randomType('nest'); i--; if (!i) return 0; } while (dirtyCheck(spot, 100));
-            let type = (ran.dice(80)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap]) : Class.crasher;
-            let o = new Entity(spot);
-                o.define(type);
-                o.team = -100;
-        }
-    };
-  //////////////////////////////////
-    // The NPC function
+  
+//the arena closer function
+  var sec_left = 60;
+  function timer(){
+    let time = setInterval(arena_loser, 10);
+  }
+  function arena_loser() {
+    sockets.broadcast('testing')
+    }
+  
+// The NPC function
     let makenpcs = (() => {
         // Return the spawning function
 let sancount = 4; //How many sanctuaries did you put 
@@ -5833,17 +5832,13 @@ if (room.bas1) //Sanctuary Room
            sancount -= 1;
            sockets.broadcast("A sanctuary has been destroyed!"); //+ sancount + " Sanctuaries Alive.");
            util.log("[INFO]" + sancount + " Sanctuaries Left.");
-              function arena_losed() {
-              sockets.broadcast('testing')
-              }
           //////////////////////////////////////////////////////////////////////////////////////////////
            if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
           /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (start)
-          setInterval(arena_losed, 1000);
+           timer();
           /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (end)
             }
-          /////////////////////////////////////////////////////////////////////////////////////////////// 
            i.ondeath = () => {
              let e = new Entity(loc);
              e.define(Class.sanctuary);
@@ -5853,7 +5848,7 @@ if (room.bas1) //Sanctuary Room
              sancount += 1;
              sockets.broadcast("A sanctuary has been restored!"); //+ sancount + " Sanctuaries Alive.");
              util.log("[INFO]" + sancount + " Sanctuaries Left.");
-             if (sancount === 1) {sockets.broadcast("NO PLS")}
+             if (sancount === 1){ sockets.broadcast('idk idk dik')}
              e.ondeath = o.ondeath;
              o = e;
           };
