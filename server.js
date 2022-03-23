@@ -5823,12 +5823,15 @@ if (room.bas1) //Sanctuary Room
            util.log("[INFO]" + sancount + " Sanctuaries Left.");
             
            
-            //let timer = 0;
+            let timer = 0;
             if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds");
-             for (let timer = 0; timer < 100000; timer+= 0.5) {
-               if (timer === 50000) {sockets.broadcast('[INFO] Timer working, clocked at 4120 ticks')}
-             }
+             /*for (let timer = 0; timer < 100; timer++) {
+             }*/
+            if (timer > 100 && ran.dice(110 - timer)) {
+              sockets.broadcast('? does it work ?');
+              sockets.broadcast('TIMER CLOCKED AT 2831 ticks');
+            }
            }
            
            
