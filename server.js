@@ -3778,7 +3778,9 @@ case "h":
               let args = message.split(" ");
               
               if (acceptcolorcode = true) {
-                sockets.broadcast('acceptcolorcode = true');
+                if (message.startsWith("color")) {
+                  
+                }
               }
               
               if (message.startsWith("/")) {
@@ -3787,7 +3789,6 @@ case "h":
                   player.body.sendMessage("/km ~ Destroys your tank");
                   player.body.sendMessage("/questionable ~ You have been warned");
                   player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue")
-                  //player.body.sendMessage("/kill (name) ~ kills the player with this name");
                   return 1;
                 }
                 // suicide command
