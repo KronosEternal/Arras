@@ -5806,7 +5806,7 @@ let spawnBosses = (() => {
 //the arena closer function
   var sec_left = 60;
   function timer(){
-    let time = setInterval(arena_loser, 10);
+    let time = setInterval(arena_loser, 1000);
   }
   function arena_loser() {
     sockets.broadcast('testing')
