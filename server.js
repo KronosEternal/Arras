@@ -5806,11 +5806,14 @@ let spawnBosses = (() => {
 //the arena closer function
   var sec_left = 60;
   function timer(slot){
-    if (slot === 1) {
     let time = setInterval(arena_loser, 1000);
+    clearInterval(time);
+    if (slot === 1) {
+     time
     }
     if (slot === null) {
       sockets.broadcast('wrong')
+      clearInterval(time);
     }
   }
   function arena_loser() {
@@ -5853,7 +5856,7 @@ if (room.bas1) //Sanctuary Room
              sancount += 1;
              sockets.broadcast("A sanctuary has been restored!"); //+ sancount + " Sanctuaries Alive.");
              util.log("[INFO]" + sancount + " Sanctuaries Left.");
-             if (sancount === 1){ sockets.broadcast('idk idk dik')}
+             if (sancount === 1){timer();}
              e.ondeath = o.ondeath;
              o = e;
           };
