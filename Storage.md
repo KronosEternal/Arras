@@ -104,3 +104,46 @@ Boss Spawning Function (Old)
             } else if (!census.miniboss) timer++;
         };
     })();
+    
+Timer Function ( OLD )
+
+    var sec_counter = 10;
+    calcValues();
+    var intvel = setInterval(calcValues, 1000);
+    function calcValues() {
+    $('.counter .to')
+        .addClass('hide')
+        .removeClass('to')
+        .addClass('from')
+        .removeClass('hide')
+        .addClass('n')
+        .find('span:not(.shadow)').each(function (i, el) {
+        $(el).text(getSec(true));
+    });
+    $('.counter .from:not(.n)')
+        .addClass('hide')
+        .addClass('to')
+        .removeClass('from')
+        .removeClass('hide')
+    .find('span:not(.shadow)').each(function (i, el) {
+        $(el).text(getSec(false));
+    });
+    $('.counter .n').removeClass('n');
+    sec_counter --;
+     }  
+     function getSec(next) {
+        var sec = sec_counter;
+         if (next) {
+
+        if (sec == 0) {
+            clearInterval(intvel);
+        }
+        else{
+          sec --; 
+        }
+    } else if(sec == 60) {
+        sec = 0;
+    }
+    return (sec < 10 ? '0' + sec : sec);
+     }
+        }
