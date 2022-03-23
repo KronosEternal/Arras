@@ -5805,12 +5805,12 @@ let spawnBosses = (() => {
   
 //the arena closer function
   var sec_left = 60;
-  function timer(sussy, baka){
-    if (sussy !== null) {
+  function timer(slot){
+    if (slot === 1) {
     let time = setInterval(arena_loser, 1000);
     }
-    if (baka !== null) {
-      sockets.broadcast('n-word')
+    if (slot === null) {
+      sockets.broadcast('wrong')
     }
   }
   function arena_loser() {
