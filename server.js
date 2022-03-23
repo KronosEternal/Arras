@@ -3772,7 +3772,7 @@ case "h":
               // Chat system!!.
 
               let message = m[0];
-              let colorcode = m[0];
+              let color = m[0];
               let maxLen = 100;
               let args = message.split(" ");
               if (message.startsWith("/")) {
@@ -3799,23 +3799,24 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/team polygon")) {
+                if (message.startsWith("/team polygon") || message.startsWith("/team -100")) {
                   {
                     player.body.team = -100;
                     player.body.sendMessage('team changed to -100')
                     return 1;
                   }
                 }
-                if (message.startsWith("/team blue")) {
+                if (message.startsWith("/team blue") || message.startsWith("/team -1")) {
                   {
                     player.body.team = -1;
                     player.body.sendMessage('team changed to -1')
                     return 1;
                   }
                 }
-                if (message.startsWith("/color " + colorcode)){
+                if (message.startsWith("/color")){
                   {
-                   player.body.color = colorcode;
+                   player.body.sendMessage("n");
+                   player.body.color = color;
                    return 1;
                   }
                 }
