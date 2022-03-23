@@ -5828,6 +5828,45 @@ if (room.bas1) //Sanctuary Room
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds");
              /*for (let timer = 0; timer < 100; timer++) {
              }*/
+var sec_counter = 10;
+calcValues();
+var intvel = setInterval(calcValues, 1000);
+function calcValues() {
+    $('.counter .to')
+        .addClass('hide')
+        .removeClass('to')
+        .addClass('from')
+        .removeClass('hide')
+        .addClass('n')
+        .find('span:not(.shadow)').each(function (i, el) {
+        $(el).text(getSec(true));
+    });
+    $('.counter .from:not(.n)')
+        .addClass('hide')
+        .addClass('to')
+        .removeClass('from')
+        .removeClass('hide')
+    .find('span:not(.shadow)').each(function (i, el) {
+        $(el).text(getSec(false));
+    });
+    $('.counter .n').removeClass('n');
+    sec_counter --;
+}  
+function getSec(next) {
+    var sec = sec_counter;
+    if (next) {
+
+        if (sec == 0) {
+            clearInterval(intvel);
+        }
+        else{
+          sec --; 
+        }
+    } else if(sec == 60) {
+        sec = 0;
+    }
+    return (sec < 10 ? '0' + sec : sec);
+}
            }
            
            
