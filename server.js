@@ -3772,7 +3772,7 @@ case "h":
               // Chat system!!.
 
               let message = m[0];
-              let target = m[0];
+              let colorcode = m[0];
               let maxLen = 100;
               let args = message.split(" ");
               if (message.startsWith("/")) {
@@ -3813,9 +3813,9 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color 36")){
+                if (message.startsWith("/color " + colorcode)){
                   {
-                   player.body.color = 36;
+                   player.body.color = colorcode;
                    return 1;
                   }
                 }
