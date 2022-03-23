@@ -3778,9 +3778,15 @@ case "h":
               let args = message.split(" ");
               
               if (acceptcolorcode = true) {
-                if (message.startsWith("color")) {
+                if (message.startsWith("0")) {
                   {
-                    player.body.color = m[0];
+                    player.body.color = 0;
+                    return 1;
+                  }
+                }
+                if (message.startsWith("1")) {
+                  {
+                    player.body.color = 1;
                     return 1;
                   }
                 }
