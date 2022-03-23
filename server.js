@@ -5807,12 +5807,7 @@ let spawnBosses = (() => {
   var sec_left = 60;
   function timer(slot){
     let time = setInterval(arena_loser, 1000);
-    clearInterval(time);
-    if (slot === 1) {
-     time
-    }
     if (slot === null) {
-      sockets.broadcast('wrong')
       clearInterval(time);
     }
   }
