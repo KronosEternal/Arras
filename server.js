@@ -5805,6 +5805,7 @@ let spawnBosses = (() => {
   
 //the arena closer function
   var sec_left = 60;
+  var stopTime = 0;
   
 var timer = setInterval(function(){
   if(sec_left <= 0){
