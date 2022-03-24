@@ -5816,6 +5816,7 @@ function timeThing() {
   if(sec_left <= 0){
     clearInterval(timer);
   } else {
+    sockets.broadcast('asd');
   }
   sec_left -= 1;
 }, 1000);
