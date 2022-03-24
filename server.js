@@ -5810,7 +5810,7 @@ var timer = setInterval(function(){
   if(sec_left <= 0){
     clearInterval(timer);
   } else {
-    sockets.broadcast('testing')
+   sockets.sussy
   }
   sec_left -= 1;
 }, 1000);
@@ -5839,7 +5839,7 @@ if (room.bas1) //Sanctuary Room
            if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
           /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (start)
-           timer();
+
           /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (end)
             }
            i.ondeath = () => {
