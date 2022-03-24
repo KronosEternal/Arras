@@ -5806,13 +5806,14 @@ let spawnBosses = (() => {
 //the arena closer function
   var sec_left = 60;
   
-  function timer(){
-    let time = setInterval(arena_loser, 10000);
-    //clearInterval(time);
+var timer = setInterval(function(){
+  if(sec_left <= 0){
+    clearInterval(timer);
+  } else {
+    sockets.broadcast('testing')
   }
-  function arena_loser() {
-    sockets.broadcast('die?');
-    }
+  sec_left -= 1;
+}, 1000);
   
 // The NPC function
     let makenpcs = (() => {
