@@ -5801,12 +5801,13 @@ let spawnBosses = (() => {
             } else if (!census.miniboss) timer++;
         };
     })();    
-// Siege Boss Spawning (Active) ^
+// Siege Boss Spawning (to be reworked) ^
+//working wave spawner -->
   
 //the arena closer function
   var sec_left = 60; //How long before team loses
   var stopTime = 0;
-  var shouldiresetit = true;
+  var reset = true;
 
 function timeThing() {
   var timer = setInterval(function(){
@@ -5817,7 +5818,7 @@ function timeThing() {
   if(sec_left <= 0){
     clearInterval(timer);
     sockets.broadcast('your team has lost')
-    shouldiresetit = false;
+    reset = false;
   } else {
     if (sec_left === 50){
       sockets.broadcast('your team will lose in 50 seconds')
@@ -5868,7 +5869,7 @@ function timeThing() {
 
 function stopit (){
   stopTime = 1;
-  if (shouldiresetit === true){
+  if (reset === true){
   sec_left = 60;
   }
 }
