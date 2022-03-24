@@ -5804,7 +5804,7 @@ let spawnBosses = (() => {
 // Siege Boss Spawning (Active) ^
   
 //the arena closer function
-  var sec_left = 60;
+  var sec_left = 20; //How long before team loses
   var stopTime = 0;
 
 function timeThing() {
@@ -5822,6 +5822,42 @@ function timeThing() {
     }
     if (sec_left === 40){
       sockets.broadcast('your team will lose in 40 seconds')
+    }
+    if (sec_left === 30){
+      sockets.broadcast('your team will lose in 30 seconds')
+    }
+    if (sec_left === 20){
+      sockets.broadcast('your team will lose in 20 seconds')
+    }
+    if (sec_left === 10){
+      sockets.broadcast('your team will lose in 10 seconds')
+    }
+    if (sec_left === 9){
+      sockets.broadcast('your team will lose in 9 seconds')
+    }
+    if (sec_left === 8){
+      sockets.broadcast('your team will lose in 8 seconds')
+    }
+    if (sec_left === 7){
+      sockets.broadcast('your team will lose in 7 seconds')
+    }
+    if (sec_left === 6){
+      sockets.broadcast('your team will lose in 6 seconds')
+    }
+    if (sec_left === 5){
+      sockets.broadcast('your team will lose in 5 seconds')
+    }
+    if (sec_left === 4){
+      sockets.broadcast('your team will lose in 4 seconds')
+    }
+    if (sec_left === 3){
+      sockets.broadcast('your team will lose in 3 seconds')
+    }
+    if (sec_left === 2){
+      sockets.broadcast('your team will lose in 2 seconds')
+    }
+    if (sec_left === 1){
+      sockets.broadcast('your team will lose in 1 seconds')
     }
   }
   sec_left -= 1;
