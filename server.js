@@ -5805,7 +5805,6 @@ let spawnBosses = (() => {
 function closeArena() {
   ArenaClosed();
 }
-
 var loops = 0;
 function ArenaClosed() {
   loops++;
@@ -5825,63 +5824,6 @@ let spawnarenacloser = (loc, mode, type) => {
   o.team = mode || -100;
   o.color = [35][-mode];
 };
-function threeHourRestart() {
-  restart3hour();
-}
-var loops = 0;
-function restart3hour() {
-  loops++;
-  if (loops < 3600000) {
-    setTimeout(restart3hour, 1000);
-  } else {
-    sockets.broadcast("Arena Closed: No players can join");
-    ArenaClosed();
-    if (room.gameMode === "tdm")
-      room["suss"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.arenaclosed, Class.arenacloser, Class.arenacloser],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "tdm")
-      room["suss"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.arenacloser, Class.arenacloser, Class.arenacloser],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "tdm")
-      room["suss"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.arenacloser, Class.arenacloser, Class.arenacloser],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "tdm")
-      room["suss"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.arenacloser, Class.arenacloser, Class.arenacloser],
-            1
-          )
-        );
-      });
-  }
-}
 function modeclose() {
   closemode();
 }
@@ -5921,7 +5863,7 @@ function closemode() {
           loc,
           -0,
           ran.choose(
-            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            [Class.closerghost, Class.closerghost, Class.closerghost],
             1
           )
         );
@@ -5932,7 +5874,7 @@ function closemode() {
           loc,
           -0,
           ran.choose(
-            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            [Class.closerghost, Class.closerghost, Class.closerghost],
             1
           )
         );
