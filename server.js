@@ -5806,6 +5806,7 @@ let spawnBosses = (() => {
 //the arena closer function
   var sec_left = 20; //How long before team loses
   var stopTime = 0;
+  var shouldiresetit = true;
 
 function timeThing() {
   var timer = setInterval(function(){
@@ -5816,6 +5817,7 @@ function timeThing() {
   if(sec_left <= 0){
     clearInterval(timer);
     sockets.broadcast('your team has lost')
+    shouldiresetit = false;
   } else {
     if (sec_left === 50){
       sockets.broadcast('your team will lose in 50 seconds')
@@ -5866,6 +5868,9 @@ function timeThing() {
 
 function stopit (){
   stopTime = 1;
+  if (shouldiresetit === true){
+  sec_left = 20;
+  }
 }
 // The NPC function
     let makenpcs = (() => {
