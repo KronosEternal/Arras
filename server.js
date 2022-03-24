@@ -3219,10 +3219,6 @@ class Entity {
                         killText += (instance.name == '') ? (killText == '') ? 'An unnamed player' : 'an unnamed player' : instance.name;
                         killText += ' and ';
                     }
-                    if (instance.master.type !== 'food' && instance.master.type !== 'crusher') {
-                        killText += (instance.name == '') ? (killText == '') ? 'An unnamed player' : 'an unnamed player' : instance.name;
-                        killText += ' and ';
-                    }
                     // Only if we give messages
                     if (dothISendAText) { 
                         instance.sendMessage('You killed ' + name + ((killers.length > 1) ? ' (with some assistance).' : '.')); 
@@ -3244,7 +3240,6 @@ class Entity {
             this.sendMessage(killText + '.');
             // If I'm the leader, broadcast it:
             if (this.id === room.topPlayerID) {
-              
               
                 let usurptText = (this.name === '') ? 'The leader': this.name;
                 if (notJustFood) { 
