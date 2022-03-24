@@ -104,3 +104,86 @@ Boss Spawning Function (Old)
             } else if (!census.miniboss) timer++;
         };
     })();
+
+The Arena Closer Function
+```
+function closeArena() {
+  ArenaClosed();
+}
+var loops = 0;
+function ArenaClosed() {
+  loops++;
+  if (loops < 31) {
+    setTimeout(ArenaClosed, 2000);
+  } else {
+    sockets.broadcast("Closing!");
+
+     //process.exit();
+    //global.restart;
+  }
+}
+
+let spawnarenacloser = (loc, mode, type) => {
+  let o = new Entity(loc);
+  o.define(type);
+  o.team = mode || -100;
+  o.color = [35][-mode];
+};
+function modeclose() {
+  closemode();
+}
+var loops = 0;
+function closemode() {
+  loops++;
+  if (loops < 10) {
+    setTimeout(closemode, 1000);
+  } else {
+    sockets.broadcast("Arena Closed");
+    ArenaClosed();
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.closerghost, Class.closerghost, Class.closerghost],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.closerghost, Class.closerghost, Class.closerghost],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.closerghost, Class.closerghost, Class.closerghost],
+            1
+          )
+        );
+      });
+  }
+}
+```
