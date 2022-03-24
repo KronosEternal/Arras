@@ -5745,9 +5745,100 @@ let spawnBosses = (() => {
     })();    
 // Siege Boss Spawning (to be reworked) ^
 //working wave spawner -->
-  
-//the arena closer function (in storage)
+  function Wavespawn(){
+    siegeSpawning();
+  }
 
+let siegeSpawning = (() => {
+    let wave = 1; //Define Wave
+    let timer = 0 //Time between waves
+    
+    let elite = 21;
+    let polygon = 21;
+    let celes = 21;
+    let final = 21;
+    
+  })();
+//the arena closer function (in storage)
+/*function closeArena() {
+  ArenaClosed();
+}
+var loops = 0;
+function ArenaClosed() {
+  loops++;
+  if (loops < 31) {
+    setTimeout(ArenaClosed, 2000);
+  } else {
+    sockets.broadcast("Closing!");
+
+     //process.exit();
+    //global.restart;
+  }
+}
+
+let spawnarenacloser = (loc, mode, type) => {
+  let o = new Entity(loc);
+  o.define(type);
+  o.team = mode || -100;
+  o.color = [35][-mode];
+};
+function modeclose() {
+  closemode();
+}
+var loops = 0;
+function closemode() {
+  loops++;
+  if (loops < 10) {
+    setTimeout(closemode, 1000);
+  } else {
+    sockets.broadcast("Arena Closed");
+    ArenaClosed();
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.closerghost, Class.closerghost, Class.closerghost],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.closerghost, Class.closerghost, Class.closerghost],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.closerghost, Class.closerghost, Class.closerghost],
+            1
+          )
+        );
+      });
+  }
+}*/
   ////////Timer function for arena losing
   var sec_left = 60; //How long before team loses
   var stopTime = 0;
@@ -5812,7 +5903,7 @@ function timeThing() {
 }, 1000);
 }
 
-function stopit (){
+function stopTimer (){
   stopTime = 1;
   if (reset === true){
   sec_left = 60;
@@ -5851,7 +5942,7 @@ if (room.bas1) //Sanctuary Room
              sancount += 1;
              sockets.broadcast("A sanctuary has been restored!"); //+ sancount + " Sanctuaries Alive.");
              util.log("[INFO]" + sancount + " Sanctuaries Left.");
-             if (sancount === 1){ stopit(); }
+             if (sancount === 1){ stopTimer(); }
              e.ondeath = o.ondeath;
              o = e;
           };
@@ -5871,7 +5962,7 @@ if (room.bas1) //Sanctuary Room
                 }
             }).filter(e => { return e; });    
             // Spawning
-            spawnBosses(census);
+            //spawnBosses(census);
             // Bots
                 if (bots.length < c.BOTS) {
                     let spot;
