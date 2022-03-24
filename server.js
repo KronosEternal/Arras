@@ -5802,6 +5802,144 @@ let spawnBosses = (() => {
 //working wave spawner -->
   
 //the arena closer function
+function closeArena() {
+  ArenaClosed();
+}
+
+var loops = 0;
+function ArenaClosed() {
+  loops++;
+  if (loops < 31) {
+    setTimeout(ArenaClosed, 2000);
+  } else {
+    sockets.broadcast("Closing!");
+
+    process.exit();
+    global.restart;
+  }
+}
+
+let spawnarenacloser = (loc, mode, type) => {
+  let o = new Entity(loc);
+  o.define(type);
+  o.team = mode || -100;
+  o.color = [35][-mode];
+};
+function threeHourRestart() {
+  restart3hour();
+}
+var loops = 0;
+function restart3hour() {
+  loops++;
+  if (loops < 3600000) {
+    setTimeout(restart3hour, 1000);
+  } else {
+    sockets.broadcast("Arena Closed: No players can join");
+    ArenaClosed();
+    if (room.gameMode === "tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.arenaclosed, Class.arenacloser, Class.arenacloser],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.arenacloser, Class.arenacloser, Class.arenacloser],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.arenacloser, Class.arenacloser, Class.arenacloser],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.arenacloser, Class.arenacloser, Class.arenacloser],
+            1
+          )
+        );
+      });
+  }
+}
+function modeclose() {
+  closemode();
+}
+var loops = 0;
+function closemode() {
+  loops++;
+  if (loops < 10) {
+    setTimeout(closemode, 1000);
+  } else {
+    sockets.broadcast("Arena Closed");
+    ArenaClosed();
+    if (room.gameMode === "tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            1
+          )
+        );
+      });
+  }
+}
+  ////////Timer function for arena losing
   var sec_left = 60; //How long before team loses
   var stopTime = 0;
   var reset = true;
@@ -5815,6 +5953,7 @@ function timeThing() {
   if(sec_left <= 0){
     clearInterval(timer);
     sockets.broadcast('your team has lost')
+    setTimeout(() => closemode(), 1e3);
     reset = false;
   } else {
     if (sec_left === 50){
@@ -5890,12 +6029,9 @@ if (room.bas1) //Sanctuary Room
            sancount -= 1;
            sockets.broadcast("A sanctuary has been destroyed!"); //+ sancount + " Sanctuaries Alive.");
            util.log("[INFO]" + sancount + " Sanctuaries Left.");
-          //////////////////////////////////////////////////////////////////////////////////////////////
            if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
-          /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (start)
            timeThing();
-          /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (end)
             }
            i.ondeath = () => {
              let e = new Entity(loc);
