@@ -5839,8 +5839,8 @@ function timeThing() {
   }
   if(sec_left <= 0){
     clearInterval(timer);
-    sockets.broadcast('your team has lost')
-    setTimeout(() => closemode(), 1e3);
+    sockets.broadcast('Your Team has Lost')
+    //setTimeout(() => closemode(), 1e3);
     reset = false;
   } else {
     if (sec_left === 50){
