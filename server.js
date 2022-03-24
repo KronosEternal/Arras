@@ -5893,7 +5893,7 @@ function closemode() {
   } else {
     sockets.broadcast("Arena Closed");
     ArenaClosed();
-    if (room.gameMode === "tdm")
+    if (room.gameMode === "2tdm")
       room["suss"].forEach(loc => {
         spawnarenacloser(
           loc,
@@ -5904,7 +5904,7 @@ function closemode() {
           )
         );
       });
-    if (room.gameMode === "tdm")
+    if (room.gameMode === "2tdm")
       room["suss"].forEach(loc => {
         spawnarenacloser(
           loc,
@@ -5915,7 +5915,7 @@ function closemode() {
           )
         );
       });
-    if (room.gameMode === "tdm")
+    if (room.gameMode === "2tdm")
       room["suss"].forEach(loc => {
         spawnarenacloser(
           loc,
@@ -5926,7 +5926,7 @@ function closemode() {
           )
         );
       });
-    if (room.gameMode === "tdm")
+    if (room.gameMode === "2tdm")
       room["suss"].forEach(loc => {
         spawnarenacloser(
           loc,
