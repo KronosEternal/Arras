@@ -5807,11 +5807,11 @@ let spawnBosses = (() => {
   var sec_left = 60;
   
   function timer(){
-    let time = setInterval(arena_loser, 1000);
+    let time = setInterval(arena_loser, 10000);
     //clearInterval(time);
   }
   function arena_loser() {
-    sockets.broadcast(sec_left);
+    sockets.broadcast('die?');
     }
   
 // The NPC function
