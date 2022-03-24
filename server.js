@@ -5804,7 +5804,7 @@ let spawnBosses = (() => {
 // Siege Boss Spawning (Active) ^
   
 //the arena closer function
-  var sec_left = 20; //How long before team loses
+  var sec_left = 60; //How long before team loses
   var stopTime = 0;
   var shouldiresetit = true;
 
@@ -5869,7 +5869,7 @@ function timeThing() {
 function stopit (){
   stopTime = 1;
   if (shouldiresetit === true){
-  sec_left = 20;
+  sec_left = 60;
   }
 }
 // The NPC function
