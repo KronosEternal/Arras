@@ -5813,8 +5813,8 @@ function ArenaClosed() {
   } else {
     sockets.broadcast("Closing!");
 
-    process.exit();
-    global.restart;
+    //process.exit();
+    //global.restart;
   }
 }
 
@@ -5852,7 +5852,7 @@ function closemode() {
           loc,
           -0,
           ran.choose(
-            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            [Class.closerghost, Class.closerghost, Class.closerghost],
             1
           )
         );
