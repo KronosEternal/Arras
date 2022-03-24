@@ -5815,8 +5815,14 @@ function timeThing() {
   }
   if(sec_left <= 0){
     clearInterval(timer);
+    sockets.broadcast('your team has lost')
   } else {
-    sockets.broadcast('asd');
+    if (sec_left === 50){
+      sockets.broadcast('your team will lose in 50 seconds')
+    }
+    if (sec_left === 40){
+      sockets.broadcast('your team will lose in 40 seconds')
+    }
   }
   sec_left -= 1;
 }, 1000);
