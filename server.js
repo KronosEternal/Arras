@@ -5806,16 +5806,24 @@ let spawnBosses = (() => {
 //the arena closer function
   var sec_left = 60;
   var stopTime = 0;
-  
-var timer = setInterval(function(){
+
+function timeThing() {
+  var timer = setInterval(function(){
+  if (stopTime === 1){
+    clearInterval(timer);
+    stopTime = 0;
+  }
   if(sec_left <= 0){
     clearInterval(timer);
   } else {
-   sockets.sussy
   }
   sec_left -= 1;
 }, 1000);
-  
+}
+
+function stopit (){
+  stopTime = 1;
+}
 // The NPC function
     let makenpcs = (() => {
         // Return the spawning function
@@ -5840,7 +5848,7 @@ if (room.bas1) //Sanctuary Room
            if (sancount === 0) {
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
           /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (start)
-
+           timeThing();
           /////////////////////////////////////////////////////////////////////////////////////////////// Timer function (end)
             }
            i.ondeath = () => {
@@ -5852,7 +5860,7 @@ if (room.bas1) //Sanctuary Room
              sancount += 1;
              sockets.broadcast("A sanctuary has been restored!"); //+ sancount + " Sanctuaries Alive.");
              util.log("[INFO]" + sancount + " Sanctuaries Left.");
-             if (sancount === 1){sockets.broadcast('            ')}
+             if (sancount === 1){ stopit(); }
              e.ondeath = o.ondeath;
              o = e;
           };
