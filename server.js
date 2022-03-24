@@ -3240,10 +3240,12 @@ class Entity {
             });
             // Prepare it and clear the collision array.
             killText = killText.slice(0, -5);
-            if (killText === 'you have died') killText = 'You are an idiot';
+            if (killText === 'You are an idiot') killText = 'You have died a stupid death';
             this.sendMessage(killText + '.');
             // If I'm the leader, broadcast it:
             if (this.id === room.topPlayerID) {
+              
+              
                 let usurptText = (this.name === '') ? 'The leader': this.name;
                 if (notJustFood) { 
                     usurptText += ' has been Obliterated by';
