@@ -3715,6 +3715,7 @@ case "h":
 
               let message = m[0];
               let maxLen = 100;
+              let number = 0;
               let args = message.split(" ");
               
               if (message.startsWith("/")) {
@@ -3754,9 +3755,11 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color " + 2)) {
+                if (message.startsWith("/color " + number)) {
                   {
-                    player.body.color = 2;
+                    if (typeof number != 'number'){
+                      player.body.sendMessage('invalid number');
+                    }
                     return 1;
                   }
                 }
