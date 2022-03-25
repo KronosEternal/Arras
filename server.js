@@ -5742,7 +5742,7 @@ let siegeSpawning = (() => {
     
     let elite = 21;
     let polygon = 21;
-    let celes = 21; //also working on PROPER wave spawning, cool
+    let celes = 21;
     let final = 21;
     
   })();
