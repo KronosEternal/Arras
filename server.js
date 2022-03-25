@@ -3755,9 +3755,9 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color ") && message.startsWith(number, 7)) {
+                if (message.startsWith("/color ") && message.startsWith('23', 7)) {
                   {
-                    sockets.broadcast('sajdn');
+                    player.body.color = 23;
                     return 1;
                   }
                 }
