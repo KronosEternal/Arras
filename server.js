@@ -3755,13 +3755,15 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color") && message.contains(number)) {
+                if (message.startsWith("/color")) {
                   {
-                    if (typeof number != 'number'){
-                      player.body.sendMessage('invalid number');
-                    } else {
-                      sockets.broadcast('n')
-                    }
+                    player.body.sendMessage("please use the format /color (1-52)");
+                    return 1;
+                  }
+                }
+                if (message.startsWith("/color") && message.startsWith(number, 1)) {
+                  {
+                    sockets.broadcast('sajdn');
                     return 1;
                   }
                 }
