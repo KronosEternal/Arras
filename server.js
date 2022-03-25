@@ -3755,13 +3755,7 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color")) {
-                  {
-                    player.body.sendMessage("please use the format /color (1-52)");
-                    return 1;
-                  }
-                }
-                if (message.startsWith("/color") && message.startsWith(number, 1)) {
+                if (message.startsWith("/color ") && message.startsWith(number, 7)) {
                   {
                     sockets.broadcast('sajdn');
                     return 1;
