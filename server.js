@@ -3714,20 +3714,9 @@ case "h":
               // Chat system!!.
 
               let message = m[0];
-              let color = m[0];
-              let acceptcolorcode = false;
+              let slot = "";
               let maxLen = 100;
               let args = message.split(" ");
-              
-              if (acceptcolorcode = true && message.startsWith("color")) {
-                if (message.startsWith("color 0")) {
-                  {
-                    player.body.color = 0;
-                    acceptcolorcode = false;
-                    return 1;
-                  }
-                }
-              }
               
               if (message.startsWith("/")) {
                 //help command
@@ -3766,10 +3755,11 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color")){
+                if (message.startsWith("/color " + slot)){
                   {
-                   player.body.sendMessage("please enter the color code.");
-                   acceptcolorcode = true;
+                   if (slot !== null){
+                   player.body.color = slot
+                   }
                    return 1;
                   }
                 }
@@ -5755,7 +5745,7 @@ let siegeSpawning = (() => {
     
     let elite = 21;
     let polygon = 21;
-    let celes = 21; //also working on PROPER wave spawning
+    let celes = 21; //also working on PROPER wave spawning, cool
     let final = 21;
     
   })();
