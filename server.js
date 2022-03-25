@@ -3714,7 +3714,6 @@ case "h":
               // Chat system!!.
 
               let message = m[0];
-              let slot = 36;
               let maxLen = 100;
               let args = message.split(" ");
               
@@ -3755,19 +3754,14 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color " + slot)){
-                  {
-                   if (slot !== null){
-                   player.body.color = slot
-                   }
-                   return 1;
-                  }
-                }
                 else
                   return player.body.sendMessage(
                     "Invalid command. Run /help for a list of commands."
                   );
               }
+              function color() {
+                  
+                }
               if (util.time() - socket.status.lastChatTime >= 2200) {
                 // Verify it
                 if (typeof message != "string") {
@@ -5749,7 +5743,7 @@ let siegeSpawning = (() => {
     let final = 21;
     
   })();
-//the arena closer function (in storage)
+//the arena closer function
 function closeArena() {
   ArenaClosed();
 }
