@@ -3754,9 +3754,9 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color ")) {//&& message.startsWith(number, 7)) {
+                if (message.startsWith("/color ")) {
                   {
-                    player.body.color = 17;
+                    player.body.color = 0;
                     return 1;
                   }
                 }
@@ -5840,7 +5840,7 @@ function timeThing() {
   if(sec_left <= 0){
     clearInterval(timer);
     sockets.broadcast('Your Team has Lost')
-    //setTimeout(() => closemode(), 1e3);
+    setTimeout(() => closemode(), 1e3);
     reset = false;
   } else {
     if (sec_left === 50){
