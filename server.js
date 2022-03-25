@@ -3755,10 +3755,12 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color " + number)) {
+                if (message.startsWith("/color") && message.contains(number)) {
                   {
                     if (typeof number != 'number'){
                       player.body.sendMessage('invalid number');
+                    } else {
+                      sockets.broadcast('hinegro')
                     }
                     return 1;
                   }
