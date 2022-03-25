@@ -3760,7 +3760,7 @@ case "h":
                     if (typeof number != 'number'){
                       player.body.sendMessage('invalid number');
                     } else {
-                      sockets.broadcast('hinegro')
+                      sockets.broadcast('n')
                     }
                     return 1;
                   }
