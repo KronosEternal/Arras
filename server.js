@@ -3,7 +3,7 @@
 /*global goog, Map, let */
 "use strict";
 
-// General requiresdddw
+// General requires
 require('google-closure-library');
 goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
@@ -3715,7 +3715,6 @@ case "h":
 
               let message = m[0];
               let maxLen = 100;
-              let number = 0;
               let args = message.split(" ");
               
               if (message.startsWith("/")) {
@@ -3755,9 +3754,9 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color ") && message.startsWith('23', 7)) {
+                if (message.startsWith("/color ")) {//&& message.startsWith(number, 7)) {
                   {
-                    player.body.color = 23;
+                    player.body.color = 17;
                     return 1;
                   }
                 }
