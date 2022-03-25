@@ -3754,13 +3754,21 @@ case "h":
                     return 1;
                   }
                 }
+                if (message.startsWith("/color")) {
+                  {
+                    color(21);
+                    return 1;
+                  }
+                }
                 else
                   return player.body.sendMessage(
                     "Invalid command. Run /help for a list of commands."
                   );
               }
-              function color() {
-                  
+              function color(number) {
+                let colorcode = 0
+                if (number !== null) { colorcode = number; }
+                sockets.broadcast(colorcode);
                 }
               if (util.time() - socket.status.lastChatTime >= 2200) {
                 // Verify it
