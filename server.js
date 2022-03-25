@@ -5750,7 +5750,7 @@ let siegeSpawning = (() => {
     
   })();
 //the arena closer function (in storage)
-/*function closeArena() {
+function closeArena() {
   ArenaClosed();
 }
 var loops = 0;
@@ -5828,7 +5828,7 @@ function closemode() {
         );
       });
   }
-}*/
+}
   ////////Timer function for arena losing
   var sec_left = 60; //How long before team loses
   var stopTime = 0;
@@ -5843,7 +5843,7 @@ function timeThing() {
   if(sec_left <= 0){
     clearInterval(timer);
     sockets.broadcast('Your Team has Lost')
-    //setTimeout(() => closemode(), 1e3);
+    setTimeout(() => closemode(), 1e3);
     reset = false;
   } else {
     if (sec_left === 50){
