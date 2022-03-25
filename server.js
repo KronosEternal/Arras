@@ -3714,7 +3714,7 @@ case "h":
               // Chat system!!.
 
               let message = m[0];
-              let slot = "";
+              let slot = 36;
               let maxLen = 100;
               let args = message.split(" ");
               
@@ -5843,7 +5843,7 @@ function timeThing() {
   if(sec_left <= 0){
     clearInterval(timer);
     sockets.broadcast('Your Team has Lost')
-    setTimeout(() => closemode(), 1e3);
+    //setTimeout(() => closemode(), 1e3);
     reset = false;
   } else {
     if (sec_left === 50){
