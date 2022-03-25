@@ -5797,7 +5797,7 @@ function closemode() {
           loc,
           -0,
           ran.choose(
-            [Class.closerghost, Class.closerghost, Class.closerghost],
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
             1
           )
         );
@@ -5808,7 +5808,7 @@ function closemode() {
           loc,
           -0,
           ran.choose(
-            [Class.closerghost, Class.closerghost, Class.closerghost],
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
             1
           )
         );
@@ -5819,7 +5819,7 @@ function closemode() {
           loc,
           -0,
           ran.choose(
-            [Class.closerghost, Class.closerghost, Class.closerghost],
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
             1
           )
         );
