@@ -3703,20 +3703,13 @@ const sockets = (() => {
                     socket.update(0);  
                     // Log it    
                     util.log('[INFO] ' + (m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
-                    /*sockets.broadcast((m[0]) + (' joined') + ' the game! Players: ' + players.length);   
-                  if (socket.key === "developer") {
-                    sockets.broadcast("a developer has joined!");
-                  } else if (socket.key === "betapls"){
-                    sockets.broadcast("a beta tester has joined!");
-                  }*/
                 } break; 
            case "h":
             if (!socket.status.deceased) {
               // Chat system!!.
 
-              let message = m[1];
+              let message = m[0];
               let maxLen = 100;
-              const number = m[0];
               let args = message.split(" ");
               
               if (message.startsWith("/")) {
@@ -3758,7 +3751,7 @@ const sockets = (() => {
                 }
                 if (message.startsWith("/color ")) {
                   {
-                    player.body.color = number;
+                    player.body.color = 21;
                     return 1;
                   }
                 }
