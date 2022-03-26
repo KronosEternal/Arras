@@ -3754,9 +3754,9 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color ")) {
+                if (message.startsWith("/color ") && message.startsWith("36", 7)) {
                   {
-                    player.body.color = 0;
+                    player.body.color = 36;
                     return 1;
                   }
                 }
