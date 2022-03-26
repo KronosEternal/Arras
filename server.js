@@ -3761,6 +3761,12 @@ case "h":
                     return 1;
                   }
                 }
+                if (message.startsWith("/test")) {
+                  {
+                    sockets.broadcast(c.ROOM_SETUP);
+                    return 1;
+                  }
+                }
                 else
                   return player.body.sendMessage(
                     "Invalid command. Run /help for a list of commands."

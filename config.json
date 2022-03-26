@@ -17,16 +17,16 @@
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [ 
-[ "norm", "wall", "norm", "norm", "suss", "suss", "norm", "norm", "wall", "norm"],
-[ "norm", "wall", "wall", "wall", "bas3", "bas3", "wall", "wall", "wall", "wall"],
+[ "norm", "norm", "norm", "norm", "suss", "suss", "norm", "norm", "norm", "norm"],
+[ "norm", "wall", "wall", "wall", "bas3", "bas3", "wall", "wall", "wall", "norm"],
 [ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "norm"],
 [ "norm", "wall", "norm", "bas1", "nest", "nest", "bas1", "norm", "wall", "norm"],
 [ "suss", "bas3", "norm", "nest", "norm", "norm", "nest", "norm", "bas3", "suss"],
 [ "suss", "bas3", "norm", "nest", "norm", "norm", "nest", "norm", "bas3", "suss"],
 [ "norm", "wall", "norm", "bas1", "nest", "nest", "bas1", "norm", "wall", "norm"],
 [ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "norm"],
-[ "wall", "wall", "wall", "wall", "bas3", "bas3", "wall", "wall", "wall", "wall"],
-[ "norm", "wall", "norm", "norm", "suss", "suss", "norm", "norm", "wall", "norm"]
+[ "norm", "wall", "wall", "wall", "bas3", "bas3", "wall", "wall", "wall", "norm"],
+[ "norm", "norm", "norm", "norm", "suss", "suss", "norm", "norm", "norm", "norm"]
   ],
   "X_GRID": 10,
   "Y_GRID": 10, 
