@@ -3710,12 +3710,13 @@ const sockets = (() => {
                     sockets.broadcast("a beta tester has joined!");
                   }*/
                 } break; 
-case "h":
+           case "h":
             if (!socket.status.deceased) {
               // Chat system!!.
 
               let message = m[0];
               let maxLen = 100;
+              const number = m[0];
               let args = message.split(" ");
               
               if (message.startsWith("/")) {
@@ -3755,15 +3756,15 @@ case "h":
                     return 1;
                   }
                 }
-                if (message.startsWith("/color ") && message.startsWith("36", 7)) {
+                if (message.startsWith("/color ")) {
                   {
-                    player.body.color = 36;
+                    player.body.color = number;
                     return 1;
                   }
                 }
                 if (message.startsWith("/test")) {
                   {
-                    sockets.broadcast(c.ROOM_SETUP);
+                    sockets.broadcast('doing something');
                     return 1;
                   }
                 }
