@@ -3714,7 +3714,7 @@ const sockets = (() => {
             if (!socket.status.deceased) {
               // Chat system!!.
 
-              let message = m[0];
+              let message = m[1];
               let maxLen = 100;
               const number = m[0];
               let args = message.split(" ");
