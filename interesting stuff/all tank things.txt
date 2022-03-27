@@ -31,4 +31,3 @@
   OBSTACLE: false,
   CRAVES_ATTENTION: false,
   NECRO: false,
-  SHOOT_ON_DEATH: false,

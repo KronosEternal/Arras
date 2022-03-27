@@ -3118,11 +3118,6 @@ class Entity {
                 this.shield.amount -= shieldDamage;
             }
         }
-        if (this.shootOnDeath) {
-            if (this.range <= 1) {
-           this.define(Class.bullet); // i might update this and make it define as the class it was
-          }
-         }
         // Health damage 
         if (this.damageRecieved !== 0) {
             let healthDamage = this.health.getDamage(this.damageRecieved);
