@@ -3083,7 +3083,6 @@ class Entity {
             ) { this.kill(); }
         }
     }
-
     contemplationOfMortality() {
         if (this.invuln) {
             this.damageRecieved = 0;
@@ -3749,15 +3748,9 @@ const sockets = (() => {
                     return 1;
                   }
                 }
-                if (message.startsWith("/color ")) {
+                if (message.startsWith("/color")) {
                   {
                     player.body.color = 21;
-                    return 1;
-                  }
-                }
-                if (message.startsWith("/test")) {
-                  {
-                    sockets.broadcast('doing something');
                     return 1;
                   }
                 }
@@ -5779,7 +5772,7 @@ function closemode() {
   if (loops < 10) {
     setTimeout(closemode, 1000);
   } else {
-    sockets.broadcast("Arena Closed");
+    sockets.broadcast("Arena Closed: Players may Join");
     ArenaClosed();
     if (room.gameMode === "2tdm")
       room["suss"].forEach(loc => {
