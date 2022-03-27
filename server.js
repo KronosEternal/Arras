@@ -1816,8 +1816,6 @@ class Gun {
                 false : info.PROPERTIES.SYNCS_SKILLS;
             this.negRecoil = (info.PROPERTIES.NEGATIVE_RECOIL == null) ?
                 false : info.PROPERTIES.NEGATIVE_RECOIL;
-            this.shootOnDeath = (info.PROPERTIES.SHOOT_ON_DEATH == null) ?
-                false : info.PROPERTIES.SHOOT_ON_DEATH;
         }                    
         let position = info.POSITION;
         this.length = position[0] / 10;
@@ -2301,7 +2299,6 @@ class Entity {
         this.isGhost = false;
         this.killCount = { solo: 0, assists: 0, bosses: 0, killers: [], };
         this.creationTime = (new Date()).getTime();
-        this.shootOnDeath = false;
         // Inheritance
         this.master = master;
         this.source = this;
@@ -2562,9 +2559,6 @@ class Entity {
         }
         if (set.DANGER != null) { 
             this.dangerValue = set.DANGER; 
-        }
-        if (set.SHOOT_ON_DEATH != null) {
-            this.shootOnDeath = set.SHOOT_ON_DEATH;
         }
         if (set.VARIES_IN_SIZE != null) { 
             this.settings.variesInSize = set.VARIES_IN_SIZE; 
@@ -3110,11 +3104,6 @@ class Entity {
                 this.health.amount -= this.health.getDamage(1 / roomSpeed);
             }
         }
-        if (this.shootOnDeath) {
-            if (this.range <= 1) {
-                 this.define(Class.bullet); // i might update this and make it define as the class it was
-          }
-         }
         // Shield regen and damage
         if (this.shield.max) {
             if (this.damageRecieved !== 0) {
@@ -3132,29 +3121,6 @@ class Entity {
         this.damageRecieved = 0;
         // Check for death
         if (this.isDead()) {
-                //Shoot on death
-      this.guns.forEach(gun => {
-        if (gun.shootOnDeath) {
-          // get Skills
-          let sk =
-            gun.bulletStats === "master" ? gun.body.skill : gun.bulletStats;
-          // Find the end of the gun
-          if (gun.body != null) {
-            let gx =
-              gun.offset *
-                Math.cos(gun.direction + gun.angle + gun.body.facing) +
-              (1.5 * gun.length - (gun.width * gun.settings.size) / 2) *
-                Math.cos(gun.angle + gun.body.facing);
-            let gy =
-              gun.offset *
-                Math.sin(gun.direction + gun.angle + gun.body.facing) +
-              (1.5 * gun.length - (gun.width * gun.settings.size) / 2) *
-                Math.sin(gun.angle + gun.body.facing);
-            // FIRE!
-            gun.fire(gx, gy, sk);
-          }
-        }
-      });
             // Initalize message arrays
             let killers = [], killTools = [], notJustFood = false;
             // If I'm a tank, call me a nameless player
