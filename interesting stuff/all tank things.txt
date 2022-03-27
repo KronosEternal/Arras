@@ -4,7 +4,7 @@
   SHAPE: 0,
   COLOR: 16,
   INDEPENDENT: false,
-  CONTROLLERS: ["doNothing"],
+  CONTROLLERS: ["doNothing"], //search "iotypes" to find controllers
   HAS_NO_MASTER: false,
   MOTION_TYPE: "glide", // motor, swarm, chase
   FACING_TYPE: "toTarget", // turnWithSpeed, withMotion, looseWithMotion, toTarget, looseToTarget
@@ -31,3 +31,4 @@
   OBSTACLE: false,
   CRAVES_ATTENTION: false,
   NECRO: false,
+  

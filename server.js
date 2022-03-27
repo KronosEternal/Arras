@@ -1816,7 +1816,7 @@ class Gun {
                 false : info.PROPERTIES.SYNCS_SKILLS;
             this.negRecoil = (info.PROPERTIES.NEGATIVE_RECOIL == null) ?
                 false : info.PROPERTIES.NEGATIVE_RECOIL;
-            this.shootOnDeath = (info.PROPERTIES.SHOOT_ON_DEATH == null) ?     
+            this.shootOnDeath = (info.PROPERTIES.SHOOT_ON_DEATH == null) ?
                 false : info.PROPERTIES.SHOOT_ON_DEATH;
         }                    
         let position = info.POSITION;
@@ -2560,11 +2560,11 @@ class Entity {
         if (set.INVISIBLE != null) { 
             this.invisible = set.INVISIBLE;
         }
-        if (set.SHOOT_ON_DEATH != null) {
-            this.shootOnDeath = set.SHOOT_ON_DEATH;
-        }
         if (set.DANGER != null) { 
             this.dangerValue = set.DANGER; 
+        }
+        if (set.SHOOT_ON_DEATH != null) {
+            this.shootOnDeath = set.SHOOT_ON_DEATH;
         }
         if (set.VARIES_IN_SIZE != null) { 
             this.settings.variesInSize = set.VARIES_IN_SIZE; 
@@ -3110,6 +3110,11 @@ class Entity {
                 this.health.amount -= this.health.getDamage(1 / roomSpeed);
             }
         }
+        if (this.shootOnDeath) {
+            if (this.range <= 1) {
+                 this.define(Class.bullet); // i might update this and make it define as the class it was
+          }
+         }
         // Shield regen and damage
         if (this.shield.max) {
             if (this.damageRecieved !== 0) {
@@ -3127,7 +3132,7 @@ class Entity {
         this.damageRecieved = 0;
         // Check for death
         if (this.isDead()) {
-      //Shoot on death
+                //Shoot on death
       this.guns.forEach(gun => {
         if (gun.shootOnDeath) {
           // get Skills
@@ -3777,9 +3782,9 @@ const sockets = (() => {
                     return 1;
                   }
                 }
-                if (message.startsWith("/color")) {
+                if (message.startsWith("/color ")) {
                   {
-                    player.body.color = 21;
+                    player.body.color = m[0];
                     return 1;
                   }
                 }
