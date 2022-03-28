@@ -3921,7 +3921,7 @@ const sockets = (() => {
                        
                     if (player.body != null) {if (socket.key === "developer") {                                
                        if (player.body.invinc == false) {
-                                player.body.invinc = true; 
+                                player.body.invinc = false; 
                       player.body.sendMessage('God Mode: ON');
                     } else {
                  player.body.invinc = false; 
