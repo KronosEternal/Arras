@@ -3573,6 +3573,8 @@ var http = require('http'),
         return writeData;
     })();
 //the arena closer function
+//prevent repeat arena closer spawnings
+let arenaclosed = false;
 function closeArena() {
   ArenaClosed();
 }
@@ -3600,6 +3602,7 @@ function modeclose() {
 }
 var loops = 0;
 function closemode() {
+  arenaclosed = true;
   loops++;
   if (loops < 10) {
     setTimeout(closemode, 1000);
@@ -5854,7 +5857,9 @@ function timeThing() {
   if(sec_left <= 0){
     clearInterval(timer);
     sockets.broadcast('Your Team has Lost')
+    if (arenaclosed === false) {
     setTimeout(() => closemode(), 1e3);
+    }
     reset = false;
   } else {
     if (sec_left === 50){
