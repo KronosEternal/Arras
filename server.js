@@ -3751,7 +3751,6 @@ const sockets = (() => {
                     }*/
                 } break;
                 case 's': { // spawn request
-                  if (canspawn === false) {player.body.sendMessage("Arena CLosed")}
                   if (canspawn !== false) {
                     if (!socket.status.deceased) { socket.kick('Trying to spawn while already alive.'); return 1; }
                     if (m.length !== 2) { socket.kick('Ill-sized spawn request.'); return 1; }
@@ -5942,6 +5941,7 @@ if (room.bas1) //Sanctuary Room
            sockets.broadcast("A sanctuary has been destroyed!"); //+ sancount + " Sanctuaries Alive.");
            util.log("[INFO]" + sancount + " Sanctuaries Left.");
            if (sancount === 0) {
+             canspawn === false;
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
            timeThing();
             }
