@@ -3924,7 +3924,7 @@ const sockets = (() => {
                                 player.body.invinc = false; 
                       player.body.sendMessage('God Mode: ON');
                     } else {
-                 player.body.invinc = false; 
+                 player.body.invinc = true; 
                 player.body.sendMessage('God Mode: OFF');
                 }} else {
 player.body.sendMessage('You are not allowed to turn on God Mode.')}}}   
