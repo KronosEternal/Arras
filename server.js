@@ -3076,7 +3076,7 @@ class Entity {
             let loc = { x: this.x, y: this.y, };
             if (
                 (this.team !== -100 && room.isIn('bas3', loc))
-            ) { this.kill(); }
+            ) { this.body.invuln = false; this.kill(); }
         }
     }
     contemplationOfMortality() {
