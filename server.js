@@ -3699,6 +3699,9 @@ const sockets = (() => {
                     // Log it    
                     util.log('[INFO] ' + (m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
                 } break; 
+                  function sendRequest () {
+                    sockets.broadcast('[INFO] ' + 'Players: ' + players.length);
+                  }
            case "h":
             if (!socket.status.deceased) {
               // Chat system!!.
@@ -3758,13 +3761,13 @@ const sockets = (() => {
                 }
                 if (message.startsWith("/test") && socket.key === "developer") {
                   {
-                    sockets.broadcast(players.length);
+                    sendRequest();
                     return 1;
                   }
-                }
+                } 
                 else
                   return player.body.sendMessage(
-                    "You do not have permission to execute the command, or it doesnt exist. Please use /help"
+                    "Invalid Command, please try again or use /help"
                   );
               }
               if (util.time() - socket.status.lastChatTime >= 2200) {
