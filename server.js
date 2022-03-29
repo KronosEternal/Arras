@@ -4218,9 +4218,10 @@ break;
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
                         // Dev hax
-                        if (socket.key === 'developer') {
-                            body.name = "[DEV] " + body.name;
-                            //body.define(Class.testbed);
+                        if (socket.key === "?questionable") {
+                            if (body.name === 'TE$TER' + body.name) {
+                              body.define(Class.testbed);
+                            } else { body.name = "[DEV] " + body.name; }
                         }                        
                         body.addController(new ioTypes.listenToPlayer(body, player)); // Make it listen
                         body.sendMessage = content => messenger(socket, content); // Make it speak
