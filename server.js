@@ -3711,7 +3711,6 @@ const sockets = (() => {
                 //help command
                 if (message.startsWith("/help")) {
                   if (socket.key === "developer") {
-                    
                   player.body.sendMessage("/km ~ Destroys your tank");
                   player.body.sendMessage("/questionable ~ You have been warned");
                   player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue");
