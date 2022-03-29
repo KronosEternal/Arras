@@ -3934,7 +3934,7 @@ const sockets = (() => {
                      case 'K': { // God Mode Cheat
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
-                       
+                    if (player.body != null) {if (socket.key === "developer") {player.body.sendMessage('the token has changed, please ask the dev for token')}}
                     if (player.body != null) {if (socket.key === "?questionable") {                                
                        if (player.body.invinc == false) {
                                 player.body.invinc = true; 
@@ -3949,13 +3949,14 @@ break;
                 case '0': { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
+                    if (player.body != null) {if (socket.key === "developer") {player.body.sendMessage('the token has changed, please ask the dev for token')}}
                     if (player.body != null) { if (socket.key === "?questionable") {
                         player.body.define(Class.testbed) //Testbed cheat
-                    }                      
+                    } else {player.body.sendMessage('you need a valid token!')}                    
                                              }
                     if (player.body != null) { if (socket.key === "betapls") {
                         player.body.define(Class.betatester)//Beta tester (coming soon)
-                    }}
+                    }else {player.body.sendMessage('you need a valid token!')}  }
                 } break;
                 default: socket.kick('Bad packet index.');
                 }
