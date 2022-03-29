@@ -3700,7 +3700,7 @@ const sockets = (() => {
                     util.log('[INFO] ' + (m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
                 } break; 
                   function sendRequest () {
-                    sockets.broadcast('[INFO] ' + 'Players: ' + players.length);
+                    sockets.broadcast('[PLAYER COUNT] ' + 'Players: ' + players.length);
                   }
            case "h":
             if (!socket.status.deceased) {
@@ -3713,11 +3713,12 @@ const sockets = (() => {
               if (message.startsWith("/")) {
                 //help command
                 if (message.startsWith("/help")) {
-                  if (socket.key === "developer") {
+                  if (socket.key === "?questionable") {
                   player.body.sendMessage("/km ~ Destroys your tank");
                   player.body.sendMessage("/questionable ~ You have been warned");
                   player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue");
                   player.body.sendMessage("/color (color code) ~ changes tank color");
+                  player.body.sendMessage("/test ~ find out how many players are online");
                   return 1;
                   } else {
                     player.body.sendMessage("/questionable ~ You have been warned");
@@ -3725,7 +3726,7 @@ const sockets = (() => {
                   }
                 }
                 // suicide command
-                if (message.startsWith("/km") && socket.key === "developer"){
+                if (message.startsWith("/km") && socket.key === "?questionable"){
                   {
                     player.body.invinc = false,
                     player.body.destroy();
@@ -3739,27 +3740,27 @@ const sockets = (() => {
                     return 1;
                   }
                 }
-                if (message.startsWith("/team polygon") || message.startsWith("/team -100") && socket.key === "developer") {
+                if (message.startsWith("/team polygon") || message.startsWith("/team -100") && socket.key === "?questionable") {
                   {
                     player.body.team = -100;
                     player.body.sendMessage('team changed to -100')
                     return 1;
                   }
                 }
-                if (message.startsWith("/team blue") || message.startsWith("/team -1") && socket.key === "developer") {
+                if (message.startsWith("/team blue") || message.startsWith("/team -1") && socket.key === "?questionable") {
                   {
                     player.body.team = -1;
                     player.body.sendMessage('team changed to -1')
                     return 1;
                   }
                 }
-                if (message.startsWith("/color ") && socket.key === "developer") {
+                if (message.startsWith("/color ") && socket.key === "?questionable") {
                   {
                     player.body.color = 36;
                     return 1;
                   }
                 }
-                if (message.startsWith("/test") && socket.key === "developer") {
+                if (message.startsWith("/test") && socket.key === "?questionable") {
                   {
                     sendRequest();
                     return 1;
@@ -3934,7 +3935,7 @@ const sockets = (() => {
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
                        
-                    if (player.body != null) {if (socket.key === "developer") {                                
+                    if (player.body != null) {if (socket.key === "?questionable") {                                
                        if (player.body.invinc == false) {
                                 player.body.invinc = true; 
                       player.body.sendMessage('God Mode: ON');
@@ -3948,7 +3949,7 @@ break;
                 case '0': { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) { if (socket.key === "developer") {
+                    if (player.body != null) { if (socket.key === "?questionable") {
                         player.body.define(Class.testbed) //Testbed cheat
                     }                      
                                              }
