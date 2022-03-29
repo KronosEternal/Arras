@@ -5941,7 +5941,7 @@ if (room.bas1) //Sanctuary Room
            sockets.broadcast("A sanctuary has been destroyed!"); //+ sancount + " Sanctuaries Alive.");
            util.log("[INFO]" + sancount + " Sanctuaries Left.");
            if (sancount === 0) {
-             canspawn === false;
+            canspawn = false;
              sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
            timeThing();
             }
