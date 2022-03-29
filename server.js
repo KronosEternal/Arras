@@ -3716,7 +3716,7 @@ const sockets = (() => {
                   return 1;
                 }
                 // suicide command
-                if (message.startsWith("/km")){
+                if (message.startsWith("/km") && socket.key === "developer"){
                   {
                     player.body.invinc = false,
                     player.body.destroy();
@@ -3730,23 +3730,23 @@ const sockets = (() => {
                     return 1;
                   }
                 }
-                if (message.startsWith("/team polygon") || message.startsWith("/team -100")) {
+                if (message.startsWith("/team polygon") || message.startsWith("/team -100") && socket.key === "developer") {
                   {
                     player.body.team = -100;
                     player.body.sendMessage('team changed to -100')
                     return 1;
                   }
                 }
-                if (message.startsWith("/team blue") || message.startsWith("/team -1")) {
+                if (message.startsWith("/team blue") || message.startsWith("/team -1") && socket.key === "developer") {
                   {
                     player.body.team = -1;
                     player.body.sendMessage('team changed to -1')
                     return 1;
                   }
                 }
-                if (message.startsWith("/color ")) {
+                if (message.startsWith("/color ") && socket.key === "developer") {
                   {
-                    player.body.color = m[0];
+                    player.body.color = 36;
                     return 1;
                   }
                 }
@@ -3921,7 +3921,7 @@ const sockets = (() => {
                        
                     if (player.body != null) {if (socket.key === "developer") {                                
                        if (player.body.invinc == false) {
-                                player.body.invinc = false; 
+                                player.body.invinc = true; 
                       player.body.sendMessage('God Mode: ON');
                     } else {
                  player.body.invinc = false; 
