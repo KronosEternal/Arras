@@ -3710,10 +3710,14 @@ const sockets = (() => {
               if (message.startsWith("/")) {
                 //help command
                 if (message.startsWith("/help")) {
+                  if (socket.key === "developer") {
                   player.body.sendMessage("/km ~ Destroys your tank");
-                  player.body.sendMessage("/questionable ~ You have been warned");
-                  player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue")
+                  player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue");
+                  player.body.sendMessage("/color (color code) ~ changes tank color");
                   return 1;
+                  } else {
+                    player.body.sendMessage("/questionable ~ You have been warned");
+                  }
                 }
                 // suicide command
                 if (message.startsWith("/km") && socket.key === "developer"){
@@ -3752,7 +3756,10 @@ const sockets = (() => {
                 }
                 else
                   return player.body.sendMessage(
-                    "Invalid command. Run /help for a list of commands."
+                    "You do not have permission to execute the command, or it doesnt exist."
+                  );
+                  return player.body.sendMessage(
+                    "Run /help to find out commands you can use"
                   );
               }
               if (util.time() - socket.status.lastChatTime >= 2200) {
