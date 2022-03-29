@@ -3573,13 +3573,16 @@ var http = require('http'),
         return writeData;
     })();
 //the arena closer function
-//prevent repeat arena closer spawnings
 let arenaclosed = false;
+//prevent repeat arena closer spawnings
+//find out whether players can spawn
+let canspawn = true;
 function closeArena() {
   ArenaClosed();
 }
 var loops = 0;
 function ArenaClosed() {
+  
   loops++;
   if (loops < 31) {
     setTimeout(ArenaClosed, 2000);
@@ -3604,10 +3607,11 @@ var loops = 0;
 function closemode() {
   arenaclosed = true;
   loops++;
-  if (loops < 10) {
+  if (loops < 4) {
     setTimeout(closemode, 1000);
   } else {
-    sockets.broadcast("Arena Closed: Players may Join");
+    sockets.broadcast("Arena Closed: No Players May Join");
+    canspawn = false;
     ArenaClosed();
     if (room.gameMode === "2tdm")
       room["suss"].forEach(loc => {
@@ -3620,7 +3624,7 @@ function closemode() {
           )
         );
       });
-    if (room.gameMode === "2tdm")
+    if (room.gameMode === "edge")
       room["suss"].forEach(loc => {
         spawnarenacloser(
           loc,
@@ -3631,7 +3635,7 @@ function closemode() {
           )
         );
       });
-    if (room.gameMode === "2tdm")
+    if (room.gameMode === "edge")
       room["suss"].forEach(loc => {
         spawnarenacloser(
           loc,
@@ -3642,7 +3646,7 @@ function closemode() {
           )
         );
       });
-    if (room.gameMode === "2tdm")
+    if (room.gameMode === "edge")
       room["suss"].forEach(loc => {
         spawnarenacloser(
           loc,
