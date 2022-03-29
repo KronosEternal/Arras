@@ -3751,6 +3751,7 @@ const sockets = (() => {
                     }*/
                 } break;
                 case 's': { // spawn request
+                  if (canspawn === false) {player.body.sendMessage("Arena CLosed")}
                   if (canspawn !== false) {
                     if (!socket.status.deceased) { socket.kick('Trying to spawn while already alive.'); return 1; }
                     if (m.length !== 2) { socket.kick('Ill-sized spawn request.'); return 1; }
