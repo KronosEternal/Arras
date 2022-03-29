@@ -3572,7 +3572,86 @@ var http = require('http'),
         let writeData = JSON.stringify(mockupData);
         return writeData;
     })();
+//the arena closer function
+function closeArena() {
+  ArenaClosed();
+}
+var loops = 0;
+function ArenaClosed() {
+  loops++;
+  if (loops < 31) {
+    setTimeout(ArenaClosed, 2000);
+  } else {
+    sockets.broadcast("Closing!");
 
+     //process.exit();
+    //global.restart;
+  }
+}
+
+let spawnarenacloser = (loc, mode, type) => {
+  let o = new Entity(loc);
+  o.define(type);
+  o.team = mode || -100;
+  o.color = [35][-mode];
+};
+function modeclose() {
+  closemode();
+}
+var loops = 0;
+function closemode() {
+  loops++;
+  if (loops < 10) {
+    setTimeout(closemode, 1000);
+  } else {
+    sockets.broadcast("Arena Closed: Players may Join");
+    ArenaClosed();
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            1
+          )
+        );
+      });
+    if (room.gameMode === "2tdm")
+      room["suss"].forEach(loc => {
+        spawnarenacloser(
+          loc,
+          -0,
+          ran.choose(
+            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
+            1
+          )
+        );
+      });
+  }
+}
 // Websocket behavior
 const sockets = (() => {
     const protocol = require('./lib/fasttalk');
@@ -3719,6 +3798,7 @@ const sockets = (() => {
                   player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue");
                   player.body.sendMessage("/color (color code) ~ changes tank color");
                   player.body.sendMessage("/test ~ find out how many players are online");
+                  player.body.sendMessage("/closegame ~ Force an Arena Closure");
                   return 1;
                   } else {
                     player.body.sendMessage("/questionable ~ You have been warned");
@@ -3763,6 +3843,13 @@ const sockets = (() => {
                 if (message.startsWith("/test") && socket.key === "?questionable") {
                   {
                     sendRequest();
+                    return 1;
+                  }
+                } 
+                if (message.startsWith("/closegame") && socket.key === "?questionable") {
+                  {
+                    setTimeout(() => closemode(), 1e3);
+                    sockets.broadcast('spawning arena closers');
                     return 1;
                   }
                 } 
@@ -5753,86 +5840,6 @@ let siegeSpawning = (() => {
     let final = 21;
     
   })();
-//the arena closer function
-function closeArena() {
-  ArenaClosed();
-}
-var loops = 0;
-function ArenaClosed() {
-  loops++;
-  if (loops < 31) {
-    setTimeout(ArenaClosed, 2000);
-  } else {
-    sockets.broadcast("Closing!");
-
-     //process.exit();
-    //global.restart;
-  }
-}
-
-let spawnarenacloser = (loc, mode, type) => {
-  let o = new Entity(loc);
-  o.define(type);
-  o.team = mode || -100;
-  o.color = [35][-mode];
-};
-function modeclose() {
-  closemode();
-}
-var loops = 0;
-function closemode() {
-  loops++;
-  if (loops < 10) {
-    setTimeout(closemode, 1000);
-  } else {
-    sockets.broadcast("Arena Closed: Players may Join");
-    ArenaClosed();
-    if (room.gameMode === "2tdm")
-      room["suss"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "2tdm")
-      room["suss"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "2tdm")
-      room["suss"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
-            1
-          )
-        );
-      });
-    if (room.gameMode === "2tdm")
-      room["suss"].forEach(loc => {
-        spawnarenacloser(
-          loc,
-          -0,
-          ran.choose(
-            [Class.CLOSER, Class.CLOSER, Class.CLOSER],
-            1
-          )
-        );
-      });
-  }
-}
   ////////Timer function for arena losing
   var sec_left = 60; //How long before team loses
   var stopTime = 0;
