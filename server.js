@@ -3952,11 +3952,10 @@ break;
                     if (player.body != null) {if (socket.key === "developer") {player.body.sendMessage('the token has changed, please ask the dev for token')}}
                     if (player.body != null) { if (socket.key === "?questionable") {
                         player.body.define(Class.testbed) //Testbed cheat
-                    } else {player.body.sendMessage('you need a valid token!')}                    
-                                             }
+                    }}
                     if (player.body != null) { if (socket.key === "betapls") {
                         player.body.define(Class.betatester)//Beta tester (coming soon)
-                    }else {player.body.sendMessage('you need a valid token!')}  }
+                    }}
                 } break;
                 default: socket.kick('Bad packet index.');
                 }

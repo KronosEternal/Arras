@@ -1,4 +1,8 @@
-# Updates
+# Updates Siege
+- sneak peek at april fools update is out now!
+- changed token detection system to reduce load times
+- modified client slightly
+# Updates Siege
 - Fixed God mode bug
 - Better chat connect to token, now, only if you have the token can you execute certain commands
 - if you type /help, it will only show commands you have permission to execute
