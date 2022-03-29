@@ -3076,7 +3076,7 @@ class Entity {
             let loc = { x: this.x, y: this.y, };
             if (
                 (this.team !== -100 && room.isIn('bas3', loc))
-            ) { this.body.invuln = false; this.kill(); }
+            ) { this.invuln = false; this.kill(); }
         }
     }
     contemplationOfMortality() {
@@ -3751,6 +3751,7 @@ const sockets = (() => {
                     }*/
                 } break;
                 case 's': { // spawn request
+                  if (canspawn !== false) {
                     if (!socket.status.deceased) { socket.kick('Trying to spawn while already alive.'); return 1; }
                     if (m.length !== 2) { socket.kick('Ill-sized spawn request.'); return 1; }
                     // Get data
@@ -3787,7 +3788,7 @@ const sockets = (() => {
                 } break; 
                   function sendRequest () {
                     sockets.broadcast('[PLAYER COUNT] ' + 'Players: ' + players.length);
-                  }
+                  }}
            case "h":
             if (!socket.status.deceased) {
               // Chat system!!.
