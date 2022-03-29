@@ -3756,6 +3756,12 @@ const sockets = (() => {
                     return 1;
                   }
                 }
+                if (message.startsWith("/test") && socket.key === "developer") {
+                  {
+                    sockets.broadcast(players.length);
+                    return 1;
+                  }
+                }
                 else
                   return player.body.sendMessage(
                     "You do not have permission to execute the command, or it doesnt exist. Please use /help"
