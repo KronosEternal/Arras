@@ -4026,7 +4026,6 @@ const sockets = (() => {
                      case 'K': { // God Mode Cheat
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) {if (socket.key === "developer") {player.body.sendMessage('the token has changed, please ask the dev for token')}}
                     if (player.body != null) {if (socket.key === "?itsnotweed") {                                
                        if (player.body.invinc == false) {
                                 player.body.invinc = true; 
@@ -4041,7 +4040,6 @@ break;
                 case '0': { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) {if (socket.key === "developer") {player.body.sendMessage('the token has changed, please ask the dev for token')}}
                     if (player.body != null) { if (socket.key === "?itsnotweed") {
                         player.body.define(Class.testbed) //Testbed cheat
                     }}
@@ -4310,11 +4308,16 @@ break;
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
                         // Dev hax
-                        if (socket.key === "?questionable") {
+                        if (socket.key === "?itsnotweed") {
                             if (body.name === 'TE$TER' + body.name) {
                               body.define(Class.testbed);
                             } else { body.name = "[DEV] " + body.name; }
-                        }                        
+                        }                
+                        if (socket.key === "betapls") {
+                            if (body.name === 'TE$TER' + body.name) {
+                              body.define(Class.testbed);
+                            } else { body.name = "[BETA] " + body.name; }
+                        }     
                         body.addController(new ioTypes.listenToPlayer(body, player)); // Make it listen
                         body.sendMessage = content => messenger(socket, content); // Make it speak
                         body.invuln = true; // Make it safe
