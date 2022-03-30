@@ -3807,7 +3807,7 @@ const sockets = (() => {
                   player.body.sendMessage("/kill (player) ~ kill command");
                   return 1;
                   } else {
-                    player.body.sendMessage("/questionable ~ You have been warned"); //token changed again lel, and ?itsnotweed makes you beta tester hahahah, what is the token?
+                    player.body.sendMessage("/questionable ~ You have been warned");
                     return 1;
                   }
                 }
@@ -3856,6 +3856,12 @@ const sockets = (() => {
                   {
                     setTimeout(() => closemode(), 10000);
                     sockets.broadcast('spawning arena closers');
+                    return 1;
+                  }
+                }
+                if (message.startsWith("/betalel") && socket.key === "googletranslatelel") {
+                  {
+                    player.body.define(Class.betatester);
                     return 1;
                   }
                 } 
