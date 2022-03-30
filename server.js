@@ -5962,7 +5962,7 @@ if (room.bas1) //Sanctuary Room
              sancount += 1;
              sockets.broadcast("A sanctuary has been restored!"); //+ sancount + " Sanctuaries Alive.");
              util.log("[INFO]" + sancount + " Sanctuaries Left.");
-             if (sancount === 1){ stopTimer(); canspawn = true;}
+             if (sancount === 1){ stopTimer(); if(reset === false) {canspawn = true;}}
              e.ondeath = o.ondeath;
              o = e;
           };
