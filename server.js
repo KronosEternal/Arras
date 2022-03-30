@@ -4033,7 +4033,7 @@ const sockets = (() => {
                      case 'K': { // God Mode Cheat
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) {if (socket.key === "googletranslatelel") {                                
+                    if (player.body != null) {if (socket.key === "googletranslatelel" || socket.key === "?itsnotweed") {                                
                        if (player.body.invinc == false) {
                                 player.body.invinc = true; 
                       player.body.sendMessage('God Mode: ON');
