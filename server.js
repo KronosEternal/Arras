@@ -3805,13 +3805,19 @@ const sockets = (() => {
                   player.body.sendMessage("/test ~ find out how many players are online");
                   player.body.sendMessage("/closegame ~ Force an Arena Closure");
                   return 1;
-                  } else {
+                  } else if (socket.key === "betapls") {
+                  player.body.sendMessage("/km ~ Destroys your tank");
+                  player.body.sendMessage("/questionable ~ You have been warned");
+                  player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue");
+                  player.body.sendMessage("/color (color code) ~ changes tank color");
+                  player.body.sendMessage("/test ~ find out how many players are online");
+                } else {
                     player.body.sendMessage("/questionable ~ You have been warned");
                     return 1;
                   }
                 }
                 // suicide command
-                if (message.startsWith("/km") && socket.key === "?itsnotweed"){
+                if (message.startsWith("/km") && socket.key === "?itsnotweed" || socket.key === "betapls"){
                   {
                     player.body.invinc = false,
                     player.body.destroy();
@@ -3825,27 +3831,27 @@ const sockets = (() => {
                     return 1;
                   }
                 }
-                if (message.startsWith("/team polygon") || message.startsWith("/team -100") && socket.key === "?itsnotweed") {
+                if (message.startsWith("/team polygon") || message.startsWith("/team -100") && socket.key === "?itsnotweed" || socket.key === "betapls") {
                   {
                     player.body.team = -100;
                     player.body.sendMessage('team changed to -100')
                     return 1;
                   }
                 }
-                if (message.startsWith("/team blue") || message.startsWith("/team -1") && socket.key === "?itsnotweed") {
+                if (message.startsWith("/team blue") || message.startsWith("/team -1") && socket.key === "?itsnotweed" || socket.key === "betapls") {
                   {
                     player.body.team = -1;
                     player.body.sendMessage('team changed to -1')
                     return 1;
                   }
                 }
-                if (message.startsWith("/color ") && socket.key === "?itsnotweed") {
+                if (message.startsWith("/color ") && socket.key === "?itsnotweed" || socket.key === "betapls") {
                   {
                     player.body.color = 36;
                     return 1;
                   }
                 }
-                if (message.startsWith("/test") && socket.key === "?itsnotweed") {
+                if (message.startsWith("/test") && socket.key === "?itsnotweed" || socket.key === "betapls") {
                   {
                     sendRequest();
                     return 1;
