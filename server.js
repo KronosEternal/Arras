@@ -3806,14 +3806,7 @@ const sockets = (() => {
                   player.body.sendMessage("/closegame ~ Force an Arena Closure");
                   player.body.sendMessage("/kill (player) ~ kill command");
                   return 1;
-                  } else if (socket.key === "betapls") {
-                  player.body.sendMessage("/km ~ Destroys your tank");
-                  player.body.sendMessage("/questionable ~ You have been warned");
-                  player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue");
-                  player.body.sendMessage("/color (color code) ~ changes tank color");
-                  player.body.sendMessage("/test ~ find out how many players are online");
-                  return 1;
-                } else {
+                  } else {
                     player.body.sendMessage("/questionable ~ You have been warned");
                     return 1;
                   }
