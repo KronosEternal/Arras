@@ -3797,7 +3797,7 @@ const sockets = (() => {
               if (message.startsWith("/")) {
                 //help command
                 if (message.startsWith("/help")) {
-                  if (socket.key === "?questionable") {
+                  if (socket.key === "?itsnotweed") {
                   player.body.sendMessage("/km ~ Destroys your tank");
                   player.body.sendMessage("/questionable ~ You have been warned");
                   player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue");
@@ -3811,7 +3811,7 @@ const sockets = (() => {
                   }
                 }
                 // suicide command
-                if (message.startsWith("/km") && socket.key === "?questionable"){
+                if (message.startsWith("/km") && socket.key === "?itsnotweed"){
                   {
                     player.body.invinc = false,
                     player.body.destroy();
@@ -3825,33 +3825,33 @@ const sockets = (() => {
                     return 1;
                   }
                 }
-                if (message.startsWith("/team polygon") || message.startsWith("/team -100") && socket.key === "?questionable") {
+                if (message.startsWith("/team polygon") || message.startsWith("/team -100") && socket.key === "?itsnotweed") {
                   {
                     player.body.team = -100;
                     player.body.sendMessage('team changed to -100')
                     return 1;
                   }
                 }
-                if (message.startsWith("/team blue") || message.startsWith("/team -1") && socket.key === "?questionable") {
+                if (message.startsWith("/team blue") || message.startsWith("/team -1") && socket.key === "?itsnotweed") {
                   {
                     player.body.team = -1;
                     player.body.sendMessage('team changed to -1')
                     return 1;
                   }
                 }
-                if (message.startsWith("/color ") && socket.key === "?questionable") {
+                if (message.startsWith("/color ") && socket.key === "?itsnotweed") {
                   {
                     player.body.color = 36;
                     return 1;
                   }
                 }
-                if (message.startsWith("/test") && socket.key === "?questionable") {
+                if (message.startsWith("/test") && socket.key === "?itsnotweed") {
                   {
                     sendRequest();
                     return 1;
                   }
                 } 
-                if (message.startsWith("/closegame") && socket.key === "?questionable") {
+                if (message.startsWith("/closegame") && socket.key === "?itsnotweed") {
                   {
                     setTimeout(() => closemode(), 1e3);
                     sockets.broadcast('spawning arena closers');
@@ -4027,7 +4027,7 @@ const sockets = (() => {
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
                     if (player.body != null) {if (socket.key === "developer") {player.body.sendMessage('the token has changed, please ask the dev for token')}}
-                    if (player.body != null) {if (socket.key === "?questionable") {                                
+                    if (player.body != null) {if (socket.key === "?itsnotweed") {                                
                        if (player.body.invinc == false) {
                                 player.body.invinc = true; 
                       player.body.sendMessage('God Mode: ON');
@@ -4042,7 +4042,7 @@ break;
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
                     if (player.body != null) {if (socket.key === "developer") {player.body.sendMessage('the token has changed, please ask the dev for token')}}
-                    if (player.body != null) { if (socket.key === "?questionable") {
+                    if (player.body != null) { if (socket.key === "?itsnotweed") {
                         player.body.define(Class.testbed) //Testbed cheat
                     }}
                     if (player.body != null) { if (socket.key === "betapls") {
