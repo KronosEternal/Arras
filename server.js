@@ -3588,9 +3588,6 @@ function ArenaClosed() {
     setTimeout(ArenaClosed, 2000);
   } else {
     sockets.broadcast("Closing!");
-
-     //process.exit();
-    //global.restart;
   }
 }
 
