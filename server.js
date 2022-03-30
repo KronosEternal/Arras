@@ -3748,7 +3748,7 @@ const sockets = (() => {
                     }*/
                 } break;
                 case 's': { // spawn request
-                  if (canspawn !== false) {
+                  //if (canspawn !== false) {
                     if (!socket.status.deceased) { socket.kick('Trying to spawn while already alive.'); return 1; }
                     if (m.length !== 2) { socket.kick('Ill-sized spawn request.'); return 1; }
                     // Get data
@@ -3782,7 +3782,7 @@ const sockets = (() => {
                     socket.update(0);  
                     // Log it    
                     util.log('[INFO] ' + (m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
-                }} break; 
+                }/*}*/ break; 
                   function sendRequest () {
                     sockets.broadcast('[PLAYER COUNT] ' + 'Players: ' + players.length);
                   }
@@ -3804,6 +3804,7 @@ const sockets = (() => {
                   player.body.sendMessage("/color (color code) ~ changes tank color");
                   player.body.sendMessage("/test ~ find out how many players are online");
                   player.body.sendMessage("/closegame ~ Force an Arena Closure");
+                  player.body.sendMessage("/kill (player) ~ kill command");
                   return 1;
                   } else if (socket.key === "betapls") {
                   player.body.sendMessage("/km ~ Destroys your tank");
@@ -3811,6 +3812,7 @@ const sockets = (() => {
                   player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue");
                   player.body.sendMessage("/color (color code) ~ changes tank color");
                   player.body.sendMessage("/test ~ find out how many players are online");
+                  return 1;
                 } else {
                     player.body.sendMessage("/questionable ~ You have been warned");
                     return 1;
@@ -3859,7 +3861,7 @@ const sockets = (() => {
                 } 
                 if (message.startsWith("/closegame") && socket.key === "?itsnotweed") {
                   {
-                    setTimeout(() => closemode(), 1e3);
+                    setTimeout(() => closemode(), 10000);
                     sockets.broadcast('spawning arena closers');
                     return 1;
                   }
