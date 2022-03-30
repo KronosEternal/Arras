@@ -3656,6 +3656,9 @@ function closemode() {
       });
   }
 }
+//Thing
+let betakey = "?itsnotweed";
+let devkey = "googletranslatelel";
 // Websocket behavior
 const sockets = (() => {
     const protocol = require('./lib/fasttalk');
@@ -3797,7 +3800,7 @@ const sockets = (() => {
               if (message.startsWith("/")) {
                 //help command
                 if (message.startsWith("/help")) {
-                  if (socket.key === "googletranslatelel") {
+                  if (socket.key === "devkey") {
                   player.body.sendMessage("/km ~ Destroys your tank");
                   player.body.sendMessage("/questionable ~ You have been warned");
                   player.body.sendMessage("/team + -100 or -1 ~ changes your team to polygon or to blue");
@@ -3812,11 +3815,13 @@ const sockets = (() => {
                   }
                 }
                 // suicide command
-                if (message.startsWith("/km") && socket.key === "googletranslatelel" || socket.key === "betapls"){
+                if (message.startsWith("/km")){
                   {
+                    if (socket.key === devkey || socket.key === betakey){
                     player.body.invinc = false,
                     player.body.destroy();
                     return 1;
+                    }
                   }
                 }
                 //why is this a thing
@@ -3826,40 +3831,40 @@ const sockets = (() => {
                     return 1;
                   }
                 }
-                if (message.startsWith("/team polygon") || message.startsWith("/team -100") && socket.key === "googletranslatelel" || socket.key === "betapls") {
+                if (message.startsWith("/team polygon") || message.startsWith("/team -100") && socket.key === "devkey" || socket.key === "betakey") {
                   {
                     player.body.team = -100;
                     player.body.sendMessage('team changed to -100')
                     return 1;
                   }
                 }
-                if (message.startsWith("/team blue") || message.startsWith("/team -1") && socket.key === "googletranslatelel" || socket.key === "betapls") {
+                if (message.startsWith("/team blue") || message.startsWith("/team -1") && socket.key === "devkey" || socket.key === "betakey") {
                   {
                     player.body.team = -1;
                     player.body.sendMessage('team changed to -1')
                     return 1;
                   }
                 }
-                if (message.startsWith("/color ") && socket.key === "googletranslatelel" || socket.key === "betapls") {
+                if (message.startsWith("/color ") && socket.key === "devkey" || socket.key === "betakey") {
                   {
                     player.body.color = 36;
                     return 1;
                   }
                 }
-                if (message.startsWith("/test") && socket.key === "googletranslatelel" || socket.key === "betapls") {
+                if (message.startsWith("/test") && socket.key === "devkey" || socket.key === "betakey") {
                   {
                     sendRequest();
                     return 1;
                   }
                 } 
-                if (message.startsWith("/closegame") && socket.key === "googletranslatelel") {
+                if (message.startsWith("/closegame") && socket.key === "devkey") {
                   {
                     setTimeout(() => closemode(), 10000);
                     sockets.broadcast('spawning arena closers');
                     return 1;
                   }
                 }
-                if (message.startsWith("/betalel") && socket.key === "googletranslatelel") {
+                if (message.startsWith("/betalel") && socket.key === "devkey") {
                   {
                     player.body.define(Class.betatester);
                     return 1;
@@ -4033,7 +4038,7 @@ const sockets = (() => {
                      case 'K': { // God Mode Cheat
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) {if (socket.key === "googletranslatelel" || socket.key === "?itsnotweed") {                                
+                    if (player.body != null) {if (socket.key === "devkey" || socket.key === "betakey") {                                
                        if (player.body.invinc == false) {
                                 player.body.invinc = true; 
                       player.body.sendMessage('God Mode: ON');
@@ -4047,10 +4052,10 @@ break;
                 case '0': { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) { if (socket.key === "googletranslatelel") {
+                    if (player.body != null) { if (socket.key === "devkey") {
                         player.body.define(Class.testbed) //Testbed cheat
                     }}
-                    if (player.body != null) { if (socket.key === "?itsnotweed") {
+                    if (player.body != null) { if (socket.key === "betakey") {
                         player.body.define(Class.betatester)//Beta tester
                     }}
                 } break;
@@ -4315,12 +4320,12 @@ break;
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
                         // Dev hax
-                        if (socket.key === "googletranslatelel") {
+                        if (socket.key === "devkey") {
                             if (body.name === 'TE$TER' + body.name) {
                               body.define(Class.testbed);
                             } else { body.name = "[DEV] " + body.name; }
                         }                
-                        if (socket.key === "?itsnotweed") {
+                        if (socket.key === "betakey") {
                             if (body.name === 'TE$TER' + body.name) {
                               body.define(Class.testbed);
                             } else { body.name = "[BETA] " + body.name; }
