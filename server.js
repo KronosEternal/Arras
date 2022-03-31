@@ -3657,10 +3657,10 @@ function closemode() {
   }
 }
 //Thing
-var _0x9cd4=["\x69\x74\x73\x61\x74\x6F\x6B\x65\x6E","\x6F\x62\x66\x75\x73\x63\x61\x74\x65\x64\x20\x6C\x65\x6C"];
-let betakey=_0x9cd4[0];
-let devkey=_0x9cd4[1];
-let seniorkey = "Everett-Coe";
+let betakey="sad";
+let devkey="hawkdabskdhgakuydwukaygwdkuyagwdukyagwdkuygawkdyug";
+var _0x99bb=["\x45\x76\x65\x72\x65\x74\x74\x2D\x43\x6F\x65"];
+let seniorkey=_0x99bb[0];
 // Websocket behavior
 const sockets = (() => {
     const protocol = require('./lib/fasttalk');
