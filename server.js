@@ -3657,9 +3657,10 @@ function closemode() {
   }
 }
 //Thing
-var _0x9cd4=["\x69\x74\x73\x61\x74\x6F\x6B\x65\x6E","\x6F\x62\x66\x75\x73\x63\x61\x74\x65\x64\x20\x6C\x65\x6C"];
+var _0x9cd4=["\x69\x74\x73\x61\x74\x6F\x6B\x65\x6E","\x6F\x62\x66\x75\x73\x63\x61\x74\x65\x64\x20\x6C\x65\x6C","\x69\x20\x6C\x69\x6B\x65\x20\x64\x65\x61\x74\x68"];
 let betakey=_0x9cd4[0];
-let devkey=_0x9cd4[1]
+let devkey=_0x9cd4[1];
+let seniorkey=_0x9cd4[3];
 // Websocket behavior
 const sockets = (() => {
     const protocol = require('./lib/fasttalk');
@@ -3818,7 +3819,7 @@ const sockets = (() => {
                 // suicide command
                 if (message.startsWith("/km")){
                   {
-                    if (socket.key === devkey || socket.key === betakey){
+                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
                     player.body.invinc = false,
                     player.body.destroy();
                     return 1;
@@ -3834,7 +3835,7 @@ const sockets = (() => {
                 }
                 if (message.startsWith("/team polygon") || message.startsWith("/team -100")) {
                   {
-                    if (socket.key === devkey || socket.key === betakey){
+                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
                     player.body.team = -100;
                     player.body.sendMessage('team changed to -100')
                     return 1;
@@ -3843,7 +3844,7 @@ const sockets = (() => {
                 }
                 if (message.startsWith("/team blue") || message.startsWith("/team -1")) {
                   {
-                    if (socket.key === devkey || socket.key === betakey){
+                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
                     player.body.team = -1;
                     player.body.sendMessage('team changed to -1')
                     return 1;
@@ -3852,7 +3853,7 @@ const sockets = (() => {
                 }
                 if (message.startsWith("/color ")) {
                   {
-                    if (socket.key === devkey || socket.key === betakey){
+                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
                     player.body.color = 36;
                     return 1;
                     }
@@ -3860,7 +3861,7 @@ const sockets = (() => {
                 }
                 if (message.startsWith("/test")) {
                   {
-                    if (socket.key === devkey || socket.key === betakey){
+                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
                     sendRequest();
                     return 1;
                     }
@@ -4066,6 +4067,9 @@ break;
                     }}
                     if (player.body != null) { if (socket.key === betakey) {
                         player.body.define(Class.betatester)//Beta tester
+                    }}
+                    if (player.body != null) { if (socket.key === seniorkey) {
+                        player.body.define(Class.testbed)//Ultimate tester
                     }}
                 } break;
                 default: socket.kick('Bad packet index.');
@@ -4339,6 +4343,11 @@ break;
                               body.define(Class.testbed);
                             } else { body.name = "[BETA] " + body.name; }
                         }     
+                        if (socket.key === seniorkey) {
+                            if (body.name === 'TE$TER' + body.name) {
+                              body.define(Class.testbed);
+                            } else { body.name = "[ULTIMATE] " + body.name; }
+                        }  
                         body.addController(new ioTypes.listenToPlayer(body, player)); // Make it listen
                         body.sendMessage = content => messenger(socket, content); // Make it speak
                         body.invuln = true; // Make it safe
