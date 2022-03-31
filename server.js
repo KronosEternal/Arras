@@ -3611,7 +3611,7 @@ function closemode() {
     canspawn = false;
     ArenaClosed();
     if (room.gameMode === "2tdm")
-      room["suss"].forEach(loc => {
+      room["bas4"].forEach(loc => {
         spawnarenacloser(
           loc,
           -0,
@@ -3622,7 +3622,7 @@ function closemode() {
         );
       });
     if (room.gameMode === "edge")
-      room["suss"].forEach(loc => {
+      room["bas4"].forEach(loc => {
         spawnarenacloser(
           loc,
           -0,
@@ -3633,7 +3633,7 @@ function closemode() {
         );
       });
     if (room.gameMode === "edge")
-      room["suss"].forEach(loc => {
+      room["bas4"].forEach(loc => {
         spawnarenacloser(
           loc,
           -0,
@@ -3644,7 +3644,7 @@ function closemode() {
         );
       });
     if (room.gameMode === "edge")
-      room["suss"].forEach(loc => {
+      room["bas4"].forEach(loc => {
         spawnarenacloser(
           loc,
           -0,
