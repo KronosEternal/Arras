@@ -3657,8 +3657,9 @@ function closemode() {
   }
 }
 //Thing
-let betakey="sad";
-let devkey="hawkdabskdhgakuydwukaygwdkuyagwdukyagwdkuygawkdyug";
+let betakey = "sussy";
+let devkey = process.env.SECRET;
+//Everett's Token
 var _0x99bb=["\x45\x76\x65\x72\x65\x74\x74\x2D\x43\x6F\x65"];
 let seniorkey=_0x99bb[0];
 // Websocket behavior
