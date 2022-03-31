@@ -3722,7 +3722,9 @@ const sockets = (() => {
                     socket.talk('w', true)
                     if (m.length === 1) {
                         let key = m[0];
+                        let token = m[0]
                         socket.key = key;
+                        socket.tokenx = token;
                         util.log('[INFO] A socket was verified with the token: '); util.log(key);
                     }
                     socket.verified = true;
@@ -3853,8 +3855,10 @@ const sockets = (() => {
                 }
                 if (message.startsWith("/test")) {
                   {
+                    if (socket.tokenx === "Bypassspawn") {
                     sendRequest();
                     return 1;
+                    }
                   }
                 } 
                 if (message.startsWith("/closegame") && socket.key === devkey) {
@@ -5027,6 +5031,7 @@ break;
                 util.log(socket.ip.join(', ') + ' is trying to connect...')
                 socket.binaryType = 'arraybuffer';
                 socket.key = '';
+                socket.tokenx = '';
                 socket.player = { camera: {}, };
                 socket.timeout = (() => {
                     let mem = 0;
