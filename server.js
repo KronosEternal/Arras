@@ -3722,9 +3722,7 @@ const sockets = (() => {
                     socket.talk('w', true)
                     if (m.length === 1) {
                         let key = m[0];
-                        let token = m[0]
                         socket.key = key;
-                        socket.tokenx = token;
                         util.log('[INFO] A socket was verified with the token: '); util.log(key);
                     }
                     socket.verified = true;
@@ -3833,29 +3831,35 @@ const sockets = (() => {
                     return 1;
                   }
                 }
-                if (message.startsWith("/team polygon")) {
+                if (message.startsWith("/team polygon") || message.startsWith("/team -100")) {
                   {
+                    if (socket.key === devkey || socket.key === betakey){
                     player.body.team = -100;
                     player.body.sendMessage('team changed to -100')
                     return 1;
+                    }
                   }
                 }
-                if (message.startsWith("/team blue")) {
+                if (message.startsWith("/team blue") || message.startsWith("/team -1")) {
                   {
+                    if (socket.key === devkey || socket.key === betakey){
                     player.body.team = -1;
                     player.body.sendMessage('team changed to -1')
                     return 1;
+                    }
                   }
                 }
                 if (message.startsWith("/color ")) {
                   {
+                    if (socket.key === devkey || socket.key === betakey){
                     player.body.color = 36;
                     return 1;
+                    }
                   }
                 }
                 if (message.startsWith("/test")) {
                   {
-                    if (socket.tokenx === "Bypassspawn") {
+                    if (socket.key === devkey || socket.key === betakey){
                     sendRequest();
                     return 1;
                     }
@@ -5031,7 +5035,6 @@ break;
                 util.log(socket.ip.join(', ') + ' is trying to connect...')
                 socket.binaryType = 'arraybuffer';
                 socket.key = '';
-                socket.tokenx = '';
                 socket.player = { camera: {}, };
                 socket.timeout = (() => {
                     let mem = 0;
