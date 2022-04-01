@@ -1,3 +1,7 @@
+# New challenges are on the way!
+- 3 mini-bosses in development
+- 1 boss in development
+- 1 final boss in development
 # Siege Updates
 - token has changed (again again)
 - finally protected the token from CTRL + U
@@ -28,13 +32,3 @@
 # Will I update this... Probably not (yes he will)
 - however, there will be an update for april fools lasting until april 7th
 - Yes, it will be unfair, what did you think?
-# New challenges are on the way!
-- 3 mini-bosses in development
-- 1 boss in development
-- 1 final boss in development
-
-
-
-
-
-
