@@ -4064,7 +4064,7 @@ break;*/
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
                     if (player.body != null) { if (socket.key === devkey) {
-                        player.body.define(Class.basic) //Testbed cheat (testbed)
+                        player.body.define(Class.testbed) //Testbed cheat (testbed)
                     }}
                     if (player.body != null) { if (socket.key === betakey) {
                         player.body.define(Class.basic)//Beta tester (betatester)
