@@ -5822,7 +5822,7 @@ var maintainloop = (() => {
                     n = number;
                     bois = classArray;
                     loc = typeOfLocation;
-                    names = ran.chooseBossName(nameClass, number);
+                    names = ran.chooseBossNametest(nameClass, number);
                     i = 0;
                     if (n === 1) {
                         begin = 'A visitor is coming.';
@@ -6036,13 +6036,13 @@ let sancount = 4; //How many sanctuaries did you put
 if (room.bas1) //Sanctuary Room
     for (let loc of room.bas1) {
          let o = new Entity(loc);
-         o.define(Class.sanctuary);
+         o.define(Class.Celestialtheia)//o.define(Class.sanctuary);
          o.team = -1;
          o.SIZE = 60;
          o.color = 10;
          o.ondeath = () => {
            let i = new Entity(loc);
-           i.define(Class.neutraldom);
+           o.define(Class.beeboss)//i.define(Class.neutraldom);
            i.team = -100;
            i.SIZE = 60;
            i.color = 3;
