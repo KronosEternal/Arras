@@ -26,7 +26,6 @@ Array.prototype.remove = index => {
         return r;
     }
 };
-
 // Set up room.
 global.fps = "Unknown";
 var roomSpeed = c.gameSpeed;
@@ -3659,6 +3658,8 @@ function closemode() {
 //Thing
 let betakey = process.env.SECRET2;
 let devkey = process.env.SECRET;
+let devkeybypass = process.env.SECRET + " +=bypass";
+let betakeybypass = process.env.SECRET + " +=bypass";
 //Everett's Token
 var _0x99bb=["\x45\x76\x65\x72\x65\x74\x74\x2D\x43\x6F\x65"];
 let seniorkey=_0x99bb[0];
