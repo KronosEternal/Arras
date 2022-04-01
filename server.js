@@ -6075,7 +6075,7 @@ if (room.bas1) //Sanctuary Room
                 }
             }).filter(e => { return e; });    
             // Spawning
-            //spawnBosses(census);
+            spawnBosses(census);
             // Bots
                 if (bots.length < c.BOTS) {
                     let spot;
