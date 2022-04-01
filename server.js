@@ -4046,7 +4046,7 @@ const sockets = (() => {
                         player.body.refreshBodyAttributes();
                     } }
                 } break;
-                     case 'K': { // God Mode Cheat 
+                     /*case 'K': { // God Mode Cheat 
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
                     if (player.body != null) {if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey) {                                
@@ -4058,7 +4058,7 @@ const sockets = (() => {
                 player.body.sendMessage('God Mode: OFF');
                 }} else {
 player.body.sendMessage('You are not allowed to turn on God Mode.')}}}   
-break;
+break;*/
                 
                 case '0': { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
@@ -5822,7 +5822,7 @@ var maintainloop = (() => {
                     n = number;
                     bois = classArray;
                     loc = typeOfLocation;
-                    names = ran.chooseBossNametest(nameClass);
+                    names = ran.chooseBossName(nameClass, number);
                     i = 0;
                     if (n === 1) {
                         begin = 'A visitor is coming.';
@@ -6036,13 +6036,13 @@ let sancount = 4; //How many sanctuaries did you put
 if (room.bas1) //Sanctuary Room
     for (let loc of room.bas1) {
          let o = new Entity(loc);
-         o.define(Class.mini_ac);//o.define(Class.sanctuary);
+         o.define(Class.yessanc);//o.define(Class.sanctuary);
          o.team = -1;
          o.SIZE = 60;
          o.color = 10;
          o.ondeath = () => {
            let i = new Entity(loc);
-           o.define(Class.anni)//i.define(Class.neutraldom);
+           i.define(Class.anni)//i.define(Class.neutraldom);
            i.team = -100;
            i.SIZE = 60;
            i.color = 3;
@@ -6056,7 +6056,7 @@ if (room.bas1) //Sanctuary Room
             }
            i.ondeath = () => {
              let e = new Entity(loc);
-             e.define(Class.mini_ac);
+             e.define(Class.yessanc);//e.define(Class.sanctuary)
              e.team = -1;
              e.SIZE = 60;
              e.color = 10;
