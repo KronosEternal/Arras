@@ -5850,14 +5850,22 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...' + Class);
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(1, 1)) {
+                switch (ran.chooseChance(1, 1, 1, 1)) {
                     case 0: 
                         choice = [[Class.ragnarok, Class.legionarycrasher, Class.Celestialeternal], 1, 'a', 'bas3'];
-                        sockets.broadcast('The power is growing!');
+                        sockets.broadcast('Reality Comes to an End as ' + Class + ' has Arrived!');
                         break;
                     case 1: 
                         choice = [[Class.Celestialnyx, Class.Celestialpaladin, Class.Celestialzaphkiel], 2, 'a', 'bas3'];
-                        sockets.broadcast('the world splits open!');
+                        sockets.broadcast('The World Trembles as the Celestials are reborn anew!');
+                        break;
+                    case 3: 
+                        choice = [[Class.miniac], 1, 'a', 'bas3'];
+                        sockets.broadcast('A fraction of the power of the Arena Nubs!');
+                        break;
+                    case 4: 
+                        choice = [[Class.miniac], 5, 'a', 'bas3'];
+                        sockets.broadcast('there are... More?');
                         break;
 
                 }
