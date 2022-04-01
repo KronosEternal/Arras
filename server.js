@@ -6036,7 +6036,7 @@ let sancount = 4; //How many sanctuaries did you put
 if (room.bas1) //Sanctuary Room
     for (let loc of room.bas1) {
          let o = new Entity(loc);
-         o.define(Class.Celestialtheia)//o.define(Class.sanctuary);
+         o.define(Class.yesasanc)//o.define(Class.sanctuary);
          o.team = -1;
          o.SIZE = 60;
          o.color = 10;
