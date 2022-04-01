@@ -5822,7 +5822,7 @@ var maintainloop = (() => {
                     n = number;
                     bois = classArray;
                     loc = typeOfLocation;
-                    names = ran.chooseBossNametest(nameClass, number);
+                    names = ran.chooseBossNametest(nameClass);
                     i = 0;
                     if (n === 1) {
                         begin = 'A visitor is coming.';
