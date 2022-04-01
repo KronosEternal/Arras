@@ -4046,10 +4046,10 @@ const sockets = (() => {
                         player.body.refreshBodyAttributes();
                     } }
                 } break;
-                     /*case 'K': { // God Mode Cheat
+                     case 'K': { // God Mode Cheat 
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) {if (socket.key === devkey || socket.key === betakey) {                                
+                    if (player.body != null) {if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey) {                                
                        if (player.body.invinc == false) {
                                 player.body.invinc = true; 
                       player.body.sendMessage('God Mode: ON');
@@ -4058,7 +4058,7 @@ const sockets = (() => {
                 player.body.sendMessage('God Mode: OFF');
                 }} else {
 player.body.sendMessage('You are not allowed to turn on God Mode.')}}}   
-break;*/
+break;
                 
                 case '0': { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
