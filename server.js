@@ -3755,7 +3755,7 @@ const sockets = (() => {
                     }*/
                 } break;
                 case 's': { // spawn request
-                  //if (canspawn !== false) {
+                  if (canspawn !== false && socket.key !== devkeybypass) {
                     if (!socket.status.deceased) { socket.kick('Trying to spawn while already alive.'); return 1; }
                     if (m.length !== 2) { socket.kick('Ill-sized spawn request.'); return 1; }
                     // Get data
@@ -3789,7 +3789,7 @@ const sockets = (() => {
                     socket.update(0);  
                     // Log it    
                     util.log('[INFO] ' + (m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
-                }/*}*/ break; 
+                }} break; 
                   function sendRequest () {
                     sockets.broadcast('[PLAYER COUNT] ' + 'Players: ' + players.length);
                   }
@@ -6052,7 +6052,7 @@ if (room.bas1) //Sanctuary Room
            util.log("[INFO]" + sancount + " Sanctuaries Left.");
            if (sancount === 0) {
             canspawn = false;
-             sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
+            sockets.broadcast("All Sanctuaries have been Destroyed, Your team will lose in 60 seconds"); 
            timeThing();
             }
            i.ondeath = () => {
@@ -6064,7 +6064,7 @@ if (room.bas1) //Sanctuary Room
              sancount += 1;
              sockets.broadcast("A sanctuary has been restored!"); //+ sancount + " Sanctuaries Alive.");
              util.log("[INFO]" + sancount + " Sanctuaries Left.");
-             if (sancount === 1){ stopTimer(); if(reset === false) {canspawn = true;}}
+             if (sancount === 1){ stopTimer(); if(reset === true) {canspawn = true;}}
              e.ondeath = o.ondeath;
              o = e;
           };
