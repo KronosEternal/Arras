@@ -6036,13 +6036,13 @@ let sancount = 4; //How many sanctuaries did you put
 if (room.bas1) //Sanctuary Room
     for (let loc of room.bas1) {
          let o = new Entity(loc);
-         o.define(Class.yesasanc)//o.define(Class.sanctuary);
+         o.define(Class.mini_ac);//o.define(Class.sanctuary);
          o.team = -1;
          o.SIZE = 60;
          o.color = 10;
          o.ondeath = () => {
            let i = new Entity(loc);
-           o.define(Class.beeboss)//i.define(Class.neutraldom);
+           o.define(Class.anni)//i.define(Class.neutraldom);
            i.team = -100;
            i.SIZE = 60;
            i.color = 3;
@@ -6056,7 +6056,7 @@ if (room.bas1) //Sanctuary Room
             }
            i.ondeath = () => {
              let e = new Entity(loc);
-             e.define(Class.sanctuary);
+             e.define(Class.mini_ac);
              e.team = -1;
              e.SIZE = 60;
              e.color = 10;
