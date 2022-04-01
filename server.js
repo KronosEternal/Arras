@@ -4046,7 +4046,7 @@ const sockets = (() => {
                         player.body.refreshBodyAttributes();
                     } }
                 } break;
-                     case 'K': { // God Mode Cheat
+                     /*case 'K': { // God Mode Cheat
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
                     if (player.body != null) {if (socket.key === devkey || socket.key === betakey) {                                
@@ -4058,19 +4058,19 @@ const sockets = (() => {
                 player.body.sendMessage('God Mode: OFF');
                 }} else {
 player.body.sendMessage('You are not allowed to turn on God Mode.')}}}   
-break;
+break;*/
                 
                 case '0': { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
                     if (player.body != null) { if (socket.key === devkey) {
-                        player.body.define(Class.testbed) //Testbed cheat
+                        player.body.define(Class.basic) //Testbed cheat (testbed)
                     }}
                     if (player.body != null) { if (socket.key === betakey) {
-                        player.body.define(Class.betatester)//Beta tester
+                        player.body.define(Class.basic)//Beta tester (betatester)
                     }}
                     if (player.body != null) { if (socket.key === seniorkey) {
-                        player.body.define(Class.testbed)//Ultimate tester
+                        player.body.define(Class.basic)//Ultimate tester (testbed)
                     }}
                 } break;
                 default: socket.kick('Bad packet index.');
@@ -5797,7 +5797,77 @@ var maintainloop = (() => {
     }
     placethiccbigWalls()
   // Spawning functions
-  
+      let spawnBosses = (() => {
+        let timer = 0;
+        let boss = (() => {
+            let i = 0,
+                names = [],
+                bois = [Class.egg],
+                n = 0,
+                begin = 'yo some shit is about to move to a lower position',
+                arrival = 'Something happened lol u should probably let Neph know this broke',
+                loc = 'norm';
+            let spawn = () => {
+                let spot, m = 0;
+                do {
+                    spot = room.randomType(loc); m++;
+                } while (dirtyCheck(spot, 500) && m<30);
+                let o = new Entity(spot);
+                    o.define(ran.choose(bois));
+                    o.team = -100;
+                    o.name = names[i++];
+            };
+            return {
+                prepareToSpawn: (classArray, number, nameClass, typeOfLocation = 'norm') => {
+                    n = number;
+                    bois = classArray;
+                    loc = typeOfLocation;
+                    names = ran.chooseBossName(nameClass, number);
+                    i = 0;
+                    if (n === 1) {
+                        begin = 'A visitor is coming.';
+                        arrival = names[0] + ' has arrived.'; 
+                    } else {
+                        begin = 'Visitors are coming.';
+                        arrival = '';
+                        for (let i=0; i<n-2; i++) arrival += names[i] + ', ';
+                        arrival += names[n-2] + ' and ' + names[n-1] + ' have arrived.';
+                    }
+                },
+                spawn: () => {
+                    sockets.broadcast(begin);
+                    for (let i=0; i<n; i++) {
+                        setTimeout(spawn, ran.randomRange(3500, 5000));
+                    }
+                    // Wrap things up.
+                    setTimeout(() => sockets.broadcast(arrival), 5000);
+                    util.log('[SPAWN] ' + arrival);
+                },
+            };
+        })();
+        return census => {
+            if (timer > 70 && ran.dice(160 - timer)) {
+                util.log('[SPAWN] Preparing to spawn...' + Class);
+                timer = 0;
+                let choice = [];
+                switch (ran.chooseChance(1, 1)) {
+                    case 0: 
+                        choice = [[Class.ragnarok, Class.legionarycrasher, Class.Celestialeternal], 1, 'a', 'bas3'];
+                        sockets.broadcast('The power is growing!');
+                        break;
+                    case 1: 
+                        choice = [[Class.Celestialnyx, Class.Celestialpaladin, Class.Celestialzaphkiel], 2, 'a', 'bas3'];
+                        sockets.broadcast('the world splits open!');
+                        break;
+
+                }
+                boss.prepareToSpawn(...choice);
+                setTimeout(boss.spawn, 300);
+                // Set the timeout for the spawn functions
+            } else if (!census.miniboss) timer++;
+        };
+    })();
+  /*
 let spawnBosses = (() => {
         let wave = 1; //Define Wave.
         let timer = 0;
@@ -5862,7 +5932,7 @@ let spawnBosses = (() => {
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
-    })();    
+    })();*/
 // Siege Boss Spawning (to be reworked) ^
 //working wave spawner -->
   function Wavespawn(){
