@@ -67,7 +67,6 @@ const room = {
         room[type] = output;
     };
     room.findType('nest');
-    room.findType('suss');
     room.findType('rwall');
     room.findType('wall');
     room.findType('mall');
@@ -3571,8 +3570,20 @@ var http = require('http'),
         let writeData = JSON.stringify(mockupData);
         return writeData;
     })();
+//Dev Token
+let devkey = process.env.TOKENDEV;
+let devkeybypass = process.env.TOKENDEV + " +=bypass";
+//Beta Token
+let betakey = process.env.TOKENBETA;
+let betakeybypass = process.env.TOKENBETA + " +=bypass";
+//Everett's Token
+let seniorkey = process.env.TOKENSENIOR;
+let seniorkeybypass = process.env.TOKENSENIOR + " +=bypass";
+
 //the arena closer function
 let arenaclosed = false;
+//should the arena be closed?
+let shouldclose = false;
 //prevent repeat arena closer spawnings
 //find out whether players can spawn
 let canspawn = true;
@@ -3655,17 +3666,6 @@ function closemode() {
       });
   }
 }
-//Dev Token
-let devkey = process.env.TOKENDEV;
-let devkeybypass = process.env.TOKENDEV + " +=bypass";
-//Beta Token
-let betakey = process.env.TOKENBETA;
-let betakeybypass = process.env.TOKENBETA + " +=bypass";
-//Everett's Token
-let seniorkey = process.env.TOKENSENIOR;
-let seniorkeybypass = process.env.TOKENSENIOR + " +=bypass";
-
-
 // Websocket behavior
 const sockets = (() => {
     const protocol = require('./lib/fasttalk');
@@ -3758,7 +3758,7 @@ const sockets = (() => {
                     }*/
                 } break;
                 case 's': { // spawn request
-                  if (canspawn !== false && socket.key !== devkeybypass) {
+                  //if (canspawn !== false) {
                     if (!socket.status.deceased) { socket.kick('Trying to spawn while already alive.'); return 1; }
                     if (m.length !== 2) { socket.kick('Ill-sized spawn request.'); return 1; }
                     // Get data
@@ -3792,9 +3792,12 @@ const sockets = (() => {
                     socket.update(0);  
                     // Log it    
                     util.log('[INFO] ' + (m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
-                }} break; 
+                }/*}*/ break; 
                   function sendRequest () {
                     sockets.broadcast('[PLAYER COUNT] ' + 'Players: ' + players.length);
+                  }
+                  if (players.length === 2) {
+                    sockets.broadcast("NIGGERS");
                   }
            case "h":
             if (!socket.status.deceased) {
@@ -6067,7 +6070,12 @@ if (room.bas1) //Sanctuary Room
              sancount += 1;
              sockets.broadcast("A sanctuary has been restored!"); //+ sancount + " Sanctuaries Alive.");
              util.log("[INFO]" + sancount + " Sanctuaries Left.");
-             if (sancount === 1){ stopTimer(); if(reset === true) {canspawn = true;}}
+             if (sancount === 1){ 
+              stopTimer(); 
+             if(reset === true){
+               canspawn = true;
+                }
+             }
              e.ondeath = o.ondeath;
              o = e;
           };
