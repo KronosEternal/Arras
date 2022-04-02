@@ -1,8 +1,10 @@
 # Siege Updates
 
+- fixed class tree, press T to open
 - improved targeting system
 - S M O O T H [AI] targeting, rather than spinning around faster than 8000 DPI, ai controls now lock on to the target smoothly rather than flicking from target to target
 - spawn bypass, if you have a valid token, add += bypass to the end of it to bypass spawn prevention during arena closing or any other event that prevents you from spawning normally (this doesnt fully work yet, use with caution)
+- added new boss(dev only)
 
 # New Voting Event!
 
