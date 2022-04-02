@@ -2567,27 +2567,17 @@ class Entity {
         }
         if (set.UPGRADES_TIER_1 != null) { 
             set.UPGRADES_TIER_1.forEach((e) => {
-                this.upgrades.push({ class: e, level: c.TIER_1, index: e.index,});
+                this.upgrades.push({ class: e, tier: 1, level: c.TIER_1, index: e.index });
             });
         }
         if (set.UPGRADES_TIER_2 != null) { 
             set.UPGRADES_TIER_2.forEach((e) => {
-                this.upgrades.push({ class: e, level: c.TIER_2, index: e.index,});
+                this.upgrades.push({ class: e, tier: 2, level: c.TIER_2, index: e.index });
             });
         }
         if (set.UPGRADES_TIER_3 != null) { 
             set.UPGRADES_TIER_3.forEach((e) => {
-                this.upgrades.push({ class: e, level: c.TIER_3, index: e.index,});
-            });
-        }
-        if (set.UPGRADES_TIER_4 != null) { 
-            set.UPGRADES_TIER_4.forEach((e) => {
-                this.upgrades.push({ class: e, level: c.TIER_4, index: e.index,});
-            });
-        }      
-        if (set.UPGRADES_TIER_5 != null) { 
-            set.UPGRADES_TIER_5.forEach((e) => {
-                this.upgrades.push({ class: e, level: c.TIER_5, index: e.index,});
+                this.upgrades.push({ class: e, tier: 3, level: c.TIER_3, index: e.index });
             });
         }
         if (set.SIZE != null) {
@@ -3340,6 +3330,7 @@ var http = require('http'),
                 layer: e.layer,
                 statnames: e.settings.skillNames,
                 position: positionInfo,
+                upgrades: e.upgrades.map(r => ({ tier: r.tier, index: r.index })),
                 guns: e.guns.map(function(gun) {
                     return {
                         offset: rounder(gun.offset),
