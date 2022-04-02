@@ -3655,14 +3655,17 @@ function closemode() {
       });
   }
 }
-//Thing
-let betakey = process.env.SECRET2;
-let devkey = process.env.SECRET;
-let devkeybypass = process.env.SECRET + " +=bypass";
-let betakeybypass = process.env.SECRET + " +=bypass";
+//Dev Token
+let devkey = process.env.TOKENDEV;
+let devkeybypass = process.env.TOKENDEV + " +=bypass";
+//Beta Token
+let betakey = process.env.TOKENBETA;
+let betakeybypass = process.env.TOKENBETA + " +=bypass";
 //Everett's Token
-var _0x99bb=["\x45\x76\x65\x72\x65\x74\x74\x2D\x43\x6F\x65"];
-let seniorkey=_0x99bb[0];
+let seniorkey = process.env.TOKENSENIOR;
+let seniorkeybypass = process.env.TOKENSENIOR + " +=bypass";
+
+
 // Websocket behavior
 const sockets = (() => {
     const protocol = require('./lib/fasttalk');
