@@ -1,5 +1,12 @@
 # Siege Updates
 
+- changed burning ring of fires name to meteor
+- added special testbed
+- ended the april fools event
+- moved some tanks to misc
+
+# Siege Updates
+
 - fixed class tree, press T to open
 - improved targeting system
 - S M O O T H [AI] targeting, rather than spinning around faster than 8000 DPI, ai controls now lock on to the target smoothly rather than flicking from target to target

@@ -2862,6 +2862,10 @@ class Entity {
             this.SIZE += 1.34;
             this.maxSpeed = this.topSpeed;
             break;
+        case "grow2":
+            this.SIZE += 1.63;
+            this.maxSpeed = this.topSpeed;
+            break;
         case "shrink":
             if (this.SIZE > 1) { //Make sure minimum size is 1 to prevent errors :)
             this.SIZE -= 1.3;
@@ -5789,85 +5793,6 @@ var maintainloop = (() => {
     }
     placethiccbigWalls()
   // Spawning functions
-      let spawnBosses = (() => {
-        let timer = 0;
-        let boss = (() => {
-            let i = 0,
-                names = [],
-                bois = [Class.egg],
-                n = 0,
-                begin = 'yo some shit is about to move to a lower position',
-                arrival = 'Something happened lol u should probably let Neph know this broke',
-                loc = 'norm';
-            let spawn = () => {
-                let spot, m = 0;
-                do {
-                    spot = room.randomType(loc); m++;
-                } while (dirtyCheck(spot, 500) && m<30);
-                let o = new Entity(spot);
-                    o.define(ran.choose(bois));
-                    o.team = -100;
-                    o.name = names[i++];
-            };
-            return {
-                prepareToSpawn: (classArray, number, nameClass, typeOfLocation = 'norm') => {
-                    n = number;
-                    bois = classArray;
-                    loc = typeOfLocation;
-                    names = ran.chooseBossName(nameClass, number);
-                    i = 0;
-                    if (n === 1) {
-                        begin = 'A visitor is coming.';
-                        arrival = names[0] + ' has arrived.'; 
-                    } else {
-                        begin = 'Visitors are coming.';
-                        arrival = '';
-                        for (let i=0; i<n-2; i++) arrival += names[i] + ', ';
-                        arrival += names[n-2] + ' and ' + names[n-1] + ' have arrived.';
-                    }
-                },
-                spawn: () => {
-                    sockets.broadcast(begin);
-                    for (let i=0; i<n; i++) {
-                        setTimeout(spawn, ran.randomRange(3500, 5000));
-                    }
-                    // Wrap things up.
-                    setTimeout(() => sockets.broadcast(arrival), 5000);
-                    util.log('[SPAWN] ' + arrival);
-                },
-            };
-        })();
-        return census => {
-            if (timer > 70 && ran.dice(160 - timer)) {
-                util.log('[SPAWN] Preparing to spawn...' + Class);
-                timer = 0;
-                let choice = [];
-                switch (ran.chooseChance(1, 1, 1, 1)) {
-                    case 0: 
-                        choice = [[Class.ragnarok, Class.legionarycrasher, Class.Celestialeternal], 1, 'a', 'bas3'];
-                        sockets.broadcast('Reality Comes to an End as finals are Arriving!');
-                        break;
-                    case 1: 
-                        choice = [[Class.Celestialnyx, Class.Celestialpaladin, Class.Celestialzaphkiel], 2, 'a', 'bas3'];
-                        sockets.broadcast('The World Trembles as the Celestials are reborn anew!');
-                        break;
-                    case 3: 
-                        choice = [[Class.mini_ac], 1, 'a', 'bas3'];
-                        sockets.broadcast('A fraction of the power of the Arena Nubs!');
-                        break;
-                    case 4: 
-                        choice = [[Class.mini_ac], 5, 'a', 'bas3'];
-                        sockets.broadcast('there are... More?');
-                        break;
-
-                }
-                boss.prepareToSpawn(...choice);
-                setTimeout(boss.spawn, 300);
-                // Set the timeout for the spawn functions
-            } else if (!census.miniboss) timer++;
-        };
-    })();
-  /*
 let spawnBosses = (() => {
         let wave = 1; //Define Wave.
         let timer = 0;
@@ -5932,7 +5857,7 @@ let spawnBosses = (() => {
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
-    })();*/
+    })();
 // Siege Boss Spawning (to be reworked) ^
 //working wave spawner -->
   function Wavespawn(){
@@ -5941,12 +5866,13 @@ let spawnBosses = (() => {
 
 let siegeSpawning = (() => {
     let wave = 1; //Define Wave
-    let timer = 0 //Time between waves
+    let timer = 0; //Time between waves
     
     let elite = 21;
     let polygon = 21;
     let celes = 21;
     let final = 21;
+    let custom = 21;
     
   })();
   ////////Timer function for arena losing
@@ -6080,7 +6006,7 @@ if (room.bas1) //Sanctuary Room
                 }
             }).filter(e => { return e; });    
             // Spawning
-            spawnBosses(census);
+            //spawnBosses(census);
             // Bots
                 if (bots.length < c.BOTS) {
                     let spot;
