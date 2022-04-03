@@ -24,8 +24,8 @@
 
 # A P R I L F O O L S
 
-- disabled tokens for god mode and testbed temporarily
-- try using testbed, you will crash your game lel
+- disabled tokens for god mode and respective classes temporarily
+- try using token, you will crash your game lel
 - sanctuaries can move and attack
 - BOSSES
 - more doom

@@ -4044,7 +4044,7 @@ const sockets = (() => {
                         player.body.refreshBodyAttributes();
                     } }
                 } break;
-                     /*case 'K': { // God Mode Cheat 
+                     case 'K': { // God Mode Cheat 
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
                     if (player.body != null) {if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey) {                                
@@ -4056,19 +4056,19 @@ const sockets = (() => {
                 player.body.sendMessage('God Mode: OFF');
                 }} else {
 player.body.sendMessage('You are not allowed to turn on God Mode.')}}}   
-break;*/
+break;
                 
-                case '0': { // testbed cheat
-                    if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
+                case '0': { // token classes
+                    if (m.length !== 0) { socket.kick('Ill-sized thing request.'); return 1; }
                     // cheatingbois
                     if (player.body != null) { if (socket.key === devkey) {
-                        player.body.define(Class.testbed) //Testbed cheat (testbed)
+                        player.body.define(Class.testbed) //Developer Class
                     }}
                     if (player.body != null) { if (socket.key === betakey) {
-                        player.body.define(Class.basic)//Beta tester (betatester)
+                        player.body.define(Class.betatester)//Beta tester (betatester)
                     }}
                     if (player.body != null) { if (socket.key === seniorkey) {
-                        player.body.define(Class.basic)//Ultimate tester (testbed)
+                        player.body.define(Class.seniorbed)//Ultimate tester (seniorbed)
                     }}
                 } break;
                 default: socket.kick('Bad packet index.');
@@ -4333,19 +4333,13 @@ break;*/
                         body.name = name; // Define the name
                         // Dev hax
                         if (socket.key === devkey) {
-                            if (body.name === 'TE$TER' + body.name) {
-                              body.define(Class.testbed);
-                            } else { body.name = "[DEV] " + body.name; }
+                        body.name = "[DEV] " + body.name;
                         }                
                         if (socket.key === betakey) {
-                            if (body.name === 'TE$TER' + body.name) {
-                              body.define(Class.testbed);
-                            } else { body.name = "[BETA] " + body.name; }
+                        body.name = "[BETA] " + body.name;
                         }     
                         if (socket.key === seniorkey) {
-                            if (body.name === 'TE$TER' + body.name) {
-                              body.define(Class.testbed);
-                            } else { body.name = "[ULTIMATE] " + body.name; }
+                         body.name = "[BETA2] " + body.name;
                         }  
                         body.addController(new ioTypes.listenToPlayer(body, player)); // Make it listen
                         body.sendMessage = content => messenger(socket, content); // Make it speak
@@ -6034,13 +6028,13 @@ let sancount = 4; //How many sanctuaries did you put
 if (room.bas1) //Sanctuary Room
     for (let loc of room.bas1) {
          let o = new Entity(loc);
-         o.define(Class.anni);//o.define(Class.sanctuary);
+         o.define(Class.sanctuary);
          o.team = -1;
          o.SIZE = 60;
          o.color = 10;
          o.ondeath = () => {
            let i = new Entity(loc);
-           i.define(Class.anni)//i.define(Class.neutraldom);
+           i.define(Class.neutraldom);
            i.team = -100;
            i.SIZE = 60;
            i.color = 3;
@@ -6054,7 +6048,7 @@ if (room.bas1) //Sanctuary Room
             }
            i.ondeath = () => {
              let e = new Entity(loc);
-             e.define(Class.anni);//e.define(Class.sanctuary)
+             e.define(Class.sanctuary)
              e.team = -1;
              e.SIZE = 60;
              e.color = 10;
@@ -6119,28 +6113,7 @@ if (room.bas1) //Sanctuary Room
                             o.color = [12][team - 1]; // temp fixed
                     o.define(Class.bot);
                    let arrayOfClasses = [
-                   Class.Celestialeternal
-                  /*
-                   Class.elite_gunner,
-                   Class.elite_sprayer,
-                   Class.elite_destroyer,
-                   Class.elite_battleship,
-                   Class.palisade,
-                   Class.summoner,
-                   Class.nestkeep,
-                   Class.skimboss,
-                   Class.cyclone,
-                   Class.Celestialtheia,
-                   Class.Celestialpaladin,
-                   Class.Celestialfreyja,
-                   Class.Celestialnyx,
-                   Class.Celestialzaphkiel,
-                   Class.RogueCelesTyr,
-                   Class.RogueCelesFiolnir,
-                   Class.RogueCelesAlviss*/
-                     /////////////////////////////////////////////
-                     /////////////////////////////////////////////
-                  /*Class.stream,
+                  Class.stream,
                    Class.overseer,
                    Class.overlord,
                    Class.God,
@@ -6161,7 +6134,25 @@ if (room.bas1) //Sanctuary Room
                    Class.basic,
                    Class.pound,
                    Class.sniper,
-                   Class.launch,*/
+                   Class.launch,
+                   /*
+                   Class.elite_gunner,
+                   Class.elite_sprayer,
+                   Class.elite_destroyer,
+                   Class.elite_battleship,
+                   Class.palisade,
+                   Class.summoner,
+                   Class.nestkeep,
+                   Class.skimboss,
+                   Class.cyclone,
+                   Class.Celestialtheia,
+                   Class.Celestialpaladin,
+                   Class.Celestialfreyja,
+                   Class.Celestialnyx,
+                   Class.Celestialzaphkiel,
+                   Class.RogueCelesTyr,
+                   Class.RogueCelesFiolnir,
+                   Class.RogueCelesAlviss*/
                  ];
                  let newClass =
                    arrayOfClasses[
