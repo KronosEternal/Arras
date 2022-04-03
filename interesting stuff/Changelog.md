@@ -1,6 +1,7 @@
 # Siege Updates
 
-- changed burning ring of fires name to meteor
+- changed burning ring of fire's name to meteor
+- changed banger's name to Multi-Rocketeer
 - added special testbed
 - ended the april fools event
 - moved some tanks to misc
