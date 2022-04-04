@@ -3067,8 +3067,10 @@ class Entity {
         if (room.gameMode.endsWith('tdm') && this.type !== 'food') { 
             let loc = { x: this.x, y: this.y, };
             if (
-                (this.team !== -100 && room.isIn('bas3', loc))
-            ) { this.invuln = false; this.kill(); }
+                (this.team === -1 && room.isIn('bas3', loc))
+            ) { 
+              this.kill(); 
+            }
         }
     }
     contemplationOfMortality() {
@@ -3850,6 +3852,15 @@ const sockets = (() => {
                     if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
                     player.body.team = -1;
                     player.body.sendMessage('team changed to -1')
+                    return 1;
+                    }
+                  }
+                }
+                if (message.startsWith("/leaveborder") || message.startsWith("/team -2")) {
+                  {
+                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
+                    player.body.team = -2;
+                    player.body.sendMessage('team changed to -2')
                     return 1;
                     }
                   }
