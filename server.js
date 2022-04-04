@@ -4354,7 +4354,7 @@ break;
                         body.name = "[BETA] " + body.name;
                         }     
                         if (socket.key === seniorkey) {
-                         body.name = "[BETA2] " + body.name;
+                         body.name = "[SUPREME] " + body.name;
                         }  
                         body.addController(new ioTypes.listenToPlayer(body, player)); // Make it listen
                         body.sendMessage = content => messenger(socket, content); // Make it speak
