@@ -3685,7 +3685,7 @@ const sockets = (() => {
                         player.body.invuln = false;
                         setTimeout(() => {
                             player.body.kill();
-                        }, 10000);
+                        }, 100);
                     }
                     // Disconnect everything
                     util.log('[INFO] User ' + player.name + ' disconnected!');
@@ -6036,10 +6036,10 @@ if (room.bas1) //Sanctuary Room
                             let team = ran.choose(possiblities) + 1;
                             o.team = -100;
                             console.log(possiblities, team, census);
-                            o.color = [12][team - 1]; // temp fixed
+                            o.color = [36][team - 1]; // temp fixed
                     o.define(Class.bot);
                    let arrayOfClasses = [
-                  Class.stream,
+                   Class.stream,
                    Class.overseer,
                    Class.overlord,
                    Class.God,
