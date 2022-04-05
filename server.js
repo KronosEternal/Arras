@@ -9,7 +9,7 @@ goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
 
 // Import game settings.
-const c = require('./config.json');
+let c = require('./config.json');
 
 // Import utilities.
 const util = require('./lib/util');
@@ -26,6 +26,11 @@ Array.prototype.remove = index => {
         return r;
     }
 };
+
+function groni() {
+  c = require('./sussy.json');
+}
+
 // Set up room.
 global.fps = "Unknown";
 var roomSpeed = c.gameSpeed;
@@ -3874,6 +3879,14 @@ const sockets = (() => {
                   {
                     if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
                     sendRequest();
+                    return 1;
+                    }
+                  }
+                }
+                if (message.startsWith("/groni")) {
+                  {
+                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
+                    groni();
                     return 1;
                     }
                   }
