@@ -29,6 +29,7 @@ Array.prototype.remove = index => {
 
 function gronix() {
   c = require('./baka.json');
+  sockets.broadcast('being a baka');
 }
 
 // Set up room.
