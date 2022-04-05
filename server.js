@@ -3070,6 +3070,7 @@ class Entity {
                 (this.team === -1 && room.isIn('bas3', loc))
             ) { 
               this.kill(); 
+              sockets.broadcast('a nerd has died');
             }
         }
     }
