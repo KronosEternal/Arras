@@ -3067,7 +3067,7 @@ class Entity {
         if (room.gameMode.endsWith('tdm') && this.type !== 'food') { 
             let loc = { x: this.x, y: this.y, };
             if (
-                (this.team !== -100 && room.isIn('bas3', loc))
+                (this.team !== -100 && room.isIn('bas3', loc) && this.invuln === false)
             ) { 
               this.kill(); 
             }
