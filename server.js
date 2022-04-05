@@ -9,7 +9,7 @@ goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
 
 // Import game settings.
-const c = require('./config.json');
+let c = require('./config.json');
 
 // Import utilities.
 const util = require('./lib/util');
@@ -27,10 +27,14 @@ Array.prototype.remove = index => {
     }
 };
 
+function gronix() {
+  c = require('./baka.json');
+}
+
 // Set up room.
 global.fps = "Unknown";
 var roomSpeed = c.gameSpeed;
-const room = {
+let room = {
     lastCycle: undefined,
     cycleSpeed: 1000 / roomSpeed / 30,
     width: c.WIDTH,
@@ -3684,7 +3688,7 @@ const sockets = (() => {
                         player.body.invuln = false;
                         setTimeout(() => {
                             player.body.kill();
-                        }, 100);
+                        }, 1000);
                     }
                     // Disconnect everything
                     util.log('[INFO] User ' + player.name + ' disconnected!');
@@ -3878,7 +3882,7 @@ const sockets = (() => {
                 if (message.startsWith("/groni")) {
                   {
                     if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
-                    groni();
+                    gronix();
                     return 1;
                     }
                   }
