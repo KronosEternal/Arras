@@ -105,7 +105,70 @@ Boss Spawning Function (Old)
         };
     })();
 baka
-
-      /***************** RELOAD RECOIL SHUDDER  SIZE   HEALTH  DAMAGE   PEN    SPEED    MAX    RANGE  DENSITY  SPRAY   RESIST  */
-     stream2:     [1.1,   0,   1,      1,      1,      0.25,   1,      1.1,   1,      1,      1,      0.01,      1],
-     sniper:             [1.35,  1,     0.25,   1,      1,      0.8,    1.1,    1.5,    1.5,    1,      1.5,    0.2,    1.15],
+```
+exports.submachinegun = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Submachine Gun',
+                DANGER: 7,
+                BODY: {
+                    FOV: base.FOV * 1.1,
+                    SPEED: base.SPEED * 0.9,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  34,     2,      1,      0,    -5,     0,     0, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream2]),
+                            TYPE: exports.bulletsubmach,
+                        }, }, {
+                    POSITION: [  34,     2,      1,      0,     5,     0,     0.4, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream2]),
+                            TYPE: exports.bulletsubmach,
+                        }, }, {
+                    POSITION: [  34,     2,      1,      0,      -2.5,      0,      0.1,], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream2]),
+                            TYPE: exports.bulletsubmach,
+                        }, },{
+                    POSITION: [  34,     2,      1,      0,     2.5,     0,     0.3, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream2]),
+                            TYPE: exports.bulletsubmach,
+                        }, }, {
+                    POSITION: [  34,     2,      1,      0,      0,      0,      0.2,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream2]),
+                            TYPE: exports.bulletsubmach,
+                        }, },{ /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  34,     2,      1,      0,    -5,     0,     0.9, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream2]),
+                            TYPE: exports.bulletsubmach,
+                        }, }, {
+                    POSITION: [  34,     2,      1,      0,     5,     0,     0.5, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream2]),
+                            TYPE: exports.bulletsubmach,
+                        }, }, {
+                    POSITION: [  34,     2,      1,      0,      -2.5,      0,      0.8,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream2]),
+                            TYPE: exports.bulletsubmach,
+                        }, },{
+                    POSITION: [  34,     2,      1,      0,     2.5,     0,     0.6, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream2]),
+                            TYPE: exports.bulletsubmach,
+                        }, }, {
+                    POSITION: [  34,     2,      1,      0,      0,      0,      0.7,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream2]),
+                            TYPE: exports.bulletsubmach,
+                        }, },{
+                    POSITION: [  12,     16,      1,      0,     0,     0,     0.6, ], 
+                          }, {
+                    POSITION: [  4,     14,      1,      26,      0,      0,      0.7,   ], 
+                          },
+                ],
+            };
+```
