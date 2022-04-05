@@ -9,7 +9,8 @@ goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
 
 // Import game settings.
-let c = require('./config.json');
+const c = require('./config.json');
+const d = require('./interesting stuff/configuration');
 
 // Import utilities.
 const util = require('./lib/util');
@@ -28,7 +29,7 @@ Array.prototype.remove = index => {
 };
 
 // Set up room.
-var setup = c.ROOM_SETUP;
+let setup = c.ROOM_SETUP;
 
 global.fps = "Unknown";
 var roomSpeed = c.gameSpeed;
@@ -55,17 +56,7 @@ let room = {
     topPlayerID: -1,
 };
 function gronix() {
-  setup = 
-[ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-[ "norm", "wall", "wall", "wall", "bas3", "bas3", "wall", "wall", "wall", "norm"],
-[ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "nest", "norm"],
-[ "norm", "wall", "norm", "bas2", "nest", "nest", "bas1", "norm", "wall", "norm"],
-[ "norm", "bas4", "wall", "nest", "norm", "norm", "nest", "norm", "bas3", "norm"],
-[ "norm", "bas3", "norm", "nest", "norm", "norm", "bas6", "norm", "bas3", "norm"],
-[ "norm", "wall", "norm", "bas1", "nest", "bas6", "bas1", "norm", "wall", "norm"],
-[ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "norm"],
-[ "norm", "wall", "wall", "wall", "bas3", "bas3", "wall", "wall", "wall", "norm"],
-[ "norm", "norm", "norm", "norm", "wall", "norm", "norm", "norm", "norm", "norm"]
+  setup = d;
   sockets.broadcast('being a baka');
 }
     room.findType = type => {
