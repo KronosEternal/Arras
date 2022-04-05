@@ -3069,7 +3069,6 @@ class Entity {
             if (
                 (this.team !== -100 && room.isIn('bas3', loc))
             ) { 
-              if (this.invuln === true) { sockets.broadcast("gae")}
               this.kill(); 
             }
         }
