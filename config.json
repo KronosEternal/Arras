@@ -17,7 +17,7 @@
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [ 
-[ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
+[ "bas6", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
 [ "norm", "wall", "wall", "wall", "bas3", "bas3", "wall", "wall", "wall", "norm"],
 [ "norm", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "norm"],
 [ "norm", "wall", "norm", "bas1", "nest", "nest", "bas1", "norm", "wall", "norm"],

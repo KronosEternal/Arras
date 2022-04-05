@@ -81,7 +81,7 @@ const room = {
     room.findType('bas4');
     room.findType('roid');
     room.findType('rock');
-    room.findType('domx');
+    room.findType('bas6');
 
     room.nestFoodAmount = 1.5 * Math.sqrt(room.nest.length) / room.xgrid / room.ygrid;
     room.random = () => {
