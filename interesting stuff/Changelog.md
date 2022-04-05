@@ -1,7 +1,36 @@
 # Siege Updates
 
-- changed burning ring of fire's name to meteor
-- changed banger's name to Multi-Rocketeer
+- sussy
+
+# Client Updates
+
+- minor color updates
+- few changes with server selector behavior
+- any event servers will be highlighted in blue
+- added a link to submit YOUR tank ideas!
+- after i choose a few that I like, we will hold a voting event to find out which ones get into the actual siege server!
+- use the "feature request" tab to get the link to the google doc!
+- then submit your design idea using google drawings!
+
+# DEV EVENT!
+
+- the dev event has officially started!
+- now you spawn as a testbed, and ALL commands, i mean ALL of them are available, no token required
+- the event ends on April 18th
+- every one spawns with the [EVENT] tag next to their name
+- the event will end earlier if the "No" option on the voting ever surpasses the yes amount of votes
+
+# Voting Updates
+
+- as of now, the votes are tied with 1 vote at eah category
+- remember to vote using the "voting events" tab at the top of the screen
+- anyways VOTE nerds
+- also working on making the vote events tab glow when the voting event is active
+- i will close it on April 8th
+
+# Siege Updates
+
+- changed burning ring of fires name to meteor
 - added special testbed
 - ended the april fools event
 - moved some tanks to misc
