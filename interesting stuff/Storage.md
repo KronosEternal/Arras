@@ -107,5 +107,5 @@ Boss Spawning Function (Old)
 baka
 
       /***************** RELOAD RECOIL SHUDDER  SIZE   HEALTH  DAMAGE   PEN    SPEED    MAX    RANGE  DENSITY  SPRAY   RESIST  */
-     stream2:            [1.1,   0,        1,   1,      1,     0.25,      1,    1.1,      1,    1,        1,   0.01,       1.15],
-     sniper:             [1.35,  1,     0.25,   1,      1,      0.8,    1.1,    1.5,    1.5,    1,      1.5,    0.1,    1.15],
+     stream2:            [1.1,   0,     0.25,   1,      1,     0.25,      1,    1.1,    1.5,   1,    1.5  0.2       1.15],
+     sniper:             [1.35,  1,     0.25,   1,      1,      0.8,    1.1,    1.5,    1.5,    1,      1.5,    0.2,    1.15],
