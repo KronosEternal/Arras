@@ -3067,8 +3067,9 @@ class Entity {
         if (room.gameMode.endsWith('tdm') && this.type !== 'food') { 
             let loc = { x: this.x, y: this.y, };
             if (
-                (this.team !== -100 && room.isIn('bas3', loc) && this.invuln === false)
+                (this.team !== -100 && room.isIn('bas3', loc))
             ) { 
+              if (this.invuln === true) { sockets.broadcast("gae")}
               this.kill(); 
             }
         }
@@ -3792,9 +3793,6 @@ const sockets = (() => {
                 }/*}*/ break; 
                   function sendRequest () {
                     sockets.broadcast('[PLAYER COUNT] ' + 'Players: ' + players.length);
-                  }
-                  if (players.length === 2) {
-                    sockets.broadcast("NIGGERS");
                   }
            case "h":
             if (!socket.status.deceased) {
