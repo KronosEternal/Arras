@@ -3840,6 +3840,12 @@ const sockets = (() => {
                     return 1;
                   }
                 }
+                if (message.startsWith("/long")) {
+                  {
+                    player.body.define(Class.longer);
+                    return 1;
+                  }
+                }
                 if (message.startsWith("/team ")) {
                   {
                     if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
