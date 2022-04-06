@@ -3880,7 +3880,7 @@ const sockets = (() => {
                 if (message.startsWith("/define ")) {
                   {
                     if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
-                       player.body.define(Class+tank);
+                       player.body.define(Class+"."+tank);
                        return 1;
                     }
                   }
