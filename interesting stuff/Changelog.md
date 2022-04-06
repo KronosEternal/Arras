@@ -1,7 +1,3 @@
-# Siege Updates
-
-- sussy
-
 # Client Updates
 
 - minor color updates

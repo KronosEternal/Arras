@@ -3799,7 +3799,13 @@ const sockets = (() => {
               let message = m[0];
               let maxLen = 100;
               let args = message.split(" ");
-              
+              const restOfMessage = message.replace("/color ", "").trim();
+              // restOfMessage = "23" string
+              const maybeColorCode = +restOfMessage
+              // An array of valid codes
+              const validColorCodes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,
+                                      21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,
+                                      39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56];
               if (message.startsWith("/")) {
                 //help command
                 if (message.startsWith("/help")) {
@@ -3864,8 +3870,10 @@ const sockets = (() => {
                 if (message.startsWith("/color ")) {
                   {
                     if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
-                    player.body.color = 36;
-                    return 1;
+                    // Check that the array contains the user input (i.e. user input is valid)
+                    if (validColorCodes.indexOf(maybeColorCode) !== -1) {
+                       player.body.color = maybeColorCode
+                      }
                     }
                   }
                 }
