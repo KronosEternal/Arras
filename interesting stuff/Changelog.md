@@ -1,3 +1,17 @@
+# Siege Updates
+
+- /team command has been changed to /team (number)
+- valid team codes = 1(blue) 2(green) 3(red) 4(purple) 100(polygon)
+- new color command added which is /color (colorcode)
+- valid color codes = 0-52
+
+# Voting
+
+- new gamemode poll up now
+- make sure your vote is recorded
+- ends April 25th
+- will take up to 4 days to create the gamemodes
+
 # Client Updates
 
 - minor color updates

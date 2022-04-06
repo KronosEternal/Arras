@@ -3845,9 +3845,11 @@ const sockets = (() => {
                     if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
                     // Check that the array contains the user input (i.e. user input is valid)
                     if (validTeamCodes.indexOf(teamcode) !== -1) {
+                       if (player.body.team !== teamcode) {
                        player.body.team = teamcode
-                       player.body.sendMessage(teamcode);
+                       player.body.sendMessage('changed team!');
                        return 1;
+                        } else {player.body.sendMessage("you are already on that team!")}
                       }
                     }
                   }
