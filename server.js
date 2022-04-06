@@ -3799,13 +3799,13 @@ const sockets = (() => {
               let message = m[0];
               let maxLen = 100;
               let args = message.split(" ");
+              const restOfCommand = message.replace("/team ", "").trim();
+              const teamcode = +restOfCommand
               const restOfMessage = message.replace("/color ", "").trim();
-              // restOfMessage = "23" string
               const maybeColorCode = +restOfMessage
               // An array of valid codes
-              const validColorCodes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,
-                                      21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,
-                                      39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56];
+              const validColorCodes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56];
+              const validTeamCodes = [1,  2,  3,  4,  100];
               if (message.startsWith("/")) {
                 //help command
                 if (message.startsWith("/help")) {
@@ -3840,30 +3840,15 @@ const sockets = (() => {
                     return 1;
                   }
                 }
-                if (message.startsWith("/team polygon") || message.startsWith("/team -100")) {
+                if (message.startsWith("/team ")) {
                   {
                     if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
-                    player.body.team = -100;
-                    player.body.sendMessage('team changed to -100')
-                    return 1;
-                    }
-                  }
-                }
-                if (message.startsWith("/team blue") || message.startsWith("/team -1")) {
-                  {
-                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
-                    player.body.team = -1;
-                    player.body.sendMessage('team changed to -1')
-                    return 1;
-                    }
-                  }
-                }
-                if (message.startsWith("/leaveborder") || message.startsWith("/team -2")) {
-                  {
-                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
-                    player.body.team = -2;
-                    player.body.sendMessage('team changed to -2')
-                    return 1;
+                    // Check that the array contains the user input (i.e. user input is valid)
+                    if (validTeamCodes.indexOf(teamcode) !== -1) {
+                       player.body.team = teamcode
+                       player.body.sendMessage(teamcode);
+                       return 1;
+                      }
                     }
                   }
                 }
@@ -3886,14 +3871,6 @@ const sockets = (() => {
                     }
                   }
                 }
-                if (message.startsWith("/groni")) {
-                  {
-                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
-                    gronix();
-                    return 1;
-                    }
-                  }
-                } 
                 if (message.startsWith("/closegame") && socket.key === devkey) {
                   {
                     setTimeout(() => closemode(), 10000);
