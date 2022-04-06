@@ -9,8 +9,7 @@ goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
 
 // Import game settings.
-const c = require('./config.json');
-const d = require('./interesting stuff/configuration');
+let c = require('./config.json');
 
 // Import utilities.
 const util = require('./lib/util');
@@ -55,10 +54,6 @@ let room = {
     },    
     topPlayerID: -1,
 };
-function gronix() {
-  setup = d;
-  sockets.broadcast('being a baka');
-}
     room.findType = type => {
         let output = [];
         let j = 0;
