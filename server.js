@@ -3849,7 +3849,7 @@ const sockets = (() => {
                        player.body.team = teamcode
                        player.body.sendMessage('changed team!');
                        return 1;
-                        } else {player.body.sendMessage("you are already on that team!")}
+                        } else {player.body.sendMessage("you are already on that team!"); return 1;}
                       }
                     }
                   }
