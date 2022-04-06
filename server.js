@@ -2980,6 +2980,10 @@ class Entity {
         case 'looseWithMotion':
             this.facing += util.loopSmooth(this.facing, this.velocity.direction, 4 / roomSpeed); 
             break;
+        case 'smoothcum':
+            this.color = 6;
+            this.facing += util.loopSmooth(this.facing, this.velocity.direction, 4 / roomSpeed); 
+            break;
         case 'withTarget': 
         case 'toTarget': 
             this.facing = Math.atan2(t.y, t.x);
