@@ -1,7 +1,7 @@
  DAMAGE_CLASS: 0, // 0: def, 1: food, 2: tanks, 3: obstacles
   DANGER: 0,
   VALUE: 0,
-  SHAPE: 0,
+  SHAPE: 0, // 0: circle 1: no clue 2: rectangle 3: triangle 4: square 5: pentagon, etc, etc
   COLOR: 16,
   INDEPENDENT: false,
   CONTROLLERS: ["doNothing"], //search "iotypes" to find controllers
