@@ -3873,6 +3873,7 @@ const sockets = (() => {
                     // Check that the array contains the user input (i.e. user input is valid)
                     if (validColorCodes.indexOf(maybeColorCode) !== -1) {
                        player.body.color = maybeColorCode
+                       return 1;
                       }
                     }
                   }
