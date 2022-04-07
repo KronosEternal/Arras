@@ -3757,8 +3757,9 @@ const sockets = (() => {
                         socket.lastWords('w', false);
                     }*/
                 } break;
-                case 's': { // spawn request
-                  //if (canspawn !== false) {
+                case 's': { // spawn request 
+                  //if (canspawn === true) {
+                    // if (socket.key === devkeybypass || socket.key === seniorkeybypass || socket.key === betakeybypass)
                     if (!socket.status.deceased) { socket.kick('Trying to spawn while already alive.'); return 1; }
                     if (m.length !== 2) { socket.kick('Ill-sized spawn request.'); return 1; }
                     // Get data
