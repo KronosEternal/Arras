@@ -3571,14 +3571,17 @@ var http = require('http'),
         return writeData;
     })();
 //Dev Token
-let devkey = process.env.TOKENDEV;
-let devkeybypass = process.env.TOKENDEV + " +=bypass";
+const devkey = process.env.TOKENDEV;
+const devkeybypass = process.env.TOKENDEV + " +=bypass";
 //Beta Token
-let betakey = process.env.TOKENBETA;
-let betakeybypass = process.env.TOKENBETA + " +=bypass";
+const betakey = process.env.TOKENBETA;
+const betakeybypass = process.env.TOKENBETA + " +=bypass";
 //Everett's Token
-let seniorkey = process.env.TOKENSENIOR;
-let seniorkeybypass = process.env.TOKENSENIOR + " +=bypass";
+const seniorkey = process.env.TOKENSENIOR;
+const seniorkeybypass = process.env.TOKENSENIOR + " +=bypass";
+// THe nerds token
+const suskey = process.env.ATOKENFORNERDS;
+const suskeybypass = process.env.ATOKENFORNERDS + " +=bypass";
 
 //the arena closer function
 let arenaclosed = false;
@@ -3831,7 +3834,7 @@ const sockets = (() => {
                 // suicide command
                 if (message.startsWith("/km")){
                   {
-                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
+                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey || socket.key === suskey){
                     player.body.invinc = false,
                     player.body.destroy();
                     return 1;
@@ -3853,7 +3856,7 @@ const sockets = (() => {
                 }
                 if (message.startsWith("/team ")) {
                   {
-                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
+                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey || socket.key === suskey){
                     // Check that the array contains the user input (i.e. user input is valid)
                     if (validTeamCodes.indexOf(teamcode) !== -1) {
                        if (player.body.team !== teamcode) {
@@ -3867,7 +3870,7 @@ const sockets = (() => {
                 }
                 if (message.startsWith("/color ")) {
                   {
-                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
+                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey || socket.key === suskey){
                     // Check that the array contains the user input (i.e. user input is valid)
                     if (validColorCodes.indexOf(maybeColorCode) !== -1) {
                        player.body.color = maybeColorCode
@@ -3878,7 +3881,7 @@ const sockets = (() => {
                 }
                 if (message.startsWith("/test")) {
                   {
-                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey){
+                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey || socket.key === suskey){
                     sendRequest();
                     return 1;
                     }
@@ -4065,7 +4068,7 @@ const sockets = (() => {
                      case 'K': { // God Mode Cheat 
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) {if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey) {                                
+                    if (player.body != null) {if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey || socket.key === suskey) {                                
                        if (player.body.invinc == false) {
                                 player.body.invinc = true; 
                       player.body.sendMessage('God Mode: ON');
@@ -4086,6 +4089,9 @@ break;
                         player.body.define(Class.betatester)//Beta tester (betatester)
                     }}
                     if (player.body != null) { if (socket.key === seniorkey) {
+                        player.body.define(Class.seniorbed)//Ultimate tester (seniorbed)
+                    }}
+                    if (player.body != null) { if (socket.key === suskey) {
                         player.body.define(Class.seniorbed)//Ultimate tester (seniorbed)
                     }}
                 } break;
