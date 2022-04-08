@@ -3621,7 +3621,7 @@ function closemode() {
     canspawn = false;
     ArenaClosed();
     if (room.gameMode === "2tdm")
-      room["bas4"].forEach(loc => {
+      room["bas3"].forEach(loc => {
         spawnarenacloser(
           loc,
           -0,
@@ -3887,7 +3887,7 @@ const sockets = (() => {
                 if (message.startsWith("/closegame") && socket.key === devkey) {
                   {
                     setTimeout(() => closemode(), 10000);
-                    sockets.broadcast('spawning arena closers');
+                    sockets.broadcast('Screwing S*** Up');
                     return 1;
                   }
                 }
