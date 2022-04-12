@@ -3810,7 +3810,7 @@ const sockets = (() => {
               const restOfCommand = message.replace("/team ", "").trim();
               const restOfMessage = message.replace("/color ", "").trim();
               const restOfBroadcast = message.replace("/broadcast ", "").trim();
-              const messagebroad = +restOfBroadcast
+              let messagebroad = +restOfBroadcast
               const teamcode = +restOfCommand
               const maybeColorCode = +restOfMessage
               // An array of valid codes
