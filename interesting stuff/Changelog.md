@@ -1,9 +1,48 @@
+# Updates
+
+- so flail is screwed over currently
+- working on fixes
+- working on bug fixes
+- Changed logo (again again)
+- adding 4TDM
+- currently in beta and only accessible by the actual devs
+- may remove event server since no one uses it
+
+# Client Updates
+
+- changed checkboxes to reflect the new color scheme of the client
+- added my own logo created fully using Adobe Illustrator
+- changed some fundamental functions under the hood to make loading faster and with less errors
+- enjoy!
+- btw, if no one votes in the next 5 days, voting will close and the 4TDM gamemode will be added!
+
+# Dev Event
+
+- please remember to clear the token field so you can get the full extent of powers!
+- 12 days left until Dev event ends!
+
 # Siege Updates
 
 - /team command has been changed to /team (number)
-- valid team codes = 1(blue) 2(green) 3(red) 4(purple) 100(polygon)
+- valid team codes= 
+
+- -1 (blue) 
+
+- -2 (green)
+
+- -3 (red) 
+
+- -4 (purple)
+
+- -100 (polygon)
+
+- /define command added (dev only)
+
+- These Changes also apply to the dev event!
+
 - new color command added which is /color (colorcode)
 - valid color codes = 0-52
+- you guys gonna vote?
 
 # Voting
 
