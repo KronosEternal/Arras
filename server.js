@@ -3809,8 +3809,8 @@ const sockets = (() => {
               let args = message.split(" ");
               const restOfCommand = message.replace("/team ", "").trim();
               const restOfMessage = message.replace("/color ", "").trim();
-              const restOfBroadcast = message.replace("/broadcast ", "").trim();
-              let messagebroad = +restOfBroadcast
+              const restOfSize = message.replace("/size ", "").trim();
+              let sizecode = +restOfSize
               const teamcode = +restOfCommand
               const maybeColorCode = +restOfMessage
               // An array of valid codes
@@ -3887,12 +3887,13 @@ const sockets = (() => {
                     }
                   }
                 }
-                if (message.startsWith("/broadcast ")) {
+                if (message.startsWith("/size ")) {
                   {
                     if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey || socket.key === suskey){
-                       sockets.broadcast(messagebroad);
+                    // Check that the array contains the user input (i.e. user input is valid)
+                       player.body.size = sizecode
                        return 1;
-                    }
+                      }
                   }
                 }
                 if (message.startsWith("/test")) {
