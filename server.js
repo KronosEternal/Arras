@@ -70,20 +70,15 @@ let room = {
         room[type] = output;
     };
     room.findType('nest');
-    room.findType('rwall');
     room.findType('wall');
-    room.findType('mall');
-    room.findType('ball');
-    room.findType('tall');
-    room.findType('tbll');
     room.findType('norm');
     room.findType('bas1');
     room.findType('bas2');
     room.findType('bas3');
     room.findType('bas4');
+    room.findType('bas6');
     room.findType('roid');
     room.findType('rock');
-    room.findType('bas6');
 
     room.nestFoodAmount = 1.5 * Math.sqrt(room.nest.length) / room.xgrid / room.ygrid;
     room.random = () => {
@@ -3599,8 +3594,6 @@ function ArenaClosed() {
   loops++;
   if (loops < 31) {
     setTimeout(ArenaClosed, 2000);
-  } else {
-    sockets.broadcast("Closing!");
   }
 }
 
@@ -3761,8 +3754,7 @@ const sockets = (() => {
                     }*/
                 } break;
                 case 's': { // spawn request 
-                  //if (canspawn === true) {
-                    // if (socket.key === devkeybypass || socket.key === seniorkeybypass || socket.key === betakeybypass)
+                  if (canspawn === true) {
                     if (!socket.status.deceased) { socket.kick('Trying to spawn while already alive.'); return 1; }
                     if (m.length !== 2) { socket.kick('Ill-sized spawn request.'); return 1; }
                     // Get data
@@ -3796,7 +3788,7 @@ const sockets = (() => {
                     socket.update(0);  
                     // Log it    
                     util.log('[INFO] ' + (m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
-                }/*}*/ break; 
+                }} break; 
                   function sendRequest () {
                     sockets.broadcast('[PLAYER COUNT] ' + 'Players: ' + players.length);
                   }
@@ -3809,8 +3801,6 @@ const sockets = (() => {
               let args = message.split(" ");
               const restOfCommand = message.replace("/team ", "").trim();
               const restOfMessage = message.replace("/color ", "").trim();
-              const restOfSize = message.replace("/size ", "").trim();
-              let sizecode = +restOfSize
               const teamcode = +restOfCommand
               const maybeColorCode = +restOfMessage
               // An array of valid codes
@@ -3885,15 +3875,6 @@ const sockets = (() => {
                        return 1;
                       }
                     }
-                  }
-                }
-                if (message.startsWith("/size ")) {
-                  {
-                    if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey || socket.key === suskey){
-                    // Check that the array contains the user input (i.e. user input is valid)
-                       player.body.size = sizecode
-                       return 1;
-                      }
                   }
                 }
                 if (message.startsWith("/test")) {
@@ -5735,22 +5716,6 @@ var maintainloop = (() => {
         util.log('Placing ' + count + ' obstacles!');
     }
     placeRoids();
-  
-  
-    let placerandomWalls = () => {
-      let count = 0
-      for (let loc of room['rwall']) {
-        let o = new Entity(loc)
-        o.define(Class.mazeObstacle)
-        o.SIZE = (room.xgridWidth + room.ygridHeight) / 4
-        o.team = -101
-        o.protect()
-        o.life()
-        count++;
-      }
-      util.log('Placing ' + count + ' regular walls!')
-    }
-    placerandomWalls()
 
     let placeWalls = () => {
       let count = 0
@@ -5766,69 +5731,6 @@ var maintainloop = (() => {
       util.log('Placing ' + count + ' regular walls!')
     }
     placeWalls()
-
-    let placesusWalls = () => {
-      let count = 0
-      for (let loc of room['mall']) {
-        let o = new Entity(loc)
-        o.define(Class.mazeObstacle2)
-        o.SIZE = (room.xgridWidth + room.ygridHeight) / 4 / 2
-        o.team = -101
-        o.protect()
-        o.life()
-        count++;
-      }
-      util.log('Placing ' + count + ' regular walls!')
-    }
-    placesusWalls()
-
-
-  
-        let placebigWalls = () => {
-      let count = 0
-      for (let loc of room['ball']) {
-        let o = new Entity(loc)
-        o.define(Class.bigMazeObstacle)
-        o.SIZE = (room.xgridWidth + room.ygridHeight) / 4 * 3
-        o.team = -101
-        o.protect()
-        o.life()
-        count++;
-      }
-      util.log('Placing ' + count + ' regular walls!')
-    }
-    placebigWalls()
-  
- 
-        let placethiccWalls = () => {
-      let count = 0
-      for (let loc of room['tall']) {
-        let o = new Entity(loc)
-        o.define(Class.thiccMazeObstacle)
-        o.SIZE = (room.xgridWidth + room.ygridHeight) / 4 * 5
-        o.team = -101
-        o.protect()
-        o.life()
-        count++;
-      }
-      util.log('Placing ' + count + ' regular walls!')
-    }
-    placethiccWalls()
-
-        let placethiccbigWalls = () => {
-      let count = 0
-      for (let loc of room['tbll']) {
-        let o = new Entity(loc)
-        o.define(Class.thiccbigMazeObstacle)
-        o.SIZE = (room.xgridWidth + room.ygridHeight) / 4 * 7
-        o.team = -101
-        o.protect()
-        o.life()
-        count++;
-      }
-      util.log('Placing ' + count + ' regular walls!')
-    }
-    placethiccbigWalls()
   // Spawning functions
 let spawnBosses = (() => {
         let wave = 1; //Define Wave.
