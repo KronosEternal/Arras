@@ -9,7 +9,7 @@ goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
 
 // Import game settings.
-let c = require('./config.json');
+const c = require('./config.json');
 
 // Import utilities.
 const util = require('./lib/util');
