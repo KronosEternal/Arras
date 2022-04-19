@@ -6,7 +6,9 @@
     "start": "node server"
   },
   "dependencies": {
+    "cli": "^1.0.1",
     "google-closure-library": "20190909.0.0",
+    "heroku": "^7.60.1",
     "ws": "7.3.0"
   },
   "engines": {
