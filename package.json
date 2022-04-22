@@ -5,7 +5,6 @@
   "scripts": {
     "start": "node server"
   },
-  "devDependencies": { "next": "^12.1.5"},
   "dependencies": {
     "cli": "^1.0.1",
     "google-closure-library": "20190909.0.0",
@@ -13,7 +12,7 @@
     "ws": "7.3.0"
   },
   "engines": {
-    "node": "12.x"
+    "node": "14.x"
   },
   "license": "GPL-3.0"
 }
