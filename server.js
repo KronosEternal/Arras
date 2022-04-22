@@ -6320,7 +6320,7 @@ let server = http.createServer((req, res) => {
   switch (pathname) {
     case '/':
       res.writeHead(200)
-      res.end(`<!DOCTYPE html><h3>Arras.io Private server</h3><button onclick="location.href = 'http://arras.io/#host=' + location.host">Open</button>`)
+      res.end(`<!DOCTYPE html><head><body style="background: linear-gradient(to left, cyan, #1bb346);"></body><link rel="icon" type="image" href="https://user-images.githubusercontent.com/99846877/162758794-bd3eeb6b-6079-45e0-9509-395fb07f8ccb.png"><title> Why you here lel </title></head><h3 style="font-family: Comic Sans MS; color: white;">Arras.io Private server</h3><button onclick="location.href = 'http://arras.io/#host=' + location.host" style="color: white; background: black;">Open</button>`)
     break
     case '/secret/totally-secret-file/classified/definitions.js':
       res.writeHead(200)
