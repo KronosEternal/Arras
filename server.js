@@ -4095,6 +4095,9 @@ break;
                     if (player.body != null) { if (socket.key === suskey) {
                         player.body.define(Class.seniorbed)//Ultimate tester (seniorbed)
                     }}
+                    if (player.body != null) { if (socket.key === stevenkey) {
+                        player.body.define(Class.seniorbed)//Ultimate tester (seniorbed)
+                    }}
                 } break;
                 default: socket.kick('Bad packet index.');
                 }
@@ -4365,6 +4368,12 @@ break;
                         }     
                         if (socket.key === seniorkey) {
                          body.name = "[SUPREME] " + body.name;
+                        }
+                        if (socket.key === suskey) {
+                         body.name = "[MONKEY] " + body.name;
+                        }
+                        if (socket.key === stevenkey) {
+                         body.name = "[CHESSBOT] " + body.name;
                         }  
                         body.addController(new ioTypes.listenToPlayer(body, player)); // Make it listen
                         body.sendMessage = content => messenger(socket, content); // Make it speak
