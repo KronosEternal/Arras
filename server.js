@@ -4069,7 +4069,7 @@ const sockets = (() => {
                      case 'K': { // God Mode Cheat 
                     if (m.length !== 0) { socket.kick('Ill-sized god mode request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) {if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey || socket.key === suskey) {                                
+                    if (player.body != null) {if (socket.key === devkey || socket.key === betakey || socket.key === seniorkey || socket.key === suskey || socket.key === stevenkey) {                                
                        if (player.body.invinc == false) {
                                 player.body.invinc = true; 
                       player.body.sendMessage('God Mode: ON');
