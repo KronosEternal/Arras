@@ -2979,6 +2979,9 @@ class Entity {
             this.color = 6;
             this.facing += util.loopSmooth(this.facing, this.velocity.direction, 4 / roomSpeed); 
             break;
+        case 'teamer':
+            this.facing += 0.34 / roomSpeed;
+            break;
         case 'withTarget': 
         case 'toTarget': 
             this.facing = Math.atan2(t.y, t.x);
