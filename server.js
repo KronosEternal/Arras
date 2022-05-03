@@ -2966,7 +2966,7 @@ class Entity {
             this.facing += 0.02 / roomSpeed;
             break;
        case 'SPEED':
-            this.facing += 0.63 / roomSpeed;
+            this.facing += 0.12 / roomSpeed;
             break;
         case 'turnWithSpeed':
             this.facing += this.velocity.length / 90 * Math.PI / roomSpeed;
