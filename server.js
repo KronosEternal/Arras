@@ -806,7 +806,7 @@ ioTypes.orbitsupermassive = class extends IO {
         if (input.target != null && (input.alt || input.main)) {
             let sizeFactor = Math.sqrt(this.body.master.size / this.body.master.SIZE)
             let leash = 82 * sizeFactor
-            let orbit = 270 * sizeFactor
+            let orbit = 20000 
             let repel = 142 * sizeFactor
             let goal
             let power = 1
