@@ -2989,6 +2989,9 @@ class Entity {
         case 'suspin': 
             this.facing -= 0.05 / roomSpeed;
             break;
+        case 'mistakes': 
+            this.facing -= 1.9 / roomSpeed;
+            break;
         case 'looseWithTarget':
         case 'looseToTarget':
         case 'smoothToTarget':
