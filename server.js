@@ -3571,6 +3571,17 @@ var http = require('http'),
         let writeData = JSON.stringify(mockupData);
         return writeData;
     })();
+                  //
+                    //
+                    //
+                    //
+                    //
+                    // WORKING ON THE SECTION BELOW
+                    //
+                    //
+                    //
+                    //
+                  //  
 //Dev Token
 const devkey = process.env.TOKENDEV;
 const devkeybypass = process.env.TOKENDEV + " +=bypass";
@@ -3671,6 +3682,22 @@ function closemode() {
       });
   }
 }
+                  //
+                    //
+                    //
+                    //
+                    //
+                    // WORKING ON THE SECTION ABOVE
+                    //
+                    //
+                    //
+                    //
+                  //  
+
+
+
+
+
 // Websocket behavior
 const sockets = (() => {
     const protocol = require('./lib/fasttalk');
@@ -3739,31 +3766,19 @@ const sockets = (() => {
                     }
                     socket.verified = true;
                     util.log('Clients: ' + clients.length);
-                    /*if (m.length !== 1) { socket.kick('Ill-sized key request.'); return 1; }
-                    // Get data
-                    // Verify it
-                    if (typeof key !== 'string') { socket.kick('Weird key offered.'); return 1; }
-                    if (key.length > 64) { socket.kick('Overly-long key offered.'); return 1; }
-                    if (socket.status.verified) { socket.kick('Duplicate player spawn attempt.'); return 1; }
-                    // Otherwise proceed to check if it's available.
-                    if (keys.indexOf(key) != -1) {
-                        // Save the key
-                        socket.key = key.substr(0, 64);
-                        // Make it unavailable
-                        util.remove(keys, keys.indexOf(key));
-                        socket.verified = true;
-                        // Proceed
-                        socket.talk('w', true);
-                        util.log('[INFO] A socket was verified with the token: '); util.log(key);
-                        util.log('Clients: ' + clients.length);
-                    } else {
-                        // If not, kick 'em (nicely)
-                        util.log('[INFO] Invalid player verification attempt.');
-                        socket.lastWords('w', false);
-                    }*/
                 } break;
+                  //
+                    //
+                    //
+                    //
+                    //
+                    // WORKING ON THE SECTION BELOW
+                    //
+                    //
+                    //
+                    //
+                  //  
                 case 's': { // spawn request 
-                  if (canspawn === true) {
                     if (!socket.status.deceased) { socket.kick('Trying to spawn while already alive.'); return 1; }
                     if (m.length !== 2) { socket.kick('Ill-sized spawn request.'); return 1; }
                     // Get data
@@ -3774,7 +3789,11 @@ const sockets = (() => {
                     if (encodeURI(name).split(/%..|./).length > 48) { socket.kick('Overly-long name.'); return 1; }
                     if (needsRoom !== -1 && needsRoom !== 0) { socket.kick('Bad spawn request.'); return 1; }
                     // Bring to life
+                    
+                    //POINT OF INTEREST
                     socket.status.deceased = false;
+                  
+                  
                     // Define the player.
                     if (players.indexOf(socket.player) != -1) { util.remove(players, players.indexOf(socket.player));  }
                     // Free the old view
@@ -3797,10 +3816,21 @@ const sockets = (() => {
                     socket.update(0);  
                     // Log it    
                     util.log('[INFO] ' + (m[0]) + (needsRoom !== -1 ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
-                }} break; 
+                } break; 
                   function sendRequest () {
                     sockets.broadcast('[PLAYER COUNT] ' + 'Players: ' + players.length);
                   }
+                  //
+                    //
+                    //
+                    //
+                    //
+                    // WORKING ON THE SECTION ABOVE
+                    //
+                    //
+                    //
+                    //
+                  //  
            case "h":
             if (!socket.status.deceased) {
               // Chat system!!.
