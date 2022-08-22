@@ -1578,7 +1578,28 @@ ioTypes.reversemother = class extends IO {
     }
 
     think(input) {
-        this.a -= 0.07
+        this.a -= 0.03
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
+ioTypes.forwardmother = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a += 0.10
         let offset = 0
         if (this.body.bond != null) {
             offset = this.body.bound.angle
