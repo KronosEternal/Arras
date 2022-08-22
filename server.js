@@ -1571,6 +1571,27 @@ ioTypes.reversespin = class extends IO {
         };
     }
 }
+ioTypes.fastreversespin = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a -= 0.08
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
 ioTypes.reversemother = class extends IO {
     constructor(body) {
         super(body)
