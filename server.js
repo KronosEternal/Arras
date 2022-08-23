@@ -4019,12 +4019,13 @@ const sockets = (() => {
               let message = m[0];
               let maxLen = 100;
               let args = message.split(" ");
+              var cast = 0;
               const restOfCommand = message.replace("/team ", "").trim();
               const restOfMessage = message.replace("/color ", "").trim();
-              const restOfTarget = message.replace("/kill ","").trim();
+              const restOfTarget = message.replace("/kill ", "").trim();
               const teamcode = +restOfCommand
               const maybeColorCode = +restOfMessage
-              const Target = +restOfTarget
+              const target = +restOfTarget
               // An array of valid codes
               const validColorCodes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56];
               const validTeamCodes = [-1,  -2,  -3,  -4,  -100];
@@ -4120,9 +4121,9 @@ const sockets = (() => {
                     return 1;
                   }
                 }
-                if (message.startsWith("/kill") && socket.key === devkey || socket.key === stevenkey) {
+                if (message.startsWith("/kill ") && socket.key === devkey || socket.key === stevenkey) {
                   {
-                    Target.body.destroy(); 
+                    player.body.destroy();
                     return 1;
                   }
                 }
@@ -4144,14 +4145,13 @@ const sockets = (() => {
                   );
                   return 1;
                 }
-  
                 let playerName = socket.player.name
                   ? socket.player.name
                   : "Player";
                 let chatMessage = playerName + " says: " + message;
                 sockets.broadcast(chatMessage);
                 util.log("[CHAT] " + chatMessage);
-                // Basic chat spam control. //its back
+                // Basic chat spam control.
                 socket.status.lastChatTime = util.time();
               } else
                 player.body.sendMessage("You're sending messages too quickly!");
