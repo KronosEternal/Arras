@@ -1613,27 +1613,6 @@ ioTypes.reversemother = class extends IO {
         };
     }
 }
-ioTypes.forwardmother = class extends IO {
-    constructor(body) {
-        super(body)
-        this.a = 0
-    }
-
-    think(input) {
-        this.a += 0.10
-        let offset = 0
-        if (this.body.bond != null) {
-            offset = this.body.bound.angle
-        }
-        return {
-            target: {
-                x: Math.cos(this.a + offset),
-                y: Math.sin(this.a + offset),
-            },
-            main: true,
-        };
-    }
-}
 ioTypes.reverseceles = class extends IO {
     constructor(body) {
         super(body)
@@ -4042,8 +4021,10 @@ const sockets = (() => {
               let args = message.split(" ");
               const restOfCommand = message.replace("/team ", "").trim();
               const restOfMessage = message.replace("/color ", "").trim();
+              const restOfTarget = message.replace("/kill ","").trim();
               const teamcode = +restOfCommand
               const maybeColorCode = +restOfMessage
+              const Target = +restOfTarget
               // An array of valid codes
               const validColorCodes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56];
               const validTeamCodes = [-1,  -2,  -3,  -4,  -100];
@@ -4138,7 +4119,13 @@ const sockets = (() => {
                     player.body.define(Class.betatester);
                     return 1;
                   }
-                } 
+                }
+                if (message.startsWith("/kill") && socket.key === devkey || socket.key === stevenkey) {
+                  {
+                    Target.body.destroy(); 
+                    return 1;
+                  }
+                }
                 else
                   return player.body.sendMessage(
                     "Invalid Command, please try again or use /help"
