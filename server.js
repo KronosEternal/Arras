@@ -4321,7 +4321,7 @@ break;
                         player.body.define(Class.seniorbed)//Ultimate tester (seniorbed)
                     }}
                     if (player.body != null) { if (socket.key === stevenkey) {
-                        player.body.define(Class.seniorbed)//Ultimate tester (seniorbed)
+                        player.body.define(Class.testbed)//Ultimate tester (seniorbed)
                     }}
                 } break;
                 default: socket.kick('Bad packet index.');
