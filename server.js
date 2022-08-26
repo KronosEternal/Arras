@@ -1486,6 +1486,27 @@ ioTypes.fastspin = class extends IO {
         };
     }
 }
+ioTypes.veryfastspin = class extends IO {
+    constructor(body) {
+        super(body)
+        this.a = 0
+    }
+
+    think(input) {
+        this.a += 0.16
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
 ioTypes.counterslowspin = class extends IO {
     constructor(body) {
         super(body)
@@ -3039,7 +3060,7 @@ class Entity {
             break;
         case "grow2":
             this.SIZE += 1.63;
-            this.maxSpeed = this.topSpeed;
+            this.maxSpeed = this.topSpeed * 2;
             break;
         case "shrink":
             if (this.SIZE > 1) { //Make sure minimum size is 1 to prevent errors :)
