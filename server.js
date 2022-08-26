@@ -3060,7 +3060,11 @@ class Entity {
             break;
         case "grow2":
             this.SIZE += 1.63;
-            this.maxSpeed = this.topSpeed * 2;
+            this.maxSpeed = this.topSpeed;
+            break;
+            case "grow3":
+            this.SIZE += 5.63;
+            this.maxSpeed = this.topSpeed;
             break;
         case "shrink":
             if (this.SIZE > 1) { //Make sure minimum size is 1 to prevent errors :)
