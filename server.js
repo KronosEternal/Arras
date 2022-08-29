@@ -28,8 +28,7 @@ Array.prototype.remove = index => {
 };
 
 // Set up room.
-let setup = c.ROOM_SETUP;
-
+let setup = c.ROOM_SETUP; 
 global.fps = "Unknown";
 var roomSpeed = c.gameSpeed;
 let room = {
@@ -174,7 +173,7 @@ class Vector {
   
     get length() {
         return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
-    }
+    } 
 
     get direction() {
         return Math.atan2(this.y, this.x);
