@@ -12,7 +12,7 @@ This server can be imported to heroku as it uses `Node.js version 12.x`,`google-
 - `storage.md` is where unused or revised code is located
 - The `package.json` has been updated for compatibility with Heroku
 
-The current contributers are `KronosEternal/@Nyx_The_Celestial` and `jbom4390/@jbom4390`
+The current contributers are `KronosEternal/@Nyx_The_Celestial`, `TheMemeGodOfMemes/@dontknowhowtocode`, and `jbom4390/@jbom4390`
 
 ```
 # Arras.io Siege Gamemode
