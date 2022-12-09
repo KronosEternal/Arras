@@ -639,7 +639,7 @@ ioTypes.nearestDifferentMaster = class extends IO {
              (e.alpha > 0.5) &&
              (e.type === 'tank' || e.type === 'crasher' || (!this.body.aiSettings.fixedFriend && e.type === 'fixed') || (!this.body.aiSettings.shapeFriend && e.type === 'food')) &&
              (this.body.aiSettings.parentView  || ((e.x -  m.x) * (e.x -  m.x) < sqrRange && (e.y -  m.y) * (e.y -  m.y) < sqrRange)) &&
-             (this.body.aiSettings.skynet      || ((e.x - mm.x) * (e.x - mm.x) < sqrRangeMaster && (e.y - mm.y) * (e.y - mm.y) < sqrRangeMaster)) &&
+             (this.body.aiSettings.skynet      || ((e.x - mm.x) * (e.x - mm.x) < sqrRangeMaster && (e.y - mm.y)* (e.y - mm.y) < sqrRangeMaster)) &&
              (!this.body.aiSettings.ignoreBase || room.isNotInBase(e))) {
           } else {
             this.targetLock = undefined
@@ -6257,7 +6257,9 @@ if (room.bas1) //Sanctuary Room
                             o.color = [36][team - 1]; // temp fixed
                     o.define(Class.bot);
                    let arrayOfClasses = [
-                   Class.stream,
+                  Class.testingdummy
+                     /* 
+                  Class.stream,
                    Class.overseer,
                    Class.overlord,
                    Class.God,
